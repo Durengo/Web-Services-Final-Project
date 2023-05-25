@@ -52,4 +52,24 @@ public class WeatherAPIClient {
 
         return response;
     }
+
+    public String getForecastWeatherData(float lat, float lon, int days) {
+        String url = BASE_URL + "forecast.json?q=" + lat + "%2C" + lon + "&days=" + days;
+
+        try {
+            return sendGetRequest(url);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
+    public String getForecastWeatherData(String city, int days) {
+        String url = BASE_URL + "forecast.json?q=" + city + "&days=" + days;
+
+        try {
+            return sendGetRequest(url);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
 }
