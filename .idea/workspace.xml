@@ -10,9 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="??">
-      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/geolocationapi/GeoLocationApiClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/geolocationapi/GeoLocationApiEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
