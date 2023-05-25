@@ -1,13 +1,8 @@
 package lt.viko.eif.pi21e.weather.server.rest.api.weatherapi;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.IOException;
 
 @RestController
 public class WeatherApiEndpoint {
