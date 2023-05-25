@@ -10,30 +10,6 @@ public class WeatherAPIClient {
     private static final String BASE_URL = "https://weatherapi-com.p.rapidapi.com/";
     OkHttpClient client = new OkHttpClient();
 
-    //forecast.json
-
-
-    public String getCurrentWeatherData(String city){
-
-        String url = BASE_URL + "current.json?q=" + city;
-
-        try {
-            return sendGetRequest(url);
-        } catch (Exception e) {
-            return e.getMessage();
-        }
-    }
-
-    public String getCurrentWeatherData(float lat, float lon){
-        String url = BASE_URL + "current.json?q=" + lat + "%2C" + lon;
-
-        try {
-            return sendGetRequest(url);
-        } catch (Exception e) {
-            return e.getMessage();
-        }
-    }
-
     private String sendGetRequest(String url) throws Exception {
         Request request = new Request.Builder()
                 .url(url)
@@ -65,6 +41,26 @@ public class WeatherAPIClient {
 
     public String getForecastWeatherData(String city, int days) {
         String url = BASE_URL + "forecast.json?q=" + city + "&days=" + days;
+
+        try {
+            return sendGetRequest(url);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
+    public String getCurrentWeatherData(String city){
+        String url = BASE_URL + "current.json?q=" + city;
+
+        try {
+            return sendGetRequest(url);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
+    public String getCurrentWeatherData(float lat, float lon){
+        String url = BASE_URL + "current.json?q=" + lat + "%2C" + lon;
 
         try {
             return sendGetRequest(url);
