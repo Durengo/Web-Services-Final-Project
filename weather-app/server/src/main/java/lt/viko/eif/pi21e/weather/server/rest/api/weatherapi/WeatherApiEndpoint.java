@@ -60,4 +60,20 @@ public class WeatherApiEndpoint {
         WeatherAPIClient client = new WeatherAPIClient();
         return client.getForecastWeatherData(city, days);
     }
+    /**
+     * Handles GET request to /weather/history endpoint
+     * @param lat latitude
+     * @param lon longitude
+     * @param start start date
+     * @param end end date
+     * @return String
+     */
+    @GetMapping(value = "/weather/history")
+    public String getWeatherCoordinatesHistory(@RequestParam(defaultValue = "0.0") float lat,
+                                               @RequestParam(defaultValue = "0.0") float lon,
+                                               @RequestParam(defaultValue = "2023-5-24") String start,
+                                               @RequestParam(defaultValue = "2023-5-26") String end) {
+        WeatherAPIClient client = new WeatherAPIClient();
+        return client.getHistoricalWeatherData(lat, lon, start, end);
+    }
 }

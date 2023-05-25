@@ -113,4 +113,21 @@ public class WeatherAPIClient {
             return e.getMessage();
         }
     }
+    /**
+     * Gets historical weather data for specified coordinates
+     * @param lat Latitude
+     * @param lon Longitude
+     * @param start Start date
+     * @param end End date
+     * @return String response from WeatherAPI
+     */
+    public String getHistoricalWeatherData(float lat, float lon, String start, String end) {
+        String url = BASE_URL + "history.json?q=" + lat + "%2C" + lon + "&dt=" + start + "&end_dt=" + end;
+
+        try {
+            return sendGetRequest(url);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
 }
