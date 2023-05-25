@@ -1,1 +1,1 @@
-rest/api - api rest endpoints
+rest/api - api rest endpoints and clients
