@@ -49,7 +49,7 @@ public class WeatherApiEndpoint {
     }
 
     /**
-     * Handles GET request to /weather/forecast/{city} endpoint
+     * Handles GET request to /weather/forecast/city/{city} endpoint
      * @param city city name
      * @param days number of days
      * @return String
