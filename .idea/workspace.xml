@@ -10,18 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="??">
+      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/geolocationapi/GeoLocationApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/geolocationapi/GeoLocationApiEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" afterDir="false" />
     </list>
-    <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="">
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" afterDir="false" />
-    </list>
+    <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -30,18 +35,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java">
-      <ranges>
-        <range start1="2" end1="5" start2="2" end2="10" changelist="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" />
-        <range start1="8" end1="10" start2="13" end2="22" changelist="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" />
-        <range start1="14" end1="15" start2="26" end2="32" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
-        <range start1="20" end1="22" start2="37" end2="48" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
-        <range start1="26" end1="28" start2="52" end2="61" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
-        <range start1="31" end1="32" start2="64" end2="64" changelist="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -59,19 +52,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/Nazar/IdeaProjects/Web-Services-Final-Project/weather-app",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nazar/IdeaProjects/Web-Services-Final-Project/weather-app&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Nazar\IdeaProjects\Web-Services-Final-Project\weather-app" />
