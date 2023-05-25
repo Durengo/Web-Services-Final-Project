@@ -9,11 +9,9 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="??">
-      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/geolocationapi/GeoLocationApiClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/geolocationapi/GeoLocationApiEndpoint.java" afterDir="false" />
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="removed useless">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/README.md" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="backend-main" />
+        <entry key="$PROJECT_DIR$" value="backend-geolocation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -139,7 +137,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685034679881</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="documentation residentsleeper">
+      <created>1685042719313</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685042719313</updated>
+    </task>
+    <task id="LOCAL-00005" summary="removed useless">
+      <created>1685043065324</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685043065324</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -161,6 +173,8 @@
     <MESSAGE value="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT" />
     <MESSAGE value="added readme" />
     <MESSAGE value="??" />
-    <option name="LAST_COMMIT_MESSAGE" value="??" />
+    <MESSAGE value="documentation residentsleeper" />
+    <MESSAGE value="removed useless" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed useless" />
   </component>
 </project>
