@@ -1,20 +1,26 @@
 package lt.viko.eif.pi21e.weather.server.rest.api.weatherapi;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
 
 @RestController
 public class WeatherApiEndpoint {
     @GetMapping("/weather?coordinates={lat},{lon}")
     public String getWeatherCoordinates(@PathVariable float lat, @PathVariable float lon) {
-        return "Hello from weather API";
+        WeatherAPIClient client = new WeatherAPIClient();
+        return client.getCurrentWeatherData(lat, lon);
     }
 
     @GetMapping("/weather?city={city}")
     public String getWeatherCity(@PathVariable String city) {
-        return "Hello from weather API";
+        WeatherAPIClient client = new WeatherAPIClient();
+        return client.getCurrentWeatherData(city);
     }
 
 }
