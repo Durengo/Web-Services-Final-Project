@@ -130,4 +130,21 @@ public class WeatherAPIClient {
             return e.getMessage();
         }
     }
+
+    /**
+     * Gets historical weather data for specified city
+     * @param city
+     * @param start
+     * @param end
+     * @return
+     */
+    public String getHistoricalWeatherData(String city, String start, String end) {
+        String url = BASE_URL + "history.json?q=" + city + "&dt=" + start + "&end_dt=" + end;
+
+        try {
+            return sendGetRequest(url);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
 }
