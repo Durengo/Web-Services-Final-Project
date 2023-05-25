@@ -12,20 +12,41 @@ public class WeatherApiEndpoint {
         return client.getCurrentWeatherData(lat, lon);
     }
 
-    @GetMapping("/weather?city={city}")
+    /**
+     * Handles GET request to /weather/{city} endpoint
+     * @param city city name
+     * @return String
+     */
+    @GetMapping(value = "/weather/{city}")
     public String getWeatherCity(@PathVariable String city) {
         WeatherAPIClient client = new WeatherAPIClient();
         return client.getCurrentWeatherData(city);
     }
 
-    @GetMapping("/weather?coordinates={lat},{lon}&forecast={days}")
-    public String getWeatherCoordinatesForecast(@PathVariable float lat, @PathVariable float lon, @PathVariable int days) {
+    /**
+     * Handles GET request to /weather/forecast endpoint
+     * @param lat latitude
+     * @param lon longitude
+     * @param days number of days
+     * @return String
+     */
+    @GetMapping(value = "/weather/forecast")
+    public String getWeatherCoordinatesForecast(@RequestParam(defaultValue = "0.0") float lat,
+                                                @RequestParam(defaultValue = "0.0") float lon,
+                                                @RequestParam(defaultValue = "1") int days) {
         WeatherAPIClient client = new WeatherAPIClient();
         return client.getForecastWeatherData(lat, lon, days);
     }
 
-    @GetMapping("/weather?city={city}&forecast={days}")
-    public String getWeatherCityForecast(@PathVariable String city, @PathVariable int days) {
+    /**
+     * Handles GET request to /weather/forecast/{city} endpoint
+     * @param city city name
+     * @param days number of days
+     * @return String
+     */
+    @GetMapping(value = "/weather/forecast/city/{city}")
+    public String getWeatherCityForecast(@PathVariable String city,
+                                         @RequestParam(defaultValue = "1") int days) {
         WeatherAPIClient client = new WeatherAPIClient();
         return client.getForecastWeatherData(city, days);
     }
