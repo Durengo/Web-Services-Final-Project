@@ -5,6 +5,10 @@ import okhttp3.Request;
 
 import java.io.IOException;
 
+/**
+ * Represents GeoLocationApiClient object which is responsible for
+ * sending requests to GeoLocationAPI
+ */
 public class GeoLocationApiClient {
     /**
      * API key for WeatherAPI
@@ -15,7 +19,16 @@ public class GeoLocationApiClient {
      */
     private static final String BASE_URL = "https://ip-geo-location.p.rapidapi.com/ip/";//23.123.12.11?format=json"
 
+    /**
+     * OkHttpClient object
+     */
     OkHttpClient client = new OkHttpClient();
+    /**
+     * Sends GET request to WeatherAPI
+     * @param url url to send request to
+     * @return response from WeatherAPI
+     * @throws Exception
+     */
     private String sendGetRequest(String url) throws Exception {
 
         Request request = new Request.Builder()
@@ -36,6 +49,11 @@ public class GeoLocationApiClient {
         return response;
     }
 
+    /**
+     * Gets IP address and sends request to WeatherAPI
+     * @param ip IP address
+     * @return response from WeatherAPI
+     */
     public String getIp(String ip) {
         String url = BASE_URL + ip + "?format=json";
 
