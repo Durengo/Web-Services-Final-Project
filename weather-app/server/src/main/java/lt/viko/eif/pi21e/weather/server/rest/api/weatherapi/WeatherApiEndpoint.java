@@ -23,4 +23,16 @@ public class WeatherApiEndpoint {
         return client.getCurrentWeatherData(city);
     }
 
+    @GetMapping("/weather?coordinates={lat},{lon}&forecast={days}")
+    public String getWeatherCoordinatesForecast(@PathVariable float lat, @PathVariable float lon, @PathVariable int days) {
+        WeatherAPIClient client = new WeatherAPIClient();
+        return client.getForecastWeatherData(lat, lon, days);
+    }
+
+    @GetMapping("/weather?city={city}&forecast={days}")
+    public String getWeatherCityForecast(@PathVariable String city, @PathVariable int days) {
+        WeatherAPIClient client = new WeatherAPIClient();
+        return client.getForecastWeatherData(city, days);
+    }
+
 }
