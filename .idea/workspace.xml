@@ -3,13 +3,20 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="AutomaticModuleUnloader">
+    <loaded-modules>
+      <module name="weather-app-server" />
+    </loaded-modules>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="??">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" afterDir="false" />
+    </list>
+    <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="">
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +26,22 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="backend-main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java">
+      <ranges>
+        <range start1="2" end1="5" start2="2" end2="10" changelist="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" />
+        <range start1="8" end1="10" start2="13" end2="22" changelist="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" />
+        <range start1="14" end1="15" start2="26" end2="32" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
+        <range start1="20" end1="22" start2="37" end2="48" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
+        <range start1="26" end1="28" start2="52" end2="61" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
+        <range start1="31" end1="32" start2="64" end2="64" changelist="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,12 +65,35 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "19",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+    "last_opened_file_path": "C:/Users/Nazar/IdeaProjects/Web-Services-Final-Project/weather-app",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nazar\IdeaProjects\Web-Services-Final-Project\weather-app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nazar\IdeaProjects\Web-Services-Final-Project\weather-app" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.WeatherApplicationServer">
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lt.viko.eif.pi21e.weather.server.rest.api.weatherapi.test.MainTest" />
+      <module name="weather-app-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.viko.eif.pi21e.weather.server.rest.api.weatherapi.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WeatherApplicationServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.viko.eif.pi21e.weather.server.WeatherApplicationServer" />
       <module name="weather-app-server" />
@@ -68,6 +110,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.WeatherApplicationServer" />
+        <item itemvalue="Application.MainTest" />
+        <item itemvalue="Application.WeatherApplicationServer" />
+        <item itemvalue="Application.WeatherApplicationServer" />
       </list>
     </recent_temporary>
   </component>
@@ -80,10 +125,49 @@
       <option name="presentableId" value="Default" />
       <updated>1685022766159</updated>
     </task>
+    <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
+      <created>1685023932871</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685023932871</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added readme">
+      <created>1685025239402</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685025239402</updated>
+    </task>
+    <task id="LOCAL-00003" summary="??">
+      <created>1685034679881</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685034679881</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
     <module name="weather-app" />
     <module name="weather-app-client" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT" />
+    <MESSAGE value="added readme" />
+    <MESSAGE value="??" />
+    <option name="LAST_COMMIT_MESSAGE" value="??" />
   </component>
 </project>
