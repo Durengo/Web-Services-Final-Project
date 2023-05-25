@@ -9,13 +9,9 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="??">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="Added history">
       <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherAPIClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/target/classes/lt/viko/eif/pi21e/weather/server/rest/api/weatherapi/WeatherApiEndpoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685034679881</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added history">
+      <created>1685045240345</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685045240345</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -163,6 +166,7 @@
     <MESSAGE value="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT" />
     <MESSAGE value="added readme" />
     <MESSAGE value="??" />
-    <option name="LAST_COMMIT_MESSAGE" value="??" />
+    <MESSAGE value="Added history" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added history" />
   </component>
 </project>
