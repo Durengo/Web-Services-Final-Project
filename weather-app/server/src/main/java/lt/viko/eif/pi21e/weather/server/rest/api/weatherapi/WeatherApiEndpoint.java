@@ -1,13 +1,23 @@
 package lt.viko.eif.pi21e.weather.server.rest.api.weatherapi;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * Represents WeatherApiEndpoint object that is responsible
+ * for handling requests and responses
+ */
 
 @RestController
 public class WeatherApiEndpoint {
-    @GetMapping("/weather?coordinates={lat},{lon}")
-    public String getWeatherCoordinates(@PathVariable float lat, @PathVariable float lon) {
+    /**
+     * Handles GET request to /weather endpoint
+     * @param lat latitude
+     * @param lon longitude
+     * @return String
+     */
+    @GetMapping(value = "/weather")
+    public String getWeatherCoordinates(@RequestParam(defaultValue = "0.0") float lat,
+                                        @RequestParam(defaultValue = "0.0") float lon) {
         WeatherAPIClient client = new WeatherAPIClient();
         return client.getCurrentWeatherData(lat, lon);
     }
@@ -50,5 +60,4 @@ public class WeatherApiEndpoint {
         WeatherAPIClient client = new WeatherAPIClient();
         return client.getForecastWeatherData(city, days);
     }
-
 }
