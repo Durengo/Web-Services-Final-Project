@@ -3,7 +3,7 @@ package lt.viko.eif.pi21e.weather.server.rest.database;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/criteriaweathers")
+@RequestMapping("/criteria")
 public class CriteriaWeatherEndpoint {
 
     @PostMapping
