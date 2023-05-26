@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class GeoLocationApiEndpoint {
     /**
      * Handles GET request to /ip endpoint
-     * @param value ip address
+     * @param ip ip address
      * @return String
      */
-    @GetMapping(value = "/ip")
-    String getIp(@RequestParam(defaultValue = "0.0.0.0") String value) {
+    @GetMapping(value = "/ipinfo")
+    String getIpInfo(@RequestParam(defaultValue = "0.0.0.0") String ip) {
         GeoLocationApiClient client = new GeoLocationApiClient();
-        return client.getIp(value);
+        return client.getIpInfo(ip);
     }
 }

@@ -11,11 +11,11 @@ import java.io.IOException;
  */
 public class GeoLocationApiClient {
     /**
-     * API key for WeatherAPI
+     * API key for GeoLocationAPI
      */
     private static final String API_KEY = "f7c563f4d9mshf772c724dd40635p183e71jsnc3d4f4ff3512";
     /**
-     * Base URL for WeatherAPI
+     * Base URL for GeoLocationAPI
      */
     private static final String BASE_URL = "https://ip-geo-location.p.rapidapi.com/ip/";//23.123.12.11?format=json"
 
@@ -24,9 +24,9 @@ public class GeoLocationApiClient {
      */
     OkHttpClient client = new OkHttpClient();
     /**
-     * Sends GET request to WeatherAPI
+     * Sends GET request to GeoLocationAPI
      * @param url url to send request to
-     * @return response from WeatherAPI
+     * @return response from GeoLocationAPI
      * @throws Exception
      */
     private String sendGetRequest(String url) throws Exception {
@@ -50,11 +50,11 @@ public class GeoLocationApiClient {
     }
 
     /**
-     * Gets IP address and sends request to WeatherAPI
+     * Gets IP address and sends request to GeoLocationAPI
      * @param ip IP address
-     * @return response from WeatherAPI
+     * @return response from GeoLocationAPI
      */
-    public String getIp(String ip) {
+    public String getIpInfo(String ip) {
         String url = BASE_URL + ip + "?format=json";
 
         try {
