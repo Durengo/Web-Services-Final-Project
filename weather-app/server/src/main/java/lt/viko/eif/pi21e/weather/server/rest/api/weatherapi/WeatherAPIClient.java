@@ -117,8 +117,8 @@ public class WeatherAPIClient {
      * Gets historical weather data for specified coordinates
      * @param lat Latitude
      * @param lon Longitude
-     * @param start Start date
-     * @param end End date
+     * @param start Start date (YYYY-MM-DD)
+     * @param end End date (YYYY-MM-DD)
      * @return String response from WeatherAPI
      */
     public String getHistoricalWeatherData(float lat, float lon, String start, String end) {
