@@ -7,6 +7,9 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class Interactor {
     private static StandardServiceRegistry registry;
@@ -74,6 +77,31 @@ public class Interactor {
             e.printStackTrace();
         }
         return entity;
+    }
+
+    public static <T> T readByParam(Class<T> entityClass, String param, String value) {
+        T entity = null;
+        try (Session session = getSessionFactory().openSession()) {
+            Query<T> query = session.createQuery("from " + entityClass.getSimpleName()
+                    + " o where o."+ param + " = :param", entityClass);
+            query.setParameter("param", value);
+            query.setMaxResults(1);
+            entity = query.uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return entity;
+    }
+
+    public static <T> List<T> readAll(Class<T> entityClass) {
+        List<T> entities = null;
+        try (Session session = getSessionFactory().openSession()) {
+            Query<T> query = session.createQuery("from " + entityClass.getSimpleName(), entityClass);
+            entities = query.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return entities;
     }
 
     public static <T> void delete(Class<T> entityClass, int id) {
