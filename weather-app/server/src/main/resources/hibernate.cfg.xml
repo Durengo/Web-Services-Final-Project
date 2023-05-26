@@ -39,6 +39,10 @@
             thread
         </property>
 
+        <property name="hibernate.enable_lazy_load_no_trans">
+            true
+        </property>
+
         <mapping class="lt.viko.eif.pi21e.weather.database.models.User"/>
         <mapping class="lt.viko.eif.pi21e.weather.database.models.FavoriteAddress"/>
         <mapping class="lt.viko.eif.pi21e.weather.database.models.SubscriptionAddress"/>
