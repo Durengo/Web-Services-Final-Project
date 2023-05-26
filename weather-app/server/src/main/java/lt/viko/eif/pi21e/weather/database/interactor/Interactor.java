@@ -54,7 +54,7 @@ public class Interactor {
             // start a transaction
             transaction = session.beginTransaction();
             // update the entity object
-            session.update(entity);
+            session.saveOrUpdate(entity);
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
@@ -74,6 +74,27 @@ public class Interactor {
             e.printStackTrace();
         }
         return entity;
+    }
+
+    public static <T> void delete(Class<T> entityClass, int id) {
+        Transaction transaction = null;
+        try (Session session = getSessionFactory().openSession()) {
+            // start a transaction
+            transaction = session.beginTransaction();
+            // get the entity object
+            T entity = session.get(entityClass, id);
+            // delete the entity object
+            if (entity != null) {
+                session.delete(entity);
+            }
+            // commit transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
     }
 
     public static void shutdown(){
