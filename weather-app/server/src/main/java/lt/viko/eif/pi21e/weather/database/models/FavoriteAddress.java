@@ -15,9 +15,9 @@ public class FavoriteAddress {
     @Column( name = "ADDRESS")
     private String address;
 
-    @Column( name = "USER_ID")
     @JoinColumn( name = "USER_ID")
-    private int userId;
+    @ManyToOne
+    private User user;
 
     @Column( name = "TYPE")
     private String type;
@@ -25,9 +25,8 @@ public class FavoriteAddress {
     public FavoriteAddress() {
     }
 
-    public FavoriteAddress(String address, int userId, String type) {
+    public FavoriteAddress(String address, String type) {
         this.address = address;
-        this.userId = userId;
         this.type = type;
     }
 
@@ -48,19 +47,19 @@ public class FavoriteAddress {
         this.address = address;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

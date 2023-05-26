@@ -21,18 +21,17 @@ public class CriteriaWeather {
     @Column( name = "CRITERIA_VALUE")
     private String criteriaValue;
 
-    @Column( name = "SUBSCRIPTION_ADDRESS_ID")
     @JoinColumn( name = "SUBSCRIPTION_ADDRESS_ID")
-    private int subscriptionAddressId;
+    @ManyToOne
+    private SubscriptionAddress subscriptionAddress;
 
     public CriteriaWeather() {
     }
 
-    public CriteriaWeather(String less_equal_more, String criteriaName, String criteriaValue, int subscriptionAddressId) {
+    public CriteriaWeather(String less_equal_more, String criteriaName, String criteriaValue) {
         this.less_equal_more = less_equal_more;
         this.criteriaName = criteriaName;
         this.criteriaValue = criteriaValue;
-        this.subscriptionAddressId = subscriptionAddressId;
     }
 
     public int getCriteriaWeatherId() {
@@ -67,11 +66,11 @@ public class CriteriaWeather {
         this.criteriaValue = criteriaValue;
     }
 
-    public int getSubscriptionAddressId() {
-        return subscriptionAddressId;
+    public SubscriptionAddress getSubscriptionAddress() {
+        return subscriptionAddress;
     }
 
-    public void setSubscriptionAddressId(int subscriptionAddressId) {
-        this.subscriptionAddressId = subscriptionAddressId;
+    public void setSubscriptionAddress(SubscriptionAddress subscriptionAddress) {
+        this.subscriptionAddress = subscriptionAddress;
     }
 }

@@ -18,20 +18,19 @@ public class SubscriptionAddress {
     @Column( name = "ADDRESS")
     private String address;
 
-    @Column( name = "USER_ID")
     @JoinColumn( name = "USER_ID")
-    private int userId;
+    @ManyToOne
+    private User user;
 
     @Column( name = "CRITERIA_WEATHERS")
-    @OneToMany( orphanRemoval = true )
+    @OneToMany( orphanRemoval = true, cascade=CascadeType.ALL, mappedBy = "subscriptionAddress")
     private List<CriteriaWeather> criteriaWeathers = new ArrayList<>();
 
     public SubscriptionAddress() {
     }
 
-    public SubscriptionAddress(String address, int userId) {
+    public SubscriptionAddress(String address) {
         this.address = address;
-        this.userId = userId;
     }
 
     public int getSubscriptionAddressId() {
@@ -50,19 +49,19 @@ public class SubscriptionAddress {
         this.address = address;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     public List<CriteriaWeather> getCriteriaWeathers() {
         return criteriaWeathers;
     }
 
     public void setCriteriaWeathers(List<CriteriaWeather> criteriaWeathers) {
         this.criteriaWeathers = criteriaWeathers;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
