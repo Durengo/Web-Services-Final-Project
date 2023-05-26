@@ -1,0 +1,77 @@
+package lt.viko.eif.pi21e.weather.database.models;
+
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "CRITERIA_WEATHERS")
+public class CriteriaWeather {
+    @Id
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
+    @Column( name = "CRITERIA_WEATHER_ID")
+    private int criteriaWeatherId;
+
+    @Column( name = "LESS_EQUAL_MORE")
+    private String less_equal_more;
+
+    @Column( name = "CRITERIA_NAME")
+    private String criteriaName;
+
+    @Column( name = "CRITERIA_VALUE")
+    private String criteriaValue;
+
+    @Column( name = "SUBSCRIPTION_ADDRESS_ID")
+    @JoinColumn( name = "SUBSCRIPTION_ADDRESS_ID")
+    private int subscriptionAddressId;
+
+    public CriteriaWeather() {
+    }
+
+    public CriteriaWeather(String less_equal_more, String criteriaName, String criteriaValue, int subscriptionAddressId) {
+        this.less_equal_more = less_equal_more;
+        this.criteriaName = criteriaName;
+        this.criteriaValue = criteriaValue;
+        this.subscriptionAddressId = subscriptionAddressId;
+    }
+
+    public int getCriteriaWeatherId() {
+        return criteriaWeatherId;
+    }
+
+    public void setCriteriaWeatherId(int criteriaWeatherId) {
+        this.criteriaWeatherId = criteriaWeatherId;
+    }
+
+    public String getLess_equal_more() {
+        return less_equal_more;
+    }
+
+    public void setLess_equal_more(String less_equal_more) {
+        this.less_equal_more = less_equal_more;
+    }
+
+    public String getCriteriaName() {
+        return criteriaName;
+    }
+
+    public void setCriteriaName(String criteriaName) {
+        this.criteriaName = criteriaName;
+    }
+
+    public String getCriteriaValue() {
+        return criteriaValue;
+    }
+
+    public void setCriteriaValue(String criteriaValue) {
+        this.criteriaValue = criteriaValue;
+    }
+
+    public int getSubscriptionAddressId() {
+        return subscriptionAddressId;
+    }
+
+    public void setSubscriptionAddressId(int subscriptionAddressId) {
+        this.subscriptionAddressId = subscriptionAddressId;
+    }
+}
