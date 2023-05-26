@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "FAVORITE_ADDRESSES")
+@Table(name = "FavoriteAddress")
 public class FavoriteAddress {
     @Id
     @GeneratedValue(generator = "increment")

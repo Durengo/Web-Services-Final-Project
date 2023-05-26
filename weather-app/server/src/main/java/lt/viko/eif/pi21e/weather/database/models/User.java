@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "User")
 public class User {
     @Id
     @GeneratedValue(generator = "increment")

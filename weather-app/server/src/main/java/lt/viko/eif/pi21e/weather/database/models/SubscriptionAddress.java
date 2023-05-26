@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "SUBSCRIPTION_ADDRESSES")
+@Table(name = "SubscriptionAddress")
 public class SubscriptionAddress {
     @Id
     @GeneratedValue(generator = "increment")
