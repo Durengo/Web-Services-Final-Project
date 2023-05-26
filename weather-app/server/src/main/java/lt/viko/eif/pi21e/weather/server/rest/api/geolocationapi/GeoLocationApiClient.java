@@ -4,6 +4,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Represents GeoLocationApiClient object which is responsible for
@@ -27,9 +28,8 @@ public class GeoLocationApiClient {
      * Sends GET request to GeoLocationAPI
      * @param url url to send request to
      * @return response from GeoLocationAPI
-     * @throws Exception
      */
-    private String sendGetRequest(String url) throws Exception {
+    private String sendGetRequest(String url) {
 
         Request request = new Request.Builder()
                 .url(url)
@@ -38,10 +38,10 @@ public class GeoLocationApiClient {
                 .addHeader("X-RapidAPI-Host", "ip-geo-location.p.rapidapi.com")
                 .build();
 
-        String response = "";
+        String response;
 
         try {
-            response = client.newCall(request).execute().body().string();
+            response = Objects.requireNonNull(client.newCall(request).execute().body()).string();
         } catch (IOException e) {
             response = e.getMessage();
         }
