@@ -1,0 +1,84 @@
+package lt.viko.eif.pi21e.weather.database.interactor;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+public class Interactor {
+    private static StandardServiceRegistry registry;
+    private static SessionFactory sessionFactory = null;
+
+    public Interactor()
+    {
+    }
+
+    public static SessionFactory getSessionFactory(){
+        if(sessionFactory == null){
+            try{
+                registry = new StandardServiceRegistryBuilder().configure().build();
+                MetadataSources sources = new MetadataSources(registry);
+                Metadata setData = sources.getMetadataBuilder().build();
+                sessionFactory = setData.getSessionFactoryBuilder().build();
+            }catch (Exception e){
+                e.printStackTrace();
+                shutdown();
+            }
+        }
+        return sessionFactory;
+    }
+
+    public static <T> void set(T entity) {
+        Transaction transaction = null;
+        try (Session session = getSessionFactory().openSession()) {
+            // start a transaction
+            transaction = session.beginTransaction();
+            // save the entity object
+            session.save(entity);
+            // commit transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public static <T> void update(T entity) {
+        Transaction transaction = null;
+        try (Session session = getSessionFactory().openSession()) {
+            // start a transaction
+            transaction = session.beginTransaction();
+            // update the entity object
+            session.update(entity);
+            // commit transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    public static <T> T read(Class<T> entityClass, int id) {
+        T entity = null;
+        try (Session session = getSessionFactory().openSession()) {
+            // get the entity object
+            entity = session.get(entityClass, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return entity;
+    }
+
+    public static void shutdown(){
+        if(registry != null){
+            StandardServiceRegistryBuilder.destroy(registry);
+        }
+    }
+}
