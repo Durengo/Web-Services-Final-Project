@@ -22,6 +22,37 @@ public class CriteriaWeatherClient {
         return ClientGenericMethods.createX(criteriaWeatherJson, CriteriaWeather.class);
     }
 
+    // idk how to generalize properly
+    public String updateCriteriaWeather(int id, String criteriaWeatherJson) {
+        CriteriaWeather existingCriteriaWeather = Interactor.read(CriteriaWeather.class, id);
+        if (existingCriteriaWeather != null) {
+            try {
+                CriteriaWeather updatedCriteriaWeather = JObj2JSON.convert(criteriaWeatherJson, CriteriaWeather.class);
+                if (updatedCriteriaWeather.getLess_equal_more() != null) {
+                    existingCriteriaWeather.setLess_equal_more(updatedCriteriaWeather.getLess_equal_more());
+                }
+                if (updatedCriteriaWeather.getCriteriaName() != null) {
+                    existingCriteriaWeather.setCriteriaName(updatedCriteriaWeather.getCriteriaName());
+                }
+                if (updatedCriteriaWeather.getCriteriaValue() != null) {
+                    existingCriteriaWeather.setCriteriaValue(updatedCriteriaWeather.getCriteriaValue());
+                }
+                Interactor.update(existingCriteriaWeather);
+                CriteriaWeather check = Interactor.read(CriteriaWeather.class, id);
+                if (check != null) {
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
+                } else {
+                    return ResponseProvider.getResponse(500, "Couldn't update CriteriaWeather", "NULL");
+                }
+            } catch (JsonProcessingException e) {
+                return ResponseProvider.getResponse(500, "Couldn't convert CriteriaWeather to JSON", e.getMessage());
+            }
+        } else {
+            return ResponseProvider.getResponse(404, "Not Found", "NULL");
+        }
+    }
+
+
     public String deleteCriteriaWeather(int id) {
         return ClientGenericMethods.deleteX(id, CriteriaWeather.class);
     }

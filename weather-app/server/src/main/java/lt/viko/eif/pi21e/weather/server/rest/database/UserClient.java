@@ -2,6 +2,8 @@ package lt.viko.eif.pi21e.weather.server.rest.database;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.database.interactor.Interactor;
+import lt.viko.eif.pi21e.weather.database.models.FavoriteAddress;
+import lt.viko.eif.pi21e.weather.database.models.SubscriptionAddress;
 import lt.viko.eif.pi21e.weather.database.models.User;
 import lt.viko.eif.pi21e.weather.server.rest.database.other.ClientGenericMethods;
 import lt.viko.eif.pi21e.weather.server.rest.database.other.ResponseProvider;
@@ -56,6 +58,7 @@ public class UserClient extends ResponseProvider {
         }
     }
 
+    // ??? HOW TO GENERALIZE THIS
     public String updateUser(String username, String userJson) {
         try {
             User newUser = JObj2JSON.convert(userJson, User.class);

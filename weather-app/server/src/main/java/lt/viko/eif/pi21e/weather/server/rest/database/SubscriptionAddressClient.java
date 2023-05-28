@@ -23,6 +23,31 @@ public class SubscriptionAddressClient extends ResponseProvider {
         return ClientGenericMethods.createX(subscriptionAddressJson, SubscriptionAddress.class);
     }
 
+    // idk how to properly generalize
+    public String updateSubscriptionAddress(int id, String subscriptionAddressJson) {
+        try {
+            SubscriptionAddress existingSubscriptionAddress = Interactor.read(SubscriptionAddress.class, id);
+            if (existingSubscriptionAddress != null) {
+                SubscriptionAddress updatedSubscriptionAddress = JObj2JSON.convert(subscriptionAddressJson, SubscriptionAddress.class);
+                if (updatedSubscriptionAddress.getAddress() != null) {
+                    existingSubscriptionAddress.setAddress(updatedSubscriptionAddress.getAddress());
+                }
+                Interactor.update(existingSubscriptionAddress);
+                SubscriptionAddress check = Interactor.read(SubscriptionAddress.class, id);
+                if (check != null) {
+                    return getResponse(200, "OK", JObj2JSON.convert(check));
+                } else {
+                    return getResponse(500, "Couldn't update SubscriptionAddress", "NULL");
+                }
+            } else {
+                return getResponse(404, "Not Found", "NULL");
+            }
+        } catch (JsonProcessingException e) {
+            return getResponse(500, "Couldn't convert SubscriptionAddress to JSON", e.getMessage());
+        }
+    }
+
+
     public String deleteSubscriptionAddress(int id) {
         return ClientGenericMethods.deleteX(id, SubscriptionAddress.class);
     }
