@@ -15,8 +15,9 @@ public class FavoriteAddress {
     @Column( name = "ADDRESS")
     private String address;
 
-    @JoinColumn( name = "USER_ID")
     @ManyToOne
+    @JoinColumn( name = "USER_ID")
+    @JsonBackReference
     private User user;
 
     @Column( name = "TYPE")

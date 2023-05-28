@@ -19,7 +19,8 @@ public class SubscriptionAddress {
     private String address;
 
     @JoinColumn( name = "USER_ID")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonBackReference
     private User user;
 
     @Column( name = "CRITERIA_WEATHERS")

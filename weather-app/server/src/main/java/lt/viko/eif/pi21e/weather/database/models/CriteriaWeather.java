@@ -22,7 +22,8 @@ public class CriteriaWeather {
     private String criteriaValue;
 
     @JoinColumn( name = "SUBSCRIPTION_ADDRESS_ID")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonBackReference
     private SubscriptionAddress subscriptionAddress;
 
     public CriteriaWeather() {

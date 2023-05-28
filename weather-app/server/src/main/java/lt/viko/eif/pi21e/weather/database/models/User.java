@@ -25,7 +25,8 @@ public class User {
     private String password;
 
     @Column( name = "FAVORITE_ADDRESSES")
-    @OneToMany( orphanRemoval = true, cascade=CascadeType.ALL, mappedBy = "user")
+    @OneToMany( orphanRemoval = true, cascade=CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<FavoriteAddress> favoriteAddresses = new ArrayList<>();
 
     @Column( name = "SUBSCRIPTION_ADDRESSES")
