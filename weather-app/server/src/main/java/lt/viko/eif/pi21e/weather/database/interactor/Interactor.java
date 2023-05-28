@@ -125,9 +125,35 @@ public class Interactor {
         }
     }
 
+    public static <T> void deleteByParam(Class<T> type, String param, String value) {
+        Transaction transaction = null;
+        try (Session session = getSessionFactory().openSession()) {
+            // start a transaction
+            transaction = session.beginTransaction();
+            // get the entity object
+            Query<T> query = session.createQuery("from " + type.getSimpleName()
+                    + " o where o."+ param + " = :param", type);
+            query.setParameter("param", value);
+            query.setMaxResults(1);
+            T entity = query.uniqueResult();
+            // delete the entity object
+            if (entity != null) {
+                session.delete(entity);
+            }
+            // commit transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
+
     public static void shutdown(){
         if(registry != null){
             StandardServiceRegistryBuilder.destroy(registry);
         }
     }
+
+
 }
