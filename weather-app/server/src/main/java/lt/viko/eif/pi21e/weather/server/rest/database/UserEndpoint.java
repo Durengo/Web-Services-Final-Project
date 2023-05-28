@@ -52,4 +52,29 @@ public class UserEndpoint {
         UserClient client = new UserClient();
         return client.deleteUser(username);
     }
+
+    @PostMapping(value = "/{id}/subscriptionAddress")
+    public String addSubscriptionAddress(@PathVariable int id, @RequestBody String subscriptionAddressJson) {
+        UserClient client = new UserClient();
+        return client.addSubscriptionAddress(id, subscriptionAddressJson);
+    }
+
+    @PostMapping(value = "/{id}/favoriteAddress")
+    public String addFavoriteAddress(@PathVariable int id, @RequestBody String favoriteAddressJson) {
+        UserClient client = new UserClient();
+        return client.addFavoriteAddress(id, favoriteAddressJson);
+    }
+
+    @DeleteMapping(value = "/{userId}/subscriptionAddress/{subscriptionAddressId}")
+    public String deleteSubscriptionAddress(@PathVariable int userId, @PathVariable int subscriptionAddressId) {
+        UserClient client = new UserClient();
+        return client.deleteSubscriptionAddress(userId, subscriptionAddressId);
+    }
+
+    @DeleteMapping(value = "/{userId}/favoriteAddress/{favoriteAddressId}")
+    public String deleteFavoriteAddress(@PathVariable int userId, @PathVariable int favoriteAddressId) {
+        UserClient client = new UserClient();
+        return client.deleteFavoriteAddress(userId, favoriteAddressId);
+    }
+
 }

@@ -35,4 +35,17 @@ public class SubscriptionAddressEndpoint {
         SubscriptionAddressClient client = new SubscriptionAddressClient();
         return client.deleteSubscriptionAddress(id);
     }
+
+    @DeleteMapping(value = "/{subId}/criteriaWeather/{criteriaWeatherId}")
+    public String deleteCriteriaWeather(@PathVariable int subId, @PathVariable int criteriaWeatherId) {
+        SubscriptionAddressClient client = new SubscriptionAddressClient();
+        return client.deleteCriteriaWeather(subId, criteriaWeatherId);
+    }
+
+    @PostMapping(value = "/subscriptionAddress/{subId}/criteriaWeather")
+    public String addCriteriaWeather(@PathVariable int subId, @RequestBody String criteriaWeatherJson) {
+        SubscriptionAddressClient client = new SubscriptionAddressClient();
+        return client.addCriteriaWeather(subId, criteriaWeatherJson);
+    }
+
 }
