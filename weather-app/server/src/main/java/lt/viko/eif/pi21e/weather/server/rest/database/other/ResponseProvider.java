@@ -1,11 +1,11 @@
-package lt.viko.eif.pi21e.weather.server.rest.database.inherits;
+package lt.viko.eif.pi21e.weather.server.rest.database.other;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.server.rest.responses.ResponseClass;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
-public class ResponseInh {
-    public String getResponse(int code, String message, String data) {
+public class ResponseProvider {
+    public static String getResponse(int code, String message, String data) {
         ResponseClass response = new ResponseClass();
         response.setStatus(code);
         response.setMessage(message);
