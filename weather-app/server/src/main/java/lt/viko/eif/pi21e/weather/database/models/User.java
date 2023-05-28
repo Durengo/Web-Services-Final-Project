@@ -1,5 +1,6 @@
 package lt.viko.eif.pi21e.weather.database.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -30,7 +31,8 @@ public class User {
     private List<FavoriteAddress> favoriteAddresses = new ArrayList<>();
 
     @Column( name = "SUBSCRIPTION_ADDRESSES")
-    @OneToMany( orphanRemoval = true, cascade=CascadeType.ALL, mappedBy = "user" )
+    @OneToMany( orphanRemoval = true, cascade=CascadeType.ALL, mappedBy = "user" , fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<SubscriptionAddress> subscriptionAddresses = new ArrayList<>();
 
     public User() {

@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "SubscriptionAddress")
@@ -24,7 +26,8 @@ public class SubscriptionAddress {
     private User user;
 
     @Column( name = "CRITERIA_WEATHERS")
-    @OneToMany( orphanRemoval = true, cascade=CascadeType.ALL, mappedBy = "subscriptionAddress")
+    @OneToMany( orphanRemoval = true, cascade=CascadeType.ALL, mappedBy = "subscriptionAddress", fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<CriteriaWeather> criteriaWeathers = new ArrayList<>();
 
     public SubscriptionAddress() {
