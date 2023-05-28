@@ -3,126 +3,79 @@ package lt.viko.eif.pi21e.weather.server.rest.database;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.database.interactor.Interactor;
 import lt.viko.eif.pi21e.weather.database.models.FavoriteAddress;
-import lt.viko.eif.pi21e.weather.server.rest.responses.ResponseClass;
+import lt.viko.eif.pi21e.weather.server.rest.database.other.ClientGenericMethods;
+import lt.viko.eif.pi21e.weather.server.rest.database.other.ResponseProvider;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
-import java.util.List;
-
+/**
+ * Class that provides FavoriteAddress client
+ */
 public class FavoriteAddressClient {
-
-    private final String RESPONSE_ERROR = """
-                    {
-                      "status": 500,
-                      "message": "Couldn't convert response to json",
-                      "data": "NULL"
-                    }""";
-
-    private final String RESPONSE_NOT_FOUND = """
-                    {
-                      "status": 404,
-                      "message": "Not Found",
-                      "data": "NULL"
-                    }""";
-
+    /**
+     * Method that returns FavoriteAddress by id
+     * @param id id
+     * @return response string in json format
+     */
     public String getFavoriteAddress(int id) {
-        FavoriteAddress favoriteAddress = Interactor.read(FavoriteAddress.class, id);
-
-        ResponseClass response = new ResponseClass();
-        if (favoriteAddress != null) {
-            response.setStatus(200);
-            response.setMessage("OK");
-            String json = "";
-            try {
-                json = JObj2JSON.convert(favoriteAddress);
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert FavoriteAddress to JSON");
-                response.setData("NULL");
-            }
-            response.setData(json);
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.getX(id, FavoriteAddress.class);
     }
 
+    /**
+     * Method that returns all FavoriteAddresses
+     * @return response string in json format
+     */
     public String getFavoriteAddresses() {
-        List<FavoriteAddress> favoriteAddresses = Interactor.readAll(FavoriteAddress.class);
-
-        ResponseClass response = new ResponseClass();
-        if (favoriteAddresses != null) {
-            response.setStatus(200);
-            response.setMessage("OK");
-            String json = "";
-            try {
-                json = JObj2JSON.convert(favoriteAddresses);
-                response.setData(json);
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert FavoriteAddresses to JSON");
-                response.setData("NULL");
-            }
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.getXs(FavoriteAddress.class);
     }
 
+    /**
+     * Method that creates FavoriteAddress
+     * @param favoriteAddressJson FavoriteAddress json
+     * @return response string in json format
+     */
     public String createFavoriteAddress(String favoriteAddressJson) {
-        try {
-            FavoriteAddress newFavoriteAddress = null;
-            ResponseClass response = new ResponseClass();
+        return ClientGenericMethods.createX(favoriteAddressJson, FavoriteAddress.class);
+    }
+
+    /**
+     * Method that updates FavoriteAddress
+     * @param id FavoriteAddress id
+     * @param favoriteAddressJson FavoriteAddress json
+     * @return response string in json format
+     */
+    // idk how to generalize properly
+    public String updateFavoriteAddress(int id, String favoriteAddressJson) {
+        FavoriteAddress existingFavoriteAddress = Interactor.read(FavoriteAddress.class, id);
+        if (existingFavoriteAddress != null) {
             try {
-                newFavoriteAddress = JObj2JSON.convert(favoriteAddressJson, FavoriteAddress.class);
-                Interactor.set(newFavoriteAddress);
-                FavoriteAddress check = Interactor.read(FavoriteAddress.class, newFavoriteAddress.getFavoriteAddressId());
+                FavoriteAddress updatedFavoriteAddress = JObj2JSON.convert(favoriteAddressJson, FavoriteAddress.class);
+                if (updatedFavoriteAddress.getAddress() != null) {
+                    existingFavoriteAddress.setAddress(updatedFavoriteAddress.getAddress());
+                }
+                if (updatedFavoriteAddress.getType() != null) {
+                    existingFavoriteAddress.setType(updatedFavoriteAddress.getType());
+                }
+                Interactor.update(existingFavoriteAddress);
+                FavoriteAddress check = Interactor.read(FavoriteAddress.class, id);
                 if (check != null) {
-                    response.setStatus(201);
-                    response.setMessage("Created");
-                    response.setData(JObj2JSON.convert(check));
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
                 } else {
-                    response.setStatus(500);
-                    response.setMessage("Couldn't create FavoriteAddress");
-                    response.setData("NULL");
+                    return ResponseProvider.getResponse(500, "Couldn't update FavoriteAddress", "NULL");
                 }
             } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert FavoriteAddress to JSON");
-                response.setData("NULL");
+                return ResponseProvider.getResponse(500, "Couldn't convert FavoriteAddress to JSON", e.getMessage());
             }
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
+        } else {
+            return ResponseProvider.getResponse(404, "Not Found", "NULL");
         }
     }
 
+    /**
+     * Method that deletes FavoriteAddress
+     * @param id FavoriteAddress id
+     * @return response string in json format
+     */
     public String deleteFavoriteAddress(int id) {
-        FavoriteAddress existingFavoriteAddress = Interactor.read(FavoriteAddress.class, id);
-
-        ResponseClass response = new ResponseClass();
-        if (existingFavoriteAddress != null) {
-            Interactor.delete(FavoriteAddress.class, id);
-            response.setStatus(200);
-            response.setMessage("OK");
-            response.setData("NULL");
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.deleteX(id, FavoriteAddress.class);
     }
 }

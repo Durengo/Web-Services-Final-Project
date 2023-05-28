@@ -3,126 +3,82 @@ package lt.viko.eif.pi21e.weather.server.rest.database;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.database.interactor.Interactor;
 import lt.viko.eif.pi21e.weather.database.models.CriteriaWeather;
-import lt.viko.eif.pi21e.weather.server.rest.responses.ResponseClass;
+import lt.viko.eif.pi21e.weather.server.rest.database.other.ClientGenericMethods;
+import lt.viko.eif.pi21e.weather.server.rest.database.other.ResponseProvider;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
-import java.util.List;
-
+/**
+ * Class that provides CriteriaWeather client
+ */
 public class CriteriaWeatherClient {
-
-    private final String RESPONSE_ERROR = """
-                    {
-                      "status": 500,
-                      "message": "Couldn't convert response to json",
-                      "data": "NULL"
-                    }""";
-
-    private final String RESPONSE_NOT_FOUND = """
-                    {
-                      "status": 404,
-                      "message": "Not Found",
-                      "data": "NULL"
-                    }""";
-
+    /**
+     * Method that returns CriteriaWeather by id
+     * @param id CriteriaWeather id
+     * @return response string in json format
+     */
     public String getCriteriaWeather(int id) {
-        CriteriaWeather criteriaWeather = Interactor.read(CriteriaWeather.class, id);
-
-        ResponseClass response = new ResponseClass();
-        if (criteriaWeather != null) {
-            response.setStatus(200);
-            response.setMessage("OK");
-            String json = "";
-            try {
-                json = JObj2JSON.convert(criteriaWeather);
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert CriteriaWeather to JSON");
-                response.setData("NULL");
-            }
-            response.setData(json);
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.getX(id, CriteriaWeather.class);
     }
 
+    /**
+     * Method that returns CriteriaWeather list
+     * @return response string in json format
+     */
     public String getCriteriaWeathers() {
-        List<CriteriaWeather> criteriaWeathers = Interactor.readAll(CriteriaWeather.class);
-
-        ResponseClass response = new ResponseClass();
-        if (criteriaWeathers != null) {
-            response.setStatus(200);
-            response.setMessage("OK");
-            String json = "";
-            try {
-                json = JObj2JSON.convert(criteriaWeathers);
-                response.setData(json);
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert CriteriaWeathers to JSON");
-                response.setData("NULL");
-            }
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.getXs(CriteriaWeather.class);
     }
 
+    /**
+     * Method that creates CriteriaWeather
+     * @param criteriaWeatherJson CriteriaWeather json
+     * @return response string in json format
+     */
     public String createCriteriaWeather(String criteriaWeatherJson) {
-        try {
-            CriteriaWeather newCriteriaWeather = null;
-            ResponseClass response = new ResponseClass();
+        return ClientGenericMethods.createX(criteriaWeatherJson, CriteriaWeather.class);
+    }
+
+    /**
+     * Method that updates CriteriaWeather
+     * @param id CriteriaWeather id
+     * @param criteriaWeatherJson CriteriaWeather json
+     * @return response string in json format
+     */
+    // idk how to generalize properly
+    public String updateCriteriaWeather(int id, String criteriaWeatherJson) {
+        CriteriaWeather existingCriteriaWeather = Interactor.read(CriteriaWeather.class, id);
+        if (existingCriteriaWeather != null) {
             try {
-                newCriteriaWeather = JObj2JSON.convert(criteriaWeatherJson, CriteriaWeather.class);
-                Interactor.set(newCriteriaWeather);
-                CriteriaWeather check = Interactor.read(CriteriaWeather.class, newCriteriaWeather.getCriteriaWeatherId());
+                CriteriaWeather updatedCriteriaWeather = JObj2JSON.convert(criteriaWeatherJson, CriteriaWeather.class);
+                if (updatedCriteriaWeather.getLess_equal_more() != null) {
+                    existingCriteriaWeather.setLess_equal_more(updatedCriteriaWeather.getLess_equal_more());
+                }
+                if (updatedCriteriaWeather.getCriteriaName() != null) {
+                    existingCriteriaWeather.setCriteriaName(updatedCriteriaWeather.getCriteriaName());
+                }
+                if (updatedCriteriaWeather.getCriteriaValue() != null) {
+                    existingCriteriaWeather.setCriteriaValue(updatedCriteriaWeather.getCriteriaValue());
+                }
+                Interactor.update(existingCriteriaWeather);
+                CriteriaWeather check = Interactor.read(CriteriaWeather.class, id);
                 if (check != null) {
-                    response.setStatus(201);
-                    response.setMessage("Created");
-                    response.setData(JObj2JSON.convert(check));
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
                 } else {
-                    response.setStatus(500);
-                    response.setMessage("Couldn't create CriteriaWeather");
-                    response.setData("NULL");
+                    return ResponseProvider.getResponse(500, "Couldn't update CriteriaWeather", "NULL");
                 }
             } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert CriteriaWeather to JSON");
-                response.setData("NULL");
+                return ResponseProvider.getResponse(500, "Couldn't convert CriteriaWeather to JSON", e.getMessage());
             }
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
+        } else {
+            return ResponseProvider.getResponse(404, "Not Found", "NULL");
         }
     }
 
+    /**
+     * Method that deletes CriteriaWeather
+     * @param id CriteriaWeather id
+     * @return response string in json format
+     */
     public String deleteCriteriaWeather(int id) {
-        CriteriaWeather existingCriteriaWeather = Interactor.read(CriteriaWeather.class, id);
-
-        ResponseClass response = new ResponseClass();
-        if (existingCriteriaWeather != null) {
-            Interactor.delete(CriteriaWeather.class, id);
-            response.setStatus(200);
-            response.setMessage("OK");
-            response.setData("NULL");
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.deleteX(id, CriteriaWeather.class);
     }
 }

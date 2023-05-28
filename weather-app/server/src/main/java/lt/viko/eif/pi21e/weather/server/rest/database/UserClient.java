@@ -2,230 +2,275 @@ package lt.viko.eif.pi21e.weather.server.rest.database;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.database.interactor.Interactor;
+import lt.viko.eif.pi21e.weather.database.models.FavoriteAddress;
+import lt.viko.eif.pi21e.weather.database.models.SubscriptionAddress;
 import lt.viko.eif.pi21e.weather.database.models.User;
-import lt.viko.eif.pi21e.weather.server.rest.responses.ResponseClass;
+import lt.viko.eif.pi21e.weather.server.rest.database.other.ClientGenericMethods;
+import lt.viko.eif.pi21e.weather.server.rest.database.other.ResponseProvider;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
-import java.util.List;
-
-
+/**
+ * Class that provides User client
+ */
 public class UserClient {
-    private final String RESPONSE_ERROR = """
-                    {
-                      "status": 500,
-                      "message": "Couldn't convert response to json",
-                      "data": "NULL"
-                    }""";
-
-    private final String RESPONSE_NOT_FOUND = """
-                    {
-                      "status": 404,
-                      "message": "Not Found",
-                      "data": "NULL"
-                    }""";
-
+    /**
+     * Method that returns User by id
+     * @param id id
+     * @return response string in json format
+     */
     public String getUser(int id) {
-        User newUser = Interactor.read(User.class, id);
-
-        ResponseClass response = new ResponseClass();
-        if (newUser != null) {
-            response.setStatus(200);
-            response.setMessage("OK");
-            String json = "";
-            try {
-                json = JObj2JSON.convert(newUser);
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert user to JSON");
-                response.setData("NULL");
-            }
-            response.setData(json);
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.getX(id, User.class);
     }
 
+    /**
+     * Method that returns user by username
+     * @param username username
+     * @return response string in json format
+     */
     public String getUser(String username) {
-        User newUser = Interactor.readByParam(User.class, "username", username);
-
-        ResponseClass response = new ResponseClass();
-        if (newUser != null) {
-            response.setStatus(200);
-            response.setMessage("OK");
-            String json = "";
-            try {
-                json = JObj2JSON.convert(newUser);
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert user to JSON");
-                response.setData("NULL");
-            }
-            response.setData(json);
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.getX("username", username, User.class);
     }
 
+    /**
+     * Method that returns all Users
+     * @return response string in json format
+     */
     public String getUsers() {
-        List<User> users = Interactor.readAll(User.class);
-
-        ResponseClass response = new ResponseClass();
-        if (users != null) {
-            response.setStatus(200);
-            response.setMessage("OK");
-            String json = "";
-            try {
-                json = JObj2JSON.convert(users);
-                response.setData(json);
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert users to JSON");
-                response.setData("NULL");
-            }
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.getXs(User.class);
     }
 
+    /**
+     * Method that creates User
+     * @param userJson User json
+     * @return response string in json format
+     */
     public String createUser(String userJson) {
-        try {
-            User newUser = null;
-            ResponseClass response = new ResponseClass();
-            try {
-                newUser = JObj2JSON.convert(userJson, User.class);
-                Interactor.set(newUser);
-                User check = Interactor.read(User.class, newUser.getUserId());
-                if (check != null) {
-                    response.setStatus(201);
-                    response.setMessage("Created");
-                    response.setData(JObj2JSON.convert(check));
-                } else {
-                    response.setStatus(500);
-                    response.setMessage("Couldn't create user");
-                    response.setData("NULL");
-                }
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert user to JSON");
-                response.setData("NULL");
-            }
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.createX(userJson, User.class);
     }
 
+    /**
+     * Method that updates User
+     * @param id User id
+     * @param userJson User json
+     * @return response string in json format
+     */
+    // I STILL DON'T KNOW HOW TO GENERALIZE THIS
     public String updateUser(int id, String userJson) {
         try {
-            User newUser = null;
-            ResponseClass response = new ResponseClass();
-            try {
-                newUser = JObj2JSON.convert(userJson, User.class);
-                User oldUser = Interactor.read(User.class, id);
-                if (newUser.getUsername() != null)
-                    oldUser.setUsername(newUser.getUsername());
-                if (newUser.getPassword() != null)
-                    oldUser.setPassword(newUser.getPassword());
-                if (newUser.getMail() != null)
-                    oldUser.setMail(newUser.getMail());
-                Interactor.update(oldUser);
-                response.setStatus(200);
-                response.setMessage("OK");
-                response.setData(JObj2JSON.convert(oldUser));
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert user to JSON");
-                response.setData("NULL");
+            User newUser = JObj2JSON.convert(userJson, User.class);
+            User oldUser = Interactor.read(User.class, id);
+            if (newUser.getUsername() != null)
+                oldUser.setUsername(newUser.getUsername());
+            if (newUser.getPassword() != null)
+                oldUser.setPassword(newUser.getPassword());
+            if (newUser.getMail() != null)
+                oldUser.setMail(newUser.getMail());
+            Interactor.update(oldUser);
+            User newUserCheck = Interactor.read(User.class, id);
+            if (newUserCheck != null) {
+                if (newUserCheck.getUsername().equals(oldUser.getUsername()) &&
+                        newUserCheck.getPassword().equals(oldUser.getPassword()) &&
+                        newUserCheck.getMail().equals(oldUser.getMail())) {
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(newUserCheck));
+                } else {
+                    return ResponseProvider.getResponse(500, "User not updated", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User destroyed during update", "NULL");
             }
-            return JObj2JSON.convert(response);
         } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
+            return ResponseProvider.getResponse(500, "Couldn't convert user to JSON", e.getMessage());
         }
     }
 
+    /**
+     * Method that updates User
+     * @param username User username
+     * @param userJson User json
+     * @return response string in json format
+     */
+    // ??? HOW TO GENERALIZE THIS
     public String updateUser(String username, String userJson) {
         try {
-            User newUser = null;
-            ResponseClass response = new ResponseClass();
-            try {
-                newUser = JObj2JSON.convert(userJson, User.class);
-                User oldUser = Interactor.readByParam(User.class, "username", username);
-                if (newUser.getUsername() != null)
-                    oldUser.setUsername(newUser.getUsername());
-                if (newUser.getPassword() != null)
-                    oldUser.setPassword(newUser.getPassword());
-                if (newUser.getMail() != null)
-                    oldUser.setMail(newUser.getMail());
-                Interactor.update(oldUser);
-                response.setStatus(200);
-                response.setMessage("OK");
-                response.setData(JObj2JSON.convert(oldUser));
-            } catch (JsonProcessingException e) {
-                response.setStatus(500);
-                response.setMessage("Couldn't convert user to JSON");
-                response.setData("NULL");
+            User newUser = JObj2JSON.convert(userJson, User.class);
+            User oldUser = Interactor.readByParam(User.class, "username", username);
+            if (newUser.getUsername() != null)
+                oldUser.setUsername(newUser.getUsername());
+            if (newUser.getPassword() != null)
+                oldUser.setPassword(newUser.getPassword());
+            if (newUser.getMail() != null)
+                oldUser.setMail(newUser.getMail());
+            Interactor.update(oldUser);
+            User newUserCheck = Interactor.readByParam(User.class, "username", username);
+            if (newUserCheck != null) {
+                if (newUserCheck.getUsername().equals(oldUser.getUsername()) &&
+                        newUserCheck.getPassword().equals(oldUser.getPassword()) &&
+                        newUserCheck.getMail().equals(oldUser.getMail())) {
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(newUserCheck));
+                } else {
+                    return ResponseProvider.getResponse(500, "User not updated", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User destroyed during update", "NULL");
             }
-            return JObj2JSON.convert(response);
         } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
+            return ResponseProvider.getResponse(500, "Couldn't convert user to JSON", e.getMessage());
         }
     }
 
+    /**
+     * Method that deletes User
+     * @param id User id
+     * @return response string in json format
+     */
     public String deleteUser(int id) {
-        User existingUser = Interactor.read(User.class, id);
-
-        ResponseClass response = new ResponseClass();
-        if (existingUser != null) {
-            Interactor.delete(User.class, id);
-            response.setStatus(200);
-            response.setMessage("User Deleted");
-            response.setData("NULL");
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
-        try {
-            return JObj2JSON.convert(response);
-        } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
-        }
+        return ClientGenericMethods.deleteX(id, User.class);
     }
 
+    /**
+     * Method that deletes User
+     * @param username User username
+     * @return response string in json format
+     */
     public String deleteUser(String username) {
-        User existingUser = Interactor.readByParam(User.class, "username", username);
+        return ClientGenericMethods.deleteX("username", username, User.class);
+    }
 
-        ResponseClass response = new ResponseClass();
-        if (existingUser != null) {
-            Interactor.delete(User.class, existingUser.getUserId());
-            response.setStatus(200);
-            response.setMessage("User Deleted");
-            response.setData("NULL");
-        } else {
-            return RESPONSE_NOT_FOUND;
-        }
-
+    /**
+     * Method that adds subscription address to User's SubscriptionAddresses
+     * @param userId User id
+     * @return response string in json format
+     */
+    public String addSubscriptionAddress(int userId, String subscriptionJson){
         try {
-            return JObj2JSON.convert(response);
+            SubscriptionAddress newSubscription = JObj2JSON.convert(subscriptionJson, SubscriptionAddress.class);
+            User user = Interactor.read(User.class, userId);
+            if (user != null) {
+                newSubscription.setUser(user);
+                user.getSubscriptionAddresses().add(newSubscription);
+                Interactor.update(user);
+                User check = Interactor.read(User.class, userId);
+                boolean found = false;
+                for (SubscriptionAddress subscriptionAddress : check.getSubscriptionAddresses()) {
+                    if (subscriptionAddress.getAddress().equals(newSubscription.getAddress())) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(newSubscription));
+                } else {
+                    return ResponseProvider.getResponse(500, "Subscription address not added", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User not found", "NULL");
+            }
         } catch (JsonProcessingException e) {
-            return RESPONSE_ERROR;
+            return ResponseProvider.getResponse(500, "Couldn't convert subscription address to JSON", e.getMessage());
         }
     }
+
+    /**
+     * Method that adds favorite address to User's FavoriteAddresses
+     * @param userId User id
+     * @param favoriteAddressJson FavoriteAddress json
+     * @return response string in json format
+     */
+    public String addFavoriteAddress(int userId, String favoriteAddressJson){
+        try {
+            FavoriteAddress newFavorite = JObj2JSON.convert(favoriteAddressJson, FavoriteAddress.class);
+            User user = Interactor.read(User.class, userId);
+            if (user != null) {
+                newFavorite.setUser(user);
+                user.getFavoriteAddresses().add(newFavorite);
+                Interactor.update(user);
+                User check = Interactor.read(User.class, userId);
+                boolean found = false;
+                for (FavoriteAddress favoriteAddress : check.getFavoriteAddresses()) {
+                    if (favoriteAddress.getType().equals(newFavorite.getType())
+                            && favoriteAddress.getAddress().equals(newFavorite.getAddress())) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found){
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(newFavorite));
+                } else {
+                    return ResponseProvider.getResponse(500, "Favorite address not added", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User not found", "NULL");
+            }
+        } catch (JsonProcessingException e) {
+            return ResponseProvider.getResponse(500, "Couldn't convert favorite address to JSON", e.getMessage());
+        }
+    }
+
+    /**
+     * Method that deletes subscription address from User's SubscriptionAddresses
+     * @param userId User id
+     * @param subscriptionAddressId SubscriptionAddress id
+     * @return response string in json format
+     */
+    public String deleteSubscriptionAddress(int userId, int subscriptionAddressId) {
+        try {
+            User user = Interactor.read(User.class, userId);
+            if (user != null) {
+                SubscriptionAddress toRemove = null;
+                for (SubscriptionAddress subscriptionAddress : user.getSubscriptionAddresses()) {
+                    if (subscriptionAddress.getSubscriptionAddressId() == subscriptionAddressId) {
+                        toRemove = subscriptionAddress;
+                        break;
+                    }
+                }
+                if (toRemove != null) {
+                    user.getSubscriptionAddresses().remove(toRemove);
+                    Interactor.update(user);
+                    Interactor.delete(SubscriptionAddress.class, toRemove.getSubscriptionAddressId());
+                    return ResponseProvider.getResponse(200, "OK", "NULL");
+                } else {
+                    return ResponseProvider.getResponse(500, "Subscription address not found", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User not found", "NULL");
+            }
+        } catch (Exception e) {
+            return ResponseProvider.getResponse(500, "Error deleting subscription address", e.getMessage());
+        }
+    }
+
+    /**
+     * Method that deletes favorite address from User's FavoriteAddresses
+     * @param userId User id
+     * @param favoriteAddressId FavoriteAddress id
+     * @return response string in json format
+     */
+    public String deleteFavoriteAddress(int userId, int favoriteAddressId) {
+        try {
+            User user = Interactor.read(User.class, userId);
+            if (user != null) {
+                FavoriteAddress toRemove = null;
+                for (FavoriteAddress favoriteAddress : user.getFavoriteAddresses()) {
+                    if (favoriteAddress.getFavoriteAddressId() == favoriteAddressId) {
+                        toRemove = favoriteAddress;
+                        break;
+                    }
+                }
+                if (toRemove != null) {
+                    user.getFavoriteAddresses().remove(toRemove);
+                    Interactor.update(user);
+                    Interactor.delete(FavoriteAddress.class, toRemove.getFavoriteAddressId());
+                    return ResponseProvider.getResponse(200, "OK", "NULL");
+                } else {
+                    return ResponseProvider.getResponse(500, "Favorite address not found", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User not found", "NULL");
+            }
+        } catch (Exception e) {
+            return ResponseProvider.getResponse(500, "Error deleting favorite address", e.getMessage());
+        }
+    }
+
+
 }
