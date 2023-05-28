@@ -14,6 +14,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
+    /**
+     * Builds and returns a new Docket which is the primary interface of the Swagger framework.
+     *
+     * @return a new Docket object
+     */
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)

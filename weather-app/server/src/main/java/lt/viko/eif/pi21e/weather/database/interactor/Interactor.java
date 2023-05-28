@@ -10,15 +10,25 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 
 import java.util.List;
-
+/**
+ * This class provides basic CRUD (Create, Read, Update, Delete) operations
+ * using the Hibernate library. These operations include getting a session factory,
+ * setting, updating, reading, deleting entities, and shutting down the service registry.
+ */
 public class Interactor {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory = null;
-
+    /**
+     * Constructs a new Interactor with no arguments.
+     */
     public Interactor()
     {
     }
-
+    /**
+     * Get the Hibernate SessionFactory. If the SessionFactory is null, it tries to build it.
+     *
+     * @return the SessionFactory for this Interactor.
+     */
     public static SessionFactory getSessionFactory(){
         if(sessionFactory == null){
             try{
@@ -34,6 +44,12 @@ public class Interactor {
         return sessionFactory;
     }
 
+    /**
+     * Save an entity to the database.
+     *
+     * @param <T> the type of the entity
+     * @param entity the entity to be saved
+     */
     public static <T> void set(T entity) {
         Transaction transaction = null;
         try (Session session = getSessionFactory().openSession()) {
@@ -51,6 +67,12 @@ public class Interactor {
         }
     }
 
+    /**
+     * Update an entity in the database.
+     *
+     * @param <T> the type of the entity
+     * @param entity the entity to be updated
+     */
     public static <T> void update(T entity) {
         Transaction transaction = null;
         try (Session session = getSessionFactory().openSession()) {
@@ -70,6 +92,14 @@ public class Interactor {
         }
     }
 
+    /**
+     * Read an entity from the database by its ID.
+     *
+     * @param <T> the type of the entity
+     * @param entityClass the class of the entity
+     * @param id the ID of the entity
+     * @return the entity found or null if no entity found
+     */
     public static <T> T read(Class<T> entityClass, int id) {
         T entity = null;
         try (Session session = getSessionFactory().openSession()) {
@@ -81,6 +111,15 @@ public class Interactor {
         return entity;
     }
 
+    /**
+     * Read an entity from the database by a specific parameter.
+     *
+     * @param <T> the type of the entity
+     * @param entityClass the class of the entity
+     * @param param the parameter name
+     * @param value the parameter value
+     * @return the entity found or null if no entity found
+     */
     public static <T> T readByParam(Class<T> entityClass, String param, String value) {
         T entity = null;
         try (Session session = getSessionFactory().openSession()) {
@@ -95,6 +134,13 @@ public class Interactor {
         return entity;
     }
 
+    /**
+     * Read all entities of a type from the database.
+     *
+     * @param <T> the type of the entity
+     * @param entityClass the class of the entities
+     * @return the list of entities found, or null if no entities found
+     */
     public static <T> List<T> readAll(Class<T> entityClass) {
         List<T> entities = null;
         try (Session session = getSessionFactory().openSession()) {
@@ -106,6 +152,13 @@ public class Interactor {
         return entities;
     }
 
+    /**
+     * Delete an entity from the database by its ID.
+     *
+     * @param <T> the type of the entity
+     * @param entityClass the class of the entity
+     * @param id the ID of the entity
+     */
     public static <T> void delete(Class<T> entityClass, int id) {
         Transaction transaction = null;
         try (Session session = getSessionFactory().openSession()) {
@@ -127,6 +180,14 @@ public class Interactor {
         }
     }
 
+    /**
+     * Delete an entity from the database by a specific parameter.
+     *
+     * @param <T> the type of the entity
+     * @param type the class of the entity
+     * @param param the parameter name
+     * @param value the parameter value
+     */
     public static <T> void deleteByParam(Class<T> type, String param, String value) {
         Transaction transaction = null;
         try (Session session = getSessionFactory().openSession()) {
@@ -151,6 +212,9 @@ public class Interactor {
         }
     }
 
+    /**
+     * Shutdown the StandardServiceRegistry.
+     */
     public static void shutdown(){
         if(registry != null){
             StandardServiceRegistryBuilder.destroy(registry);
