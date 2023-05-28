@@ -7,19 +7,42 @@ import lt.viko.eif.pi21e.weather.server.rest.database.other.ClientGenericMethods
 import lt.viko.eif.pi21e.weather.server.rest.database.other.ResponseProvider;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
+/**
+ * Class that provides CriteriaWeather client
+ */
 public class CriteriaWeatherClient {
+    /**
+     * Method that returns CriteriaWeather by id
+     * @param id CriteriaWeather id
+     * @return response string in json format
+     */
     public String getCriteriaWeather(int id) {
         return ClientGenericMethods.getX(id, CriteriaWeather.class);
     }
 
+    /**
+     * Method that returns CriteriaWeather list
+     * @return response string in json format
+     */
     public String getCriteriaWeathers() {
         return ClientGenericMethods.getXs(CriteriaWeather.class);
     }
 
+    /**
+     * Method that creates CriteriaWeather
+     * @param criteriaWeatherJson CriteriaWeather json
+     * @return response string in json format
+     */
     public String createCriteriaWeather(String criteriaWeatherJson) {
         return ClientGenericMethods.createX(criteriaWeatherJson, CriteriaWeather.class);
     }
 
+    /**
+     * Method that updates CriteriaWeather
+     * @param id CriteriaWeather id
+     * @param criteriaWeatherJson CriteriaWeather json
+     * @return response string in json format
+     */
     // idk how to generalize properly
     public String updateCriteriaWeather(int id, String criteriaWeatherJson) {
         CriteriaWeather existingCriteriaWeather = Interactor.read(CriteriaWeather.class, id);
@@ -50,7 +73,11 @@ public class CriteriaWeatherClient {
         }
     }
 
-
+    /**
+     * Method that deletes CriteriaWeather
+     * @param id CriteriaWeather id
+     * @return response string in json format
+     */
     public String deleteCriteriaWeather(int id) {
         return ClientGenericMethods.deleteX(id, CriteriaWeather.class);
     }

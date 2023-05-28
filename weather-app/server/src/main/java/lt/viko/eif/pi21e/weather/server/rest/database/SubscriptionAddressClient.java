@@ -10,19 +10,42 @@ import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
 import java.util.List;
 
-public class SubscriptionAddressClient extends ResponseProvider {
+/**
+ * Class that provides SubscriptionAddress client
+ */
+public class SubscriptionAddressClient {
+    /**
+     * Method that returns SubscriptionAddress by id
+     * @param id id
+     * @return response string in json format
+     */
     public String getSubscriptionAddress(int id) {
         return ClientGenericMethods.getX(id, SubscriptionAddress.class);
     }
 
+    /**
+     * Method that returns SubscriptionAddress list
+     * @return response string in json format
+     */
     public String getSubscriptionAddresses() {
         return ClientGenericMethods.getXs(SubscriptionAddress.class);
     }
 
+    /**
+     * Method that creates SubscriptionAddress
+     * @param subscriptionAddressJson SubscriptionAddress json
+     * @return response string in json format
+     */
     public String createSubscriptionAddress(String subscriptionAddressJson) {
         return ClientGenericMethods.createX(subscriptionAddressJson, SubscriptionAddress.class);
     }
 
+    /**
+     * Method that updates SubscriptionAddress
+     * @param id SubscriptionAddress id
+     * @param subscriptionAddressJson SubscriptionAddress json
+     * @return response string in json format
+     */
     // idk how to properly generalize
     public String updateSubscriptionAddress(int id, String subscriptionAddressJson) {
         try {
@@ -35,23 +58,33 @@ public class SubscriptionAddressClient extends ResponseProvider {
                 Interactor.update(existingSubscriptionAddress);
                 SubscriptionAddress check = Interactor.read(SubscriptionAddress.class, id);
                 if (check != null) {
-                    return getResponse(200, "OK", JObj2JSON.convert(check));
+                    return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
                 } else {
-                    return getResponse(500, "Couldn't update SubscriptionAddress", "NULL");
+                    return ResponseProvider.getResponse(500, "Couldn't update SubscriptionAddress", "NULL");
                 }
             } else {
-                return getResponse(404, "Not Found", "NULL");
+                return ResponseProvider.getResponse(404, "Not Found", "NULL");
             }
         } catch (JsonProcessingException e) {
-            return getResponse(500, "Couldn't convert SubscriptionAddress to JSON", e.getMessage());
+            return ResponseProvider.getResponse(500, "Couldn't convert SubscriptionAddress to JSON", e.getMessage());
         }
     }
 
-
+    /**
+     * Method that deletes SubscriptionAddress
+     * @param id SubscriptionAddress id
+     * @return response string in json format
+     */
     public String deleteSubscriptionAddress(int id) {
         return ClientGenericMethods.deleteX(id, SubscriptionAddress.class);
     }
 
+    /**
+     * Method that adds CriteriaWeather to SubscriptionAddress
+     * @param subId SubscriptionAddress id
+     * @param criteriaWeatherJson CriteriaWeather json
+     * @return response string in json format
+     */
     public String addCriteriaWeather(int subId, String criteriaWeatherJson) {
         try {
             SubscriptionAddress existingSubscriptionAddress = Interactor.read(SubscriptionAddress.class, subId);
@@ -74,21 +107,27 @@ public class SubscriptionAddressClient extends ResponseProvider {
                         }
                     }
                     if (found) {
-                        return getResponse(200, "OK", JObj2JSON.convert(check));
+                        return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
                     } else {
-                        return getResponse(500, "Couldn't add criteria weather", "NULL");
+                        return ResponseProvider.getResponse(500, "Couldn't add criteria weather", "NULL");
                     }
                 } else {
-                    return getResponse(500, "Subscribed address was destroyed", "NULL");
+                    return ResponseProvider.getResponse(500, "Subscribed address was destroyed", "NULL");
                 }
             } else {
-                return getResponse(404, "Not Found", "NULL");
+                return ResponseProvider.getResponse(404, "Not Found", "NULL");
             }
         } catch (JsonProcessingException e) {
-            return getResponse(500, "Couldn't convert CriteriaWeather to JSON", e.getMessage());
+            return ResponseProvider.getResponse(500, "Couldn't convert CriteriaWeather to JSON", e.getMessage());
         }
     }
 
+    /**
+     * Method that deletes CriteriaWeather from SubscriptionAddress
+     * @param subId SubscriptionAddress id
+     * @param criteriaWeatherId CriteriaWeather id
+     * @return response string in json format
+     */
     public String deleteCriteriaWeather(int subId, int criteriaWeatherId) {
         try {
             SubscriptionAddress subscriptionAddress = Interactor.read(SubscriptionAddress.class, subId);
@@ -105,15 +144,15 @@ public class SubscriptionAddressClient extends ResponseProvider {
                     criteriaWeathers.remove(criteriaToRemove);
                     subscriptionAddress.setCriteriaWeathers(criteriaWeathers);
                     Interactor.update(subscriptionAddress);
-                    return getResponse(200, "OK", "Criteria weather successfully removed");
+                    return ResponseProvider.getResponse(200, "OK", "Criteria weather successfully removed");
                 } else {
-                    return getResponse(404, "Criteria Weather not found", "NULL");
+                    return ResponseProvider.getResponse(404, "Criteria Weather not found", "NULL");
                 }
             } else {
-                return getResponse(404, "Subscription Address not found", "NULL");
+                return ResponseProvider.getResponse(404, "Subscription Address not found", "NULL");
             }
         } catch (Exception e) {
-            return getResponse(500, "Couldn't delete Criteria Weather", e.getMessage());
+            return ResponseProvider.getResponse(500, "Couldn't delete Criteria Weather", e.getMessage());
         }
     }
 

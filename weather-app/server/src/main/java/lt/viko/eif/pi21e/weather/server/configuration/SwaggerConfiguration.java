@@ -7,7 +7,10 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
+/**
+ * This class provides configuration for Swagger.
+ * Swagger is used to build interactive API documentation.
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {

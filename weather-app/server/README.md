@@ -41,6 +41,17 @@
 
 <b>DELETE /users/username?username=USERNAME_VALUE</b> - delete user by USERNAME_VALUE
 
+<b>POST /ID_VALUE/subscriptions</b> - subscribe to a new address. ID_VALUE is user ID. Requires a JSON body with the following fields:
+- <b>address</b>
+
+<b>POST /ID_VALUE/favorites</b> - add a new favorite address. ID_VALUE is user ID. Requires a JSON body with the following fields:
+- <b>address</b>
+- <b>type</b>.
+
+<b>DELETE /ID_VALUE/subscriptions/SUB_ADDRESS_ID</b> - unsubscribe from an address. ID_VALUE is user ID, SUB_ADDRESS_ID is subscription address id.
+
+<b>DELETE /ID_VALUE/favorites/FAV_ADDRESS_ID</b> - delete a favorite address. ID_VALUE is user ID, FAV_ADDRESS_ID is favorite address id.
+
 <h1><b>FAVORITES</b></h1>
 
 <b>POST /favorites</b> - create a new favorite address. Requires a JSON body with the following fields:
@@ -50,6 +61,12 @@
 <b>GET /favorites/ID_VALUE</b> - get favorite address info by ID_VALUE
 
 <b>GET /favorites</b> - get all favorite addresses info
+
+<b>DELETE /favorites/ID_VALUE</b> - delete favorite address by ID_VALUE
+
+<b>PUT /favorites/ID_VALUE</b> - update favorite address info by ID_VALUE. Requires a JSON body with ANY (at least 1) of the following fields:
+- <b>address</b>
+- <b>type</b>
 
 <b>DELETE /favorites/ID_VALUE</b> - delete favorite address by ID_VALUE
 
@@ -64,6 +81,16 @@
 
 <b>DELETE /subscriptions/ID_VALUE</b> - delete subscription by ID_VALUE
 
+<b>PUT /subscriptions/ID_VALUE</b> - update subscription info by ID_VALUE. Requires a JSON body with ANY (at least 1) of the following fields:
+- <b>address</b>
+
+<b>POST /subscriptions/ID_VALUE</b> - add a new criteria to a subscription. ID_VALUE is subscription ID. Requires a JSON body with the following fields:
+- <b>less_equal_more</b> - "LESS", "EQUAL" or "MORE"
+- <b>criteriaName</b> - "TEMPERATURE", "HUMIDITY", "PRESSURE", "WIND_SPEED", "WIND_DIRECTION", "CLOUDINESS", "RAIN", "SNOW" (ask which ones need implemented)
+- <b>criteriaValue</b> - value dependant on criteria. For example, if criteriaName is "TEMPERATURE", then criteriaValue is a float number. If criteriaName is "WIND_DIRECTION", then criteriaValue is a string with the direction (N, NE, E, SE, S, SW, W, NW). Make sure the values are actually possible.
+
+<b>DELETE /subscriptions/ID_VALUE/CRITERIA_ID</b> - delete a criteria from a subscription. ID_VALUE is subscription ID, CRITERIA_ID is criteria id.
+
 <h1><b>CRITERIA</b></h1>
 
 <b>POST /criteria</b> - create a new criteria. Requires a JSON body with the following fields:
@@ -76,4 +103,9 @@
 <b>GET /criteria</b> - get all criterias info
 
 <b>DELETE /criteria/ID_VALUE</b> - delete criteria by ID_VALUE
+
+<b>PUT /criteria/ID_VALUE</b> - update criteria info by ID_VALUE. Requires a JSON body with ANY (at least 1) of the following fields:
+- <b>less_equal_more</b> - "LESS", "EQUAL" or "MORE"
+- <b>criteriaName</b> - "TEMPERATURE", "HUMIDITY", "PRESSURE", "WIND_SPEED", "WIND_DIRECTION", "CLOUDINESS", "RAIN", "SNOW" (ask which ones need implemented)
+- <b>criteriaValue</b> - value dependant on criteria. For example, if criteriaName is "TEMPERATURE", then criteriaValue is a float number. If criteriaName is "WIND_DIRECTION", then criteriaValue is a string with the direction (N, NE, E, SE, S, SW, W, NW). Make sure the values are actually possible.
 
