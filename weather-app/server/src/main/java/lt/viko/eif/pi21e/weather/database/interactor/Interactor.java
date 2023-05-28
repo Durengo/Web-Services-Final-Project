@@ -56,8 +56,10 @@ public class Interactor {
         try (Session session = getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
-            // update the entity object
-            session.saveOrUpdate(entity);
+            // Merge the entity object to get a managed instance
+            T managedEntity = (T) session.merge(entity);
+            // update the entity object using the managed instance
+            session.saveOrUpdate(managedEntity);
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
