@@ -24,6 +24,12 @@ public class CriteriaWeatherEndpoint {
         return client.getCriteriaWeathers();
     }
 
+    @PutMapping(value = "/{id}")
+    public String updateCriteriaWeather(@RequestBody String criteriaWeather, @PathVariable int id) {
+        CriteriaWeatherClient client = new CriteriaWeatherClient();
+        return client.updateCriteriaWeather(id, criteriaWeather);
+    }
+
     @DeleteMapping(value = "/{id}")
     public String deleteCriteriaWeather(@PathVariable int id) {
         CriteriaWeatherClient client = new CriteriaWeatherClient();

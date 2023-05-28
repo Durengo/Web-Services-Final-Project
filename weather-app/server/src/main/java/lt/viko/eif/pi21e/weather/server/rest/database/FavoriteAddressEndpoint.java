@@ -24,7 +24,11 @@ public class FavoriteAddressEndpoint {
         return client.getFavoriteAddresses();
     }
 
-    // Here is no update method because the FavoriteAddressClient class does not have any update methods
+    @PutMapping(value = "/{id}")
+    public String updateFavoriteAddress(@RequestBody String favoriteAddress, @PathVariable int id) {
+        FavoriteAddressClient client = new FavoriteAddressClient();
+        return client.updateFavoriteAddress(id, favoriteAddress);
+    }
 
     @DeleteMapping(value = "/{id}")
     public String deleteFavoriteAddress(@PathVariable int id) {

@@ -24,7 +24,11 @@ public class SubscriptionAddressEndpoint {
         return client.getSubscriptionAddresses();
     }
 
-    // Here is no update method because the SubscriptionAddressClient class does not have any update methods
+    @PutMapping(value = "/{id}")
+    public String updateSubscriptionAddress(@RequestBody String subscriptionAddress, @PathVariable int id) {
+        SubscriptionAddressClient client = new SubscriptionAddressClient();
+        return client.updateSubscriptionAddress(id, subscriptionAddress);
+    }
 
     @DeleteMapping(value = "/{id}")
     public String deleteSubscriptionAddress(@PathVariable int id) {
