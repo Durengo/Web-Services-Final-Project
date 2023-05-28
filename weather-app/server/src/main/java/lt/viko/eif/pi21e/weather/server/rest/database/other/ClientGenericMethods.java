@@ -2,7 +2,6 @@ package lt.viko.eif.pi21e.weather.server.rest.database.other;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.database.interactor.Interactor;
-import lt.viko.eif.pi21e.weather.database.models.CriteriaWeather;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
 import java.util.List;

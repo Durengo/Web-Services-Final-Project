@@ -2,8 +2,6 @@ package lt.viko.eif.pi21e.weather.database.models;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity

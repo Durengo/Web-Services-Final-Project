@@ -57,7 +57,7 @@ public class Interactor {
             // start a transaction
             transaction = session.beginTransaction();
             // Merge the entity object to get a managed instance
-            T managedEntity = (T) session.merge(entity);
+            T managedEntity = session.merge(entity);
             // update the entity object using the managed instance
             session.saveOrUpdate(managedEntity);
             // commit transaction
@@ -156,6 +156,4 @@ public class Interactor {
             StandardServiceRegistryBuilder.destroy(registry);
         }
     }
-
-
 }

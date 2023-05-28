@@ -9,9 +9,6 @@ import lt.viko.eif.pi21e.weather.server.rest.database.other.ClientGenericMethods
 import lt.viko.eif.pi21e.weather.server.rest.database.other.ResponseProvider;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
 
-import java.util.List;
-
-
 public class UserClient extends ResponseProvider {
     public String getUser(int id) {
         return ClientGenericMethods.getX(id, User.class);
