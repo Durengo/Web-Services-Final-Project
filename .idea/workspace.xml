@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="Added history">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="centered page, centered and moved google map api">
+      <changelist_data name="zerpollo" email="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/MapContainer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/MapContainer/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/css/Globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/css/Globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/js/App.jsx" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +27,14 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="zerpollo" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="backend-main" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,16 +61,32 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "frontend-main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/Nazar/IdeaProjects/Web-Services-Final-Project/weather-app",
+    "last_opened_file_path": "C:/Users/zerpollo/WebstormProjects/Web-Services-Final-Project/weather-app/client/src/package.json",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Nazar\IdeaProjects\Web-Services-Final-Project\weather-app" />
@@ -70,7 +95,7 @@
       <recent name="C:\Users\Nazar\IdeaProjects\Web-Services-Final-Project\weather-app" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WeatherApplicationServer">
+  <component name="RunManager" selected="npm.start">
     <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.viko.eif.pi21e.weather.server.rest.api.weatherapi.test.MainTest" />
       <module name="weather-app-server" />
@@ -97,14 +122,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.WeatherApplicationServer" />
-        <item itemvalue="Application.MainTest" />
-        <item itemvalue="Application.WeatherApplicationServer" />
-        <item itemvalue="Application.WeatherApplicationServer" />
-      </list>
-    </recent_temporary>
+    <configuration name="start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/weather-app/client/src/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2">
+        <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/weather-app/client/src/package.json" />
+          <command value="install" />
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -114,6 +148,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685022766159</updated>
+      <workItem from="1685479961796" duration="1594000" />
+      <workItem from="1685521788997" duration="6581000" />
+      <workItem from="1685814188425" duration="4315000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
       <created>1685023932871</created>
@@ -146,6 +183,9 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ID_ORDER">
       <list>
@@ -173,6 +213,7 @@
     <MESSAGE value="added readme" />
     <MESSAGE value="??" />
     <MESSAGE value="Added history" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added history" />
+    <MESSAGE value="centered page, centered and moved google map api" />
+    <option name="LAST_COMMIT_MESSAGE" value="centered page, centered and moved google map api" />
   </component>
 </project>

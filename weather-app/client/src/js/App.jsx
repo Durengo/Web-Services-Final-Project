@@ -10,8 +10,6 @@ function App() {
     <Router>
       <Switch>
         <Route path="/:path(|1_160)">
-            <MapContainer />
-            <h1>Break Point Here</h1>
           <WeatherMain {...weatherMainData} />
         </Route>
       </Switch>
@@ -103,6 +101,5 @@ const weatherMainData = {
     spanText25: "10",
     spanText26: "⁰",
     textLabelMap: "Map of weather conditions",
-    map: "/img/map.png",
 };
 

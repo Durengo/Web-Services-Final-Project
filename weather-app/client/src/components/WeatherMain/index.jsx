@@ -1,5 +1,6 @@
 import React from "react";
 import "./WeatherMain.css";
+import MapContainer from "../MapContainer";
 
 function WeatherMain(props) {
     const {
@@ -84,7 +85,6 @@ function WeatherMain(props) {
         spanText25,
         spanText26,
         textLabelMap,
-        map,
     } = props;
 
     return (
@@ -301,7 +301,7 @@ function WeatherMain(props) {
                 </div>
             </div>
             <div className="text-label-map">{textLabelMap}</div>
-            <img className="map" src={map} alt="Map" />
+            <MapContainer />
         </div>
     );
 }
