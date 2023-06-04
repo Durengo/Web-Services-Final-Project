@@ -4,6 +4,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Represents WeatherAPIClient object which is used to send requests to WeatherAPI
@@ -29,9 +30,8 @@ public class WeatherAPIClient {
      * Sends GET request to WeatherAPI
      * @param url URL to send request to
      * @return String response from WeatherAPI
-     * @throws Exception
      */
-    private String sendGetRequest(String url) throws Exception {
+    private String sendGetRequest(String url) {
         Request request = new Request.Builder()
                 .url(url)
                 .get()
@@ -39,10 +39,10 @@ public class WeatherAPIClient {
                 .addHeader("X-RapidAPI-Host", "weatherapi-com.p.rapidapi.com")
                 .build();
 
-        String response = "";
+        String response;
 
         try {
-            response = client.newCall(request).execute().body().string();
+            response = Objects.requireNonNull(client.newCall(request).execute().body()).string();
         } catch (IOException e) {
             response = e.getMessage();
         }
@@ -117,8 +117,8 @@ public class WeatherAPIClient {
      * Gets historical weather data for specified coordinates
      * @param lat Latitude
      * @param lon Longitude
-     * @param start Start date
-     * @param end End date
+     * @param start Start date (YYYY-MM-DD)
+     * @param end End date (YYYY-MM-DD)
      * @return String response from WeatherAPI
      */
     public String getHistoricalWeatherData(float lat, float lon, String start, String end) {
@@ -133,10 +133,10 @@ public class WeatherAPIClient {
 
     /**
      * Gets historical weather data for specified city
-     * @param city
-     * @param start
-     * @param end
-     * @return
+     * @param city City name
+     * @param start Start date (YYYY-MM-DD)
+     * @param end End date (YYYY-MM-DD)
+     * @return String response from WeatherAPI
      */
     public String getHistoricalWeatherData(String city, String start, String end) {
         String url = BASE_URL + "history.json?q=" + city + "&dt=" + start + "&end_dt=" + end;
