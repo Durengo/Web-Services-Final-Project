@@ -3,7 +3,6 @@ import "../css/App.css";
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import WeatherMain from "../components/WeatherMain";
-import MapContainer from "../components/MapContainer";
 
 function App() {
   return (
@@ -19,10 +18,8 @@ function App() {
 
 export default App;
 
-const weatherMainData = {
+export const weatherMainData = {
     todaydate: "2023/05/26",
-    today: "TODAY",
-    weekmo: "WEEK/MONTH",
     profileCircle: "/img/profile-circle.png",
     citytoday: "Vilnius",
     currentregiontoday: "Vilnius region, Lithuania",
