@@ -1,5 +1,9 @@
 package lt.viko.eif.pi21e.weather.server;
 
+import lt.viko.eif.pi21e.weather.server.checker.CheckerClass;
+import lt.viko.eif.pi21e.weather.server.events.EventInfo;
+import lt.viko.eif.pi21e.weather.server.events.EventPublisher;
+import lt.viko.eif.pi21e.weather.server.timer.HourlyTask;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -17,5 +21,6 @@ public class WeatherApplicationServer {
     public static void main(String... args)
     {
         SpringApplication.run(WeatherApplicationServer.class, args);
+        new HourlyTask().start();
     }
 }

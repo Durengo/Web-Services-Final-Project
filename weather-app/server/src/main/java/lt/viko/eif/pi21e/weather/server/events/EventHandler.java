@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import javax.json.*;
 import java.io.StringReader;
 import java.util.List;
+import java.util.Map;
 
 public class EventHandler {
     private JsonObject jsonObject;
@@ -20,14 +21,11 @@ public class EventHandler {
         String less_equal_more = criteria.getLess_equal_more();
         String value = criteria.getCriteriaValue();
         String address = criteria.getSubscriptionAddress().getAddress();
-        boolean criteriaMet = CriteriaHandler.checkCriteria(name, less_equal_more, value, address);
-        WeatherAPIClient client = new WeatherAPIClient();
-        JSONObject json = new JSONObject(client.getCurrentWeatherData(address));
-        JSONObject current = json.getJSONObject("current");
-        String currentValue = current.get(name).toString();
-        if (criteriaMet) {
+        Map<String, String> result = CriteriaHandler.checkCriteria(name, less_equal_more, value, address);
+        if (result.get("Success").equals(Boolean.toString(true))) {
             EventPublisher eventPublisher = new EventPublisher();
-            eventPublisher.publishEvent(new EventInfo(name, less_equal_more, value, currentValue, current.toString()));
+            eventPublisher.publishEvent(criteria.getSubscriptionAddress().getSubscriptionAddressId(),
+                    new EventInfo(name, less_equal_more, value, result.get("New Value"), result.get("JSON")));
         }
     }
 }

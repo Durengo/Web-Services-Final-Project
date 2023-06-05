@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.io.IOException;
+import java.util.Map;
 
 /*
 String jsonString = "{"
@@ -52,38 +54,66 @@ public class JsonParserChecker {
         return jsonObject.get(key);
     }
 
-    public boolean checkParameter(String key, JsonNode valueToCheck, String operator) {
+    public Map<String, String> checkParameter(String key, JsonNode valueToCheck, String operator) {
         JsonNode value = findParameter(key);
-
+        HashMap<String, String> map = new HashMap<>();
+        Boolean i;
+        String e;
+        String f = jsonObject.toString();
         if (value.isNumber() && valueToCheck.isNumber()) {
             double compareValue = value.doubleValue();
             double valueToCheckDouble = valueToCheck.doubleValue();
 
             switch (operator) {
                 case "MORE":
-                    return compareValue > valueToCheckDouble;
+                    i = Boolean.valueOf(compareValue > valueToCheckDouble);
+                    e = String.valueOf(compareValue);
+                    map.put("Success", i.toString());
+                    map.put("New Value", e);
+                    map.put("JSON", f);
+                    return map;
                 case "LESS":
-                    return compareValue < valueToCheckDouble;
+                    i = Boolean.valueOf(compareValue < valueToCheckDouble);
+                    e = String.valueOf(compareValue);
+                    map.put("Success", i.toString());
+                    map.put("New Value", e);
+                    map.put("JSON", f);
+                    return map;
                 case "EQUAL":
-                    return compareValue == valueToCheckDouble;
+                    i = Boolean.valueOf(compareValue == valueToCheckDouble);
+                    e = String.valueOf(compareValue);
+                    map.put("Success", i.toString());
+                    map.put("New Value", e);
+                    map.put("JSON", f);
+                    return map;
                 default:
                     throw new IllegalArgumentException("Operator must be one of: MORE, LESS, EQUAL");
             }
         } else if (value.isTextual() && valueToCheck.isTextual()) {
-            return value.asText().equals(valueToCheck.asText());
+            i = Boolean.valueOf(value.textValue() == valueToCheck.textValue());
+            e = value.textValue();
+            map.put("Success", i.toString());
+            map.put("New Value", e);
+            map.put("JSON", f);
+            return map;
         } else if (value.isNumber() && valueToCheck.isTextual()){
             boolean valueBoolean = value.asBoolean();
             boolean valueToCheckBoolean = valueToCheck.asBoolean();
 
             switch (operator) {
                 case "EQUAL":
-                    return valueBoolean == valueToCheckBoolean;
+                    i = Boolean.valueOf(valueBoolean == valueToCheckBoolean);
+                    e = value.textValue();
+                    map.put("Success", i.toString());
+                    map.put("New Value", e);
+                    map.put("JSON", f);
+                    return map;
                 default:
                     throw new IllegalArgumentException("Operator must be one of: EQUAL");
             }
         }
-
-        return false;
+        map.put(null, null);
+        return map;
     }
 
 
@@ -106,7 +136,8 @@ public class JsonParserChecker {
         for (int i = 0; i < keys.size(); i++) {
             String key = keys.get(i);
             JsonNode valueToCheck = valuesToCheck.get(i);
-            if (!checkParameter(key, valueToCheck, operator)) {
+            Map<String, String> map = checkParameter(key, valueToCheck, operator);
+            if (map.get("Success").equals(Boolean.toString(false))) {
                 return false;
             }
         }

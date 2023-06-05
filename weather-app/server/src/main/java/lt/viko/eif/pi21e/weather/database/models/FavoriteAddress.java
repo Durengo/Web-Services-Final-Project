@@ -57,7 +57,7 @@ public class FavoriteAddress {
      * @return the identifier of the favorite address
      */
     public int getFavoriteAddressId() {
-        return favoriteAddressId;
+        return id;
     }
     /**
      * Set the unique identifier of the favorite address.
@@ -65,7 +65,7 @@ public class FavoriteAddress {
      * @param favoriteAddressId the identifier to set
      */
     public void setFavoriteAddressId(int favoriteAddressId) {
-        this.favoriteAddressId = favoriteAddressId;
+        this.id = favoriteAddressId;
     }
     /**
      * Get the favored address.

@@ -2,12 +2,15 @@ package lt.viko.eif.pi21e.weather.server.rest.database;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.database.interactor.Interactor;
+import lt.viko.eif.pi21e.weather.database.models.CriteriaWeather;
 import lt.viko.eif.pi21e.weather.database.models.FavoriteAddress;
 import lt.viko.eif.pi21e.weather.database.models.SubscriptionAddress;
 import lt.viko.eif.pi21e.weather.database.models.User;
 import lt.viko.eif.pi21e.weather.server.rest.database.other.ClientGenericMethods;
 import lt.viko.eif.pi21e.weather.server.rest.database.other.ResponseProvider;
 import lt.viko.eif.pi21e.weather.server.util.JObj2JSON;
+
+import java.util.List;
 
 /**
  * Class that provides User client
@@ -273,4 +276,77 @@ public class UserClient {
     }
 
 
+    public String addSubscriptionAddress(int userId, int subscriptionAddressId) {
+        SubscriptionAddress existingSubscriptionAddress = Interactor.read(SubscriptionAddress.class, subscriptionAddressId);
+        User user = Interactor.read(User.class, userId);
+        if (existingSubscriptionAddress != null && user != null) {
+            existingSubscriptionAddress.setUser(user);
+            List<SubscriptionAddress> collection = user.getSubscriptionAddresses();
+            collection.add(existingSubscriptionAddress);
+            user.setSubscriptionAddresses(collection);
+            Interactor.update(existingSubscriptionAddress);
+            Interactor.update(user);
+            User check = Interactor.read(User.class, userId);
+            boolean found = false;
+            if (check != null) {
+                for (SubscriptionAddress subscriptionAddress1 : check.getSubscriptionAddresses()) {
+                    if (subscriptionAddress1.getSubscriptionAddressId() ==
+                            existingSubscriptionAddress.getSubscriptionAddressId()) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    try {
+                        return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
+                    } catch (JsonProcessingException e) {
+                        return ResponseProvider.getResponse(500, "Couldn't convert user to JSON", "NULL");
+                    }
+                } else {
+                    return ResponseProvider.getResponse(500, "Couldn't add sbuscription address", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User was destroyed", "NULL");
+            }
+        } else {
+            return ResponseProvider.getResponse(404, "Not Found", "NULL");
+        }
+    }
+
+    public String addFavoriteAddress(int userId, int favoriteAddressId) {
+        FavoriteAddress existingFavoriteAddress = Interactor.read(FavoriteAddress.class, favoriteAddressId);
+        User user = Interactor.read(User.class, userId);
+        if (existingFavoriteAddress != null && user != null) {
+            existingFavoriteAddress.setUser(user);
+            List<FavoriteAddress> collection = user.getFavoriteAddresses();
+            collection.add(existingFavoriteAddress);
+            user.setFavoriteAddresses(collection);
+            Interactor.update(existingFavoriteAddress);
+            Interactor.update(user);
+            User check = Interactor.read(User.class, userId);
+            boolean found = false;
+            if (check != null) {
+                for (FavoriteAddress favoriteAddress : check.getFavoriteAddresses()) {
+                    if (favoriteAddress.getFavoriteAddressId() ==
+                            existingFavoriteAddress.getFavoriteAddressId()) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    try {
+                        return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
+                    } catch (JsonProcessingException e) {
+                        return ResponseProvider.getResponse(500, "Couldn't convert user to JSON", "NULL");
+                    }
+                } else {
+                    return ResponseProvider.getResponse(500, "Couldn't add favorite address", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(500, "User was destroyed", "NULL");
+            }
+        } else {
+            return ResponseProvider.getResponse(404, "Not Found", "NULL");
+        }
+    }
 }

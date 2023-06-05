@@ -63,7 +63,7 @@ public class CriteriaWeather {
      * @return the identifier of the criteria weather
      */
     public int getCriteriaWeatherId() {
-        return criteriaWeatherId;
+        return id;
     }
     /**
      * Set the unique identifier of the criteria weather.
@@ -71,7 +71,7 @@ public class CriteriaWeather {
      * @param criteriaWeatherId the identifier to set
      */
     public void setCriteriaWeatherId(int criteriaWeatherId) {
-        this.criteriaWeatherId = criteriaWeatherId;
+        this.id = criteriaWeatherId;
     }
     /**
      * Get the less_equal_more attribute.

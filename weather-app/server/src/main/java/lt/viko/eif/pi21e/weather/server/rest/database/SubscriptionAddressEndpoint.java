@@ -88,4 +88,10 @@ public class SubscriptionAddressEndpoint {
         return client.addCriteriaWeather(subId, criteriaWeatherJson);
     }
 
+    @PutMapping(value = "/{subId}/{criteriaId}")
+    public String addCriteriaWeatherById(@PathVariable int subId, @PathVariable int criteriaId){
+        SubscriptionAddressClient client = new SubscriptionAddressClient();
+        return client.addCriteriaWeather(subId, criteriaId);
+    }
+
 }
