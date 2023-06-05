@@ -147,4 +147,11 @@ public class WeatherAPIClient {
             return e.getMessage();
         }
     }
+
+    public String getCityRadius(String cityName){
+        CityAreaClient city = new CityAreaClient(cityName);
+        return city.toJson();
+    }
+
+
 }
