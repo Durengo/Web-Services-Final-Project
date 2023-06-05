@@ -17,7 +17,7 @@ public class CriteriaWeather {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column( name = "CRITERIA_WEATHER_ID")
-    private int criteriaWeatherId;
+    private int id;
     /**
      * Specifies if the criterion is less, equal or more.
      */

@@ -17,7 +17,7 @@ public class FavoriteAddress {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column( name = "FAVORITE_ADDRESS_ID")
-    private int favoriteAddressId;
+    private int id;
     /**
      * The actual address that is favored by the user.
      */

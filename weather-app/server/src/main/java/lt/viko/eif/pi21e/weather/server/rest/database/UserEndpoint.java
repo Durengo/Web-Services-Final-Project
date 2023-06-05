@@ -146,4 +146,16 @@ public class UserEndpoint {
         return client.deleteFavoriteAddress(userId, favoriteAddressId);
     }
 
+    @PutMapping(value = "/{userId}/subscriptions/{subscriptionAddressId}")
+    public String addSubscriptionAddress(@PathVariable int userId, @PathVariable int subscriptionAddressId) {
+        UserClient client = new UserClient();
+        return client.addSubscriptionAddress(userId, subscriptionAddressId);
+    }
+
+    @PutMapping(value = "/{userId}/favorites/{favoriteAddressId}")
+    public String addFavoriteAddress(@PathVariable int userId, @PathVariable int favoriteAddressId) {
+        UserClient client = new UserClient();
+        return client.addFavoriteAddress(userId, favoriteAddressId);
+    }
+
 }
