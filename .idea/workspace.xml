@@ -9,35 +9,17 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="Added history">
-      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/ActiveMQ/MessageSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/timer/HourlyTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="Some new classes">
+      <change afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/timer/SchedulerInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/CriteriaWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/CriteriaWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/FavoriteAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/FavoriteAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/Firebase/FirebaseMessageSender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/Firebase/InitializeFirebase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/Firebase/test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/UserEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/UserEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/requests/delete" beforeDir="false" />
-    </list>
-    <list id="8a38f620-abac-4096-b408-ec7ff6f038a4" name="Changes by Nazar" comment="">
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/interactor/Interactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/interactor/Interactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/CriteriaWeather.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/CriteriaWeather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/FavoriteAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/FavoriteAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/SubscriptionAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/SubscriptionAddress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/ActiveMQ/MessageReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/ActiveMQ/MessageReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/WeatherApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/WeatherApplicationServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/CriteriaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/CriteriaHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/EventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/EventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/JsonParserChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/events/JsonParserChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/SubscriptionAddressClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/SubscriptionAddressClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/SubscriptionAddressEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/SubscriptionAddressEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/UserClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/other/ClientGenericMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/rest/database/other/ClientGenericMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/timer/HourlyTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/timer/HourlyTask.java" afterDir="false" />
+    </list>
+    <list id="8a38f620-abac-4096-b408-ec7ff6f038a4" name="Changes by Nazar" comment="Changes by Nazar">
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/WeatherApplicationServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/WeatherApplicationServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/checker/CheckerClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/checker/CheckerClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/timer/HourlyTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/timer/HourlyTask.java" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,18 +43,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/CriteriaWeather.java">
+    <file path="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/timer/HourlyTask.java">
       <ranges>
-        <range start1="19" end1="20" start2="19" end2="20" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
-        <range start1="65" end1="66" start2="65" end2="66" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
-        <range start1="73" end1="74" start2="73" end2="74" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
+        <range start1="2" end1="2" start2="2" end2="3" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
+        <range start1="3" end1="3" start2="4" end2="5" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
+        <range start1="9" end1="9" start2="11" end2="12" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
+        <range start1="11" end1="12" start2="14" end2="14" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
+        <range start1="21" end1="22" start2="23" end2="24" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/database/models/FavoriteAddress.java">
+    <file path="$PROJECT_DIR$/weather-app/server/src/main/java/lt/viko/eif/pi21e/weather/server/WeatherApplicationServer.java">
       <ranges>
-        <range start1="19" end1="20" start2="19" end2="20" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
-        <range start1="59" end1="60" start2="59" end2="60" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
-        <range start1="67" end1="68" start2="67" end2="68" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
+        <range start1="2" end1="2" start2="2" end2="3" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
+        <range start1="6" end1="6" start2="7" end2="8" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
+        <range start1="9" end1="9" start2="11" end2="14" changelist="8a38f620-abac-4096-b408-ec7ff6f038a4" />
+        <range start1="23" end1="24" start2="28" end2="28" changelist="6b7a4218-0386-4cca-9d38-285819ea34f6" />
       </ranges>
     </file>
   </component>
@@ -158,9 +143,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainTest" />
         <item itemvalue="JUnit.Test.testDatabase" />
         <item itemvalue="Application.WeatherApplicationServer" />
-        <item itemvalue="Application.MainTest" />
         <item itemvalue="Application.WeatherApplicationServer" />
         <item itemvalue="Application.WeatherApplicationServer" />
       </list>
@@ -203,7 +188,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685045240345</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added history">
+      <created>1685989466034</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685989466034</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changes by Nazar">
+      <created>1685989473091</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685989473091</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Some new classes">
+      <created>1685989488761</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685989488761</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -226,6 +232,8 @@
     <MESSAGE value="added readme" />
     <MESSAGE value="??" />
     <MESSAGE value="Added history" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added history" />
+    <MESSAGE value="Changes by Nazar" />
+    <MESSAGE value="Some new classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some new classes" />
   </component>
 </project>

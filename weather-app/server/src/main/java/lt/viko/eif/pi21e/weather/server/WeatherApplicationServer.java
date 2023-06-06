@@ -21,6 +21,5 @@ public class WeatherApplicationServer {
     public static void main(String... args)
     {
         SpringApplication.run(WeatherApplicationServer.class, args);
-        new HourlyTask().start();
     }
 }

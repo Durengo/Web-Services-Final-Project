@@ -4,6 +4,9 @@ import javax.jms.*;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MessageReceiver {
     private static String url = ActiveMQConnection.DEFAULT_BROKER_URL;
     private ConnectionFactory connectionFactory;
@@ -31,15 +34,34 @@ public class MessageReceiver {
         }
     }
 
+    public List<String> receiveAllMessages() throws JMSException {
+        List<String> messages = new ArrayList<>();
+        Message message;
+        while (true) {
+            message = consumer.receive(1000);
+            if (message != null) {
+                if (message instanceof TextMessage) {
+                    TextMessage textMessage = (TextMessage) message;
+                    messages.add(textMessage.getText());
+                    System.out.println("Received message: " + textMessage.getText());
+                }
+            } else {
+                break;  // break the loop if no message is received within the timeout
+            }
+        }
+        return messages;
+    }
+
+
     public void close() throws JMSException {
         connection.close();
     }
 
-    public static void main(String[] args) throws JMSException {
+    /*public static void main(String[] args) throws JMSException {
         MessageReceiver receiver = new MessageReceiver("-1");
         receiver.receiveMessage();
         receiver.close();
-    }
+    }*/
 }
 
 

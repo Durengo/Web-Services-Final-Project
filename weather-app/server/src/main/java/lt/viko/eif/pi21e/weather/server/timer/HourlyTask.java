@@ -1,6 +1,8 @@
 package lt.viko.eif.pi21e.weather.server.timer;
 
+import jakarta.annotation.PostConstruct;
 import lt.viko.eif.pi21e.weather.server.checker.CheckerClass;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.concurrent.Executors;
@@ -19,7 +21,7 @@ public class HourlyTask {
         // schedule the task to run starting now and then every hour...
         final long initialDelay = 0L;
         final long period = 1L;
-        scheduler.scheduleAtFixedRate(task, initialDelay, period, TimeUnit.HOURS);
+        scheduler.scheduleAtFixedRate(task, initialDelay, 10, TimeUnit.SECONDS);
     }
 }
 
