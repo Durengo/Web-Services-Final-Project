@@ -90,7 +90,11 @@ public class WeatherApiEndpoint {
         WeatherAPIClient client = new WeatherAPIClient();
         return client.getHistoricalWeatherData(city, start, end);
     }
-
+    /**
+     * Handles GET request to /radius/{city} endpoint
+     * @param city city name
+     * @return String
+     */
     @GetMapping(value = "/radius/{city}")
     public String getCityRadius(@PathVariable String city) {
         WeatherAPIClient client = new WeatherAPIClient();

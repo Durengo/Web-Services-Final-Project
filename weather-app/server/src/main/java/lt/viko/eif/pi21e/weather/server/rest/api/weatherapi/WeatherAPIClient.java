@@ -148,6 +148,11 @@ public class WeatherAPIClient {
         }
     }
 
+    /**
+     * Gets city radius
+     * @param cityName
+     * @return
+     */
     public String getCityRadius(String cityName){
         CityAreaClient city = new CityAreaClient(cityName);
         return city.toJson();

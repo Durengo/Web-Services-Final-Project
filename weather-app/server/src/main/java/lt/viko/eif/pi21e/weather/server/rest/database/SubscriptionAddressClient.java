@@ -156,6 +156,12 @@ public class SubscriptionAddressClient {
         }
     }
 
+    /**
+     * Method that gets CriteriaWeather from SubscriptionAddress
+     * @param subId
+     * @param criteriaId
+     * @return
+     */
     public String addCriteriaWeather(int subId, int criteriaId) {
         try {
             SubscriptionAddress existingSubscriptionAddress = Interactor.read(SubscriptionAddress.class, subId);

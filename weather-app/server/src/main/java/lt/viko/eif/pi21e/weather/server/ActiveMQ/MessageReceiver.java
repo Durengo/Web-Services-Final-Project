@@ -6,13 +6,35 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Class that receives messages from the ActiveMQ
+ */
 public class MessageReceiver {
+    /**
+     * Represents the url of the ActiveMQ
+     */
     private static String url = ActiveMQConnection.DEFAULT_BROKER_URL;
+    /**
+     * Represents the connection factory
+     */
     private ConnectionFactory connectionFactory;
+    /**
+     * Represents the connection
+     */
     private Connection connection;
+    /**
+     * Represents the session
+     */
     private Session session;
+    /**
+     * Represents the consumer
+     */
     private MessageConsumer consumer;
+    /**
+     * Constructor
+     * @param queueName the name of the queue
+     * @throws JMSException
+     */
 
     public MessageReceiver(String queueName) throws JMSException {
         connectionFactory = new ActiveMQConnectionFactory(url);
@@ -24,7 +46,10 @@ public class MessageReceiver {
 
         consumer = session.createConsumer(destination);
     }
-
+    /**
+     * Receives a message from the ActiveMQ
+     * @throws JMSException
+     */
     public void receiveMessage() throws JMSException {
         Message message = consumer.receive();
 
@@ -33,7 +58,10 @@ public class MessageReceiver {
             System.out.println("Received message: " + textMessage.getText());
         }
     }
-
+    /**
+     * Receives all messages from the ActiveMQ
+     * @throws JMSException
+     */
     public List<String> receiveAllMessages() throws JMSException {
         List<String> messages = new ArrayList<>();
         Message message;
@@ -52,16 +80,13 @@ public class MessageReceiver {
         return messages;
     }
 
-
+    /**
+     * Closes the connection
+     * @throws JMSException
+     */
     public void close() throws JMSException {
         connection.close();
     }
-
-    /*public static void main(String[] args) throws JMSException {
-        MessageReceiver receiver = new MessageReceiver("-1");
-        receiver.receiveMessage();
-        receiver.close();
-    }*/
 }
 
 

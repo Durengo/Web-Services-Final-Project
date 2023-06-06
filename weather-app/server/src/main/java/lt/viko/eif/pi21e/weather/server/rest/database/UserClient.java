@@ -275,7 +275,12 @@ public class UserClient {
         }
     }
 
-
+    /**
+     * Method that updates subscription address
+     * @param userId
+     * @param subscriptionAddressId
+     * @return
+     */
     public String addSubscriptionAddress(int userId, int subscriptionAddressId) {
         SubscriptionAddress existingSubscriptionAddress = Interactor.read(SubscriptionAddress.class, subscriptionAddressId);
         User user = Interactor.read(User.class, userId);
@@ -313,6 +318,12 @@ public class UserClient {
         }
     }
 
+    /**
+     * Method that adds favorite address to User's FavoriteAddresses
+     * @param userId
+     * @param favoriteAddressId
+     * @return
+     */
     public String addFavoriteAddress(int userId, int favoriteAddressId) {
         FavoriteAddress existingFavoriteAddress = Interactor.read(FavoriteAddress.class, favoriteAddressId);
         User user = Interactor.read(User.class, userId);

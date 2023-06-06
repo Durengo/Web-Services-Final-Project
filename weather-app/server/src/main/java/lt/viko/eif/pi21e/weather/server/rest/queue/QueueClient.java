@@ -10,7 +10,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * QueueClient class that handles requests to /queue endpoint
+ * and returns the messages from the queue
+ * in json format
+ */
 public class QueueClient {
+    /**
+     * Gets the messages from the queue
+     * @param id
+     * @return
+     */
     public String getEvents(int id) {
         try {
             MessageReceiver messageReceiver = new MessageReceiver(Integer.toString(id));

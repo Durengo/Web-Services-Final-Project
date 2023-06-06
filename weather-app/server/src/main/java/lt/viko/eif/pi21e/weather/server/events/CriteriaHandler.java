@@ -9,8 +9,18 @@ import javax.json.Json;
 import javax.json.JsonValue;
 import java.util.Map;
 
+/**
+ * Class that handles criteria
+ */
 public class CriteriaHandler {
-
+    /**
+     * Method that checks criteria
+     * @param name criteria name
+     * @param lessEqualMore less, equal or more
+     * @param value criteria value
+     * @param address address
+     * @return map with result
+     */
     public static Map<String, String> checkCriteria(String name, String lessEqualMore, String value, String address) {
         WeatherAPIClient client = new WeatherAPIClient();
         JSONObject json = new JSONObject(client.getCurrentWeatherData(address));

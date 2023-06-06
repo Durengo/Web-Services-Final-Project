@@ -9,36 +9,19 @@ import java.util.List;
 import java.io.IOException;
 import java.util.Map;
 
-/*
-String jsonString = "{"
-+ "\"location\": {"
-    + "\"name\": \"Boston\","
-    + "\"region\": \"Lincolnshire\","
-    + "\"country\": \"United Kingdom\","
-    + "\"lat\": 53.1,"
-    + "\"lon\": -0.13"
-+ "},"
-+ "\"current\": {"
-    + "\"temp_c\": 15,"
-    + "\"temp_f\": 59,"
-    + "\"humidity\": 59"
-+ "}"
-+ "}";
-
-JsonParserChecker parserChecker = new JsonParserChecker(jsonString);
-
-JsonValue valueToCheck = Json.createValue(16);
-boolean result = parserChecker.checkParameter("temp_c", valueToCheck, "<");
-System.out.println("Is temperature less than 16°C? " + result);  // Outputs: Is temperature less than 16°C? true
-
-JsonValue valueToCheckString = Json.createValue("Boston");
-boolean result2 = parserChecker.checkParameter("name", valueToCheckString, "=");
-System.out.println("Is the location name 'Boston'? " + result2);  // Outputs: Is the location name 'Boston'? true
-
-*/
+/**
+ * Class that handles criteria
+ */
 public class JsonParserChecker {
+    /**
+     * JsonNode object
+     */
     private JsonNode jsonObject;
 
+    /**
+     * Constructor
+     * @param jsonString
+     */
     // Parse the JSON when constructing the class
     public JsonParserChecker(String jsonString) {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -49,11 +32,23 @@ public class JsonParserChecker {
         }
     }
 
+    /**
+     * Method to find and return a JsonNode based on the given key
+     * @param key
+     * @return
+     */
     // Method to find and return a JsonNode based on the given key
     public JsonNode findParameter(String key) {
         return jsonObject.get(key);
     }
 
+    /**
+     * Method to check if the given value is more, less or equal to the value in the JSON
+     * @param key
+     * @param valueToCheck
+     * @param operator
+     * @return
+     */
     public Map<String, String> checkParameter(String key, JsonNode valueToCheck, String operator) {
         JsonNode value = findParameter(key);
         HashMap<String, String> map = new HashMap<>();
@@ -116,7 +111,11 @@ public class JsonParserChecker {
         return map;
     }
 
-
+    /**
+     * Method to find and return multiple JsonNodes based on the provided list of keys
+     * @param keys
+     * @return
+     */
     // Method to find and return multiple JsonNodes based on the provided list of keys
     // Note: You can't create new JSON objects with the ObjectMapper, so we'll return a List of JsonNode instead.
     public List<JsonNode> findParameters(List<String> keys) {
@@ -130,6 +129,13 @@ public class JsonParserChecker {
         return values;
     }
 
+    /**
+     * Method to check multiple parameters' values
+     * @param keys
+     * @param valuesToCheck
+     * @param operator
+     * @return
+     */
     // Method to check multiple parameters' values
     // Note: As we now return a List of JsonNode, you'll need to pass a List of keys and a List of values to this method.
     public boolean checkParameters(List<String> keys, List<JsonNode> valuesToCheck, String operator) {

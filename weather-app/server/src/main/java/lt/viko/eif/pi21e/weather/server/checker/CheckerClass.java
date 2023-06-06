@@ -7,7 +7,13 @@ import lt.viko.eif.pi21e.weather.server.events.EventHandler;
 
 import java.util.List;
 
+/**
+ * Class that checks criteria
+ */
 public class CheckerClass {
+    /**
+     * Method that checks criteria
+     */
     public static void run(){
         for (CriteriaWeather criteria : scanDatabase()){
             try {
@@ -17,7 +23,10 @@ public class CheckerClass {
             }
         }
     }
-
+    /**
+     * Method that scans database
+     * @return list of criteria
+     */
     private static List<CriteriaWeather> scanDatabase(){
         return Interactor.readAll(CriteriaWeather.class);
     }

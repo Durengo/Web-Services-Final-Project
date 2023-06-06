@@ -88,6 +88,12 @@ public class SubscriptionAddressEndpoint {
         return client.addCriteriaWeather(subId, criteriaWeatherJson);
     }
 
+    /**
+     * This method is responsible for handling PUT request to /subscriptions/{subId}/{criteriaId} endpoint
+     * @param subId
+     * @param criteriaId
+     * @return
+     */
     @PutMapping(value = "/{subId}/{criteriaId}")
     public String addCriteriaWeatherById(@PathVariable int subId, @PathVariable int criteriaId){
         SubscriptionAddressClient client = new SubscriptionAddressClient();

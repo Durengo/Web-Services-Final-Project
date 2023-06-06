@@ -12,9 +12,25 @@ import javax.json.*;
 import java.io.StringReader;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Class that handles criteria
+ */
 public class EventHandler {
+    /**
+     * Method that checks criteria
+     * @param name criteria name
+     * @param lessEqualMore less, equal or more
+     * @param value criteria value
+     * @param address address
+     * @return map with result
+     */
     private JsonObject jsonObject;
+
+    /**
+     * Method that checks criteria
+     * @param criteria
+     * @throws JsonProcessingException
+     */
 
     public static void ProcessCriteria(CriteriaWeather criteria) throws JsonProcessingException {
         String name = criteria.getCriteriaName();
