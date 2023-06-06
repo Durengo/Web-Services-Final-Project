@@ -14,7 +14,36 @@
 
 <b>GET /history/<span style="color:green">CITY_NAME</span>?start=<span style="color:green">START_DATE_OLD</span>&end=<span style="color:green">END_DATE_YOUNG</span></b> - get weather history using city name for a period from START_DATE_OLD until END_DATE_YOUNG. Default for START_DATE_OLD and END_DATE_YOUNG is 2023-5-24 and 2023-5-26, respectively. The format for dates is <b>YYYY-MM-DD</b>. The maximum amount of days between both dates is 7 or only last 7 days is possible idk.
 
+<b>GET /radius/<span style="color:green">CITY_NAME</span> - get area and radius in kilometers and miles of city
+
+
+<h1><b>EVENT</b></h1>
+<b>/queue/{ID}</b> - get all the messages enqueued for the provided subscription address ID
+
+    { 
+        "messages": ["X", "Y", "Z"] 
+    }
+
+<h1><b>THE FOLLOWING REST ENDPOINTS WILL RETURN MESSAGES IN THIS FORMAT</b></h1>
+
+    {
+        "status": STATUS_CODE,
+        "message": "MESSAGE",
+        "data": "DATA"
+    }
+
+POST should return ID of created object in message field
+
 <h1><b>USERS</b></h1>
+
+
+USERS CONTAINS THE FOLLOWING FIELDS:
+- <b>id</b>
+- <b>username</b>
+- <b>password</b>
+- <b>mail</b>
+- <b>subscriptions</b>
+- <b>favorites</b>
 
 <b>POST /users</b> - create a new user. Requires a JSON body with the following fields: 
 - <b>username</b>
@@ -41,18 +70,25 @@
 
 <b>DELETE /users/username?username=USERNAME_VALUE</b> - delete user by USERNAME_VALUE
 
-<b>POST /ID_VALUE/subscriptions</b> - subscribe to a new address. ID_VALUE is user ID. Requires a JSON body with the following fields:
-- <b>address</b>
+<b>DELETE /users/ID_VALUE/subscriptions/SUB_ADDRESS_ID</b> - unsubscribe from an address. ID_VALUE is user ID, SUB_ADDRESS_ID is subscription address id.
 
-<b>POST /ID_VALUE/favorites</b> - add a new favorite address. ID_VALUE is user ID. Requires a JSON body with the following fields:
-- <b>address</b>
-- <b>type</b>.
+<b>DELETE /users/ID_VALUE/favorites/FAV_ADDRESS_ID</b> - delete a favorite address. ID_VALUE is user ID, FAV_ADDRESS_ID is favorite address id.
 
-<b>DELETE /ID_VALUE/subscriptions/SUB_ADDRESS_ID</b> - unsubscribe from an address. ID_VALUE is user ID, SUB_ADDRESS_ID is subscription address id.
+<b>PUT /users/ID_VALUE/subscriptions/SUB_ADDRESS_ID</b> - subscribe to an address. ID_VALUE is user ID, SUB_ADDRESS_ID is subscription address id.
 
-<b>DELETE /ID_VALUE/favorites/FAV_ADDRESS_ID</b> - delete a favorite address. ID_VALUE is user ID, FAV_ADDRESS_ID is favorite address id.
+<b>PUT /users/ID_VALUE/favorites/FAV_ADDRESS_ID</b> - add a favorite address. ID_VALUE is user ID, FAV_ADDRESS_ID is favorite address id.
+
+<b>DELETE /users/ID_VALUE/subscriptions/SUB_ADDRESS_ID</b> - unsubscribe from an address. ID_VALUE is user ID, SUB_ADDRESS_ID is subscription address id.
+
+<b>DELETE /users/ID_VALUE/favorites/FAV_ADDRESS_ID</b> - delete a favorite address. ID_VALUE is user ID, FAV_ADDRESS_ID is favorite address id.
 
 <h1><b>FAVORITES</b></h1>
+
+<b>FAVORITES CONTAINS THE FOLLOWING FIELDS:</b>
+- <b>id</b>
+- <b>address</b>
+- <b>type</b>
+- <b>user</b>
 
 <b>POST /favorites</b> - create a new favorite address. Requires a JSON body with the following fields:
 - <b>address</b>
@@ -72,6 +108,12 @@
 
 <h1><b>SUBSCRIPTIONS</b></h1>
 
+<b>SUBSCRIPTIONS CONTAINS THE FOLLOWING FIELDS:</b>
+- <b>id</b>
+- <b>address</b>
+- <b>criterias</b>
+- <b>user</b>
+
 <b>POST /subscriptions</b> - create a new subscription. Requires a JSON body with the following fields:
 - <b>address</b>
 
@@ -84,19 +126,25 @@
 <b>PUT /subscriptions/ID_VALUE</b> - update subscription info by ID_VALUE. Requires a JSON body with ANY (at least 1) of the following fields:
 - <b>address</b>
 
-<b>POST /subscriptions/ID_VALUE</b> - add a new criteria to a subscription. ID_VALUE is subscription ID. Requires a JSON body with the following fields:
-- <b>less_equal_more</b> - "LESS", "EQUAL" or "MORE"
-- <b>criteriaName</b> - "TEMPERATURE", "HUMIDITY", "PRESSURE", "WIND_SPEED", "WIND_DIRECTION", "CLOUDINESS", "RAIN", "SNOW" (ask which ones need implemented)
-- <b>criteriaValue</b> - value dependant on criteria. For example, if criteriaName is "TEMPERATURE", then criteriaValue is a float number. If criteriaName is "WIND_DIRECTION", then criteriaValue is a string with the direction (N, NE, E, SE, S, SW, W, NW). Make sure the values are actually possible.
+<b>DELETE /subscriptions/ID_VALUE/CRITERIA_ID</b> - delete a criteria from a subscription. ID_VALUE is subscription ID, CRITERIA_ID is criteria id.
+
+<b>PUT /subscriptions/ID_VALUE/CRITERIA_ID</b> - add a criteria to a subscription. ID_VALUE is subscription ID, CRITERIA_ID is criteria id.
 
 <b>DELETE /subscriptions/ID_VALUE/CRITERIA_ID</b> - delete a criteria from a subscription. ID_VALUE is subscription ID, CRITERIA_ID is criteria id.
 
 <h1><b>CRITERIA</b></h1>
 
+<b>CRITERIA CONTAINS THE FOLLOWING FIELDS:</b>
+- <b>id</b>
+- <b>less_equal_more</b>
+- <b>criteriaName</b>
+- <b>criteriaValue</b>
+- <b>subscription_address</b>
+
 <b>POST /criteria</b> - create a new criteria. Requires a JSON body with the following fields:
 - <b>less_equal_more</b> - "LESS", "EQUAL" or "MORE"
-- <b>criteriaName</b> - "TEMPERATURE", "HUMIDITY", "PRESSURE", "WIND_SPEED", "WIND_DIRECTION", "CLOUDINESS", "RAIN", "SNOW" (ask which ones need implemented)
-- <b>criteriaValue</b> - value dependant on criteria. For example, if criteriaName is "TEMPERATURE", then criteriaValue is a float number. If criteriaName is "WIND_DIRECTION", then criteriaValue is a string with the direction (N, NE, E, SE, S, SW, W, NW). Make sure the values are actually possible.
+- <b>criteriaName</b> - "temp_c", etc. the fields from the weather api that need checking
+- <b>criteriaValue</b> - value dependant on criteria. For example, if criteriaName is "temp_c", then criteriaValue is a float number.
 
 <b>GET /criteria/ID_VALUE</b> - get criteria info by ID_VALUE
 
@@ -106,6 +154,6 @@
 
 <b>PUT /criteria/ID_VALUE</b> - update criteria info by ID_VALUE. Requires a JSON body with ANY (at least 1) of the following fields:
 - <b>less_equal_more</b> - "LESS", "EQUAL" or "MORE"
-- <b>criteriaName</b> - "TEMPERATURE", "HUMIDITY", "PRESSURE", "WIND_SPEED", "WIND_DIRECTION", "CLOUDINESS", "RAIN", "SNOW" (ask which ones need implemented)
-- <b>criteriaValue</b> - value dependant on criteria. For example, if criteriaName is "TEMPERATURE", then criteriaValue is a float number. If criteriaName is "WIND_DIRECTION", then criteriaValue is a string with the direction (N, NE, E, SE, S, SW, W, NW). Make sure the values are actually possible.
+- <b>criteriaName</b> - "temp_c", etc. the fields from the weather api that need checking
+- <b>criteriaValue</b> - value dependant on criteria. For example, if criteriaName is "temp_c", then criteriaValue is a float number.
 
