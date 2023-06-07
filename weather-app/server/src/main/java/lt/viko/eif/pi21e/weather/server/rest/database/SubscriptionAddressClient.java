@@ -156,4 +156,48 @@ public class SubscriptionAddressClient {
         }
     }
 
+    /**
+     * Method that gets CriteriaWeather from SubscriptionAddress
+     * @param subId
+     * @param criteriaId
+     * @return
+     */
+    public String addCriteriaWeather(int subId, int criteriaId) {
+        try {
+            SubscriptionAddress existingSubscriptionAddress = Interactor.read(SubscriptionAddress.class, subId);
+            CriteriaWeather criteriaWeather = Interactor.read(CriteriaWeather.class, criteriaId);
+            if (existingSubscriptionAddress != null && criteriaWeather != null) {
+                criteriaWeather.setSubscriptionAddress(existingSubscriptionAddress);
+                List<CriteriaWeather> collection = existingSubscriptionAddress.getCriteriaWeathers();
+                collection.add(criteriaWeather);
+                existingSubscriptionAddress.setCriteriaWeathers(collection);
+                Interactor.update(existingSubscriptionAddress);
+                Interactor.update(criteriaWeather);
+                SubscriptionAddress check = Interactor.read(SubscriptionAddress.class, subId);
+                boolean found = false;
+                if (check != null) {
+                    for (CriteriaWeather criteriaWeather1 : check.getCriteriaWeathers()) {
+                        if (criteriaWeather1.getLess_equal_more().equals(criteriaWeather.getLess_equal_more()) &&
+                                criteriaWeather1.getCriteriaName().equals(criteriaWeather.getCriteriaName()) &&
+                                criteriaWeather1.getCriteriaValue().equals(criteriaWeather.getCriteriaValue())) {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) {
+                        return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(check));
+                    } else {
+                        return ResponseProvider.getResponse(500, "Couldn't add criteria weather", "NULL");
+                    }
+                } else {
+                    return ResponseProvider.getResponse(500, "Subscribed address was destroyed", "NULL");
+                }
+            } else {
+                return ResponseProvider.getResponse(404, "Not Found", "NULL");
+            }
+
+        } catch (JsonProcessingException e) {
+            return ResponseProvider.getResponse(500, "Couldn't convert CriteriaWeather to JSON", e.getMessage());
+        }
+    }
 }

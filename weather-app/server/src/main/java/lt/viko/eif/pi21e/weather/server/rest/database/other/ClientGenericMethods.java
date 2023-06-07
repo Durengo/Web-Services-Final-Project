@@ -78,8 +78,8 @@ public class ClientGenericMethods {
     public static <T> String createX(String json, Class<T> type) {
         try {
             T o = JObj2JSON.convert(json, type);
-            Interactor.set(o);
-            return ResponseProvider.getResponse(200, "OK", JObj2JSON.convert(o));
+            int id = Interactor.set(o);
+            return ResponseProvider.getResponse(200, Integer.toString(id), JObj2JSON.convert(o));
         } catch (JsonProcessingException e) {
             return ResponseProvider.getResponse(500, "Couldn't convert "+ type.getSimpleName() +
                     " to JSON", e.getMessage());

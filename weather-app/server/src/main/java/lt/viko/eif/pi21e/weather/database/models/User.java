@@ -20,7 +20,7 @@ public class User {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column( name = "USER_ID")
-    private int userId;
+    private int id;
     /**
      * The username of the user.
      */
@@ -74,7 +74,7 @@ public class User {
      * @return the identifier of the user
      */
     public int getUserId() {
-        return userId;
+        return id;
     }
     /**
      * Set the unique identifier of the user.
@@ -82,7 +82,7 @@ public class User {
      * @param userId the identifier to set
      */
     public void setUserId(int userId) {
-        this.userId = userId;
+        this.id = userId;
     }
     /**
      * Get the username of the user.
