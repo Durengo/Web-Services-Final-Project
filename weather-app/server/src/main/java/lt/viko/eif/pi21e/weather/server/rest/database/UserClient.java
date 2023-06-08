@@ -59,6 +59,9 @@ public class UserClient {
         try {
             User newUser = JObj2JSON.convert(userJson, User.class);
             User oldUser = Interactor.read(User.class, id);
+            if (oldUser == null) {
+                return ResponseProvider.getResponse(404, "User not found", "NULL");
+            }
             if (newUser.getUsername() != null)
                 oldUser.setUsername(newUser.getUsername());
             if (newUser.getPassword() != null)
@@ -89,11 +92,13 @@ public class UserClient {
      * @param userJson User json
      * @return response string in json format
      */
-    // ??? HOW TO GENERALIZE THIS
     public String updateUser(String username, String userJson) {
         try {
             User newUser = JObj2JSON.convert(userJson, User.class);
             User oldUser = Interactor.readByParam(User.class, "username", username);
+            if (oldUser == null) {
+                return ResponseProvider.getResponse(404, "User not found", "NULL");
+            }
             if (newUser.getUsername() != null)
                 oldUser.setUsername(newUser.getUsername());
             if (newUser.getPassword() != null)

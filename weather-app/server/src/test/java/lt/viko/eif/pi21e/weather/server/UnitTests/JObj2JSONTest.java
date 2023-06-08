@@ -1,4 +1,4 @@
-package lt.viko.eif.pi21e.weather.server.utilTests;
+package lt.viko.eif.pi21e.weather.server.UnitTests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lt.viko.eif.pi21e.weather.database.models.*;
