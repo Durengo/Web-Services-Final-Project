@@ -21,7 +21,7 @@ public class SubscriptionAddress {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column( name = "SUBSCRIPTION_ADDRESS_ID")
-    private int subscriptionAddressId;
+    private int id;
     /**
      * The actual address that the user is subscribed to.
      */
@@ -60,7 +60,7 @@ public class SubscriptionAddress {
      * @return the identifier of the subscription address
      */
     public int getSubscriptionAddressId() {
-        return subscriptionAddressId;
+        return id;
     }
     /**
      * Set the unique identifier of the subscription address.
@@ -68,7 +68,7 @@ public class SubscriptionAddress {
      * @param subscriptionAddressId the identifier to set
      */
     public void setSubscriptionAddressId(int subscriptionAddressId) {
-        this.subscriptionAddressId = subscriptionAddressId;
+        this.id = subscriptionAddressId;
     }
     /**
      * Get the address that the user is subscribed to.

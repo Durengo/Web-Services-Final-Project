@@ -9,6 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 
+import java.io.Serializable;
 import java.util.List;
 /**
  * This class provides basic CRUD (Create, Read, Update, Delete) operations
@@ -50,20 +51,23 @@ public class Interactor {
      * @param <T> the type of the entity
      * @param entity the entity to be saved
      */
-    public static <T> void set(T entity) {
+    public static <T> int set(T entity) {
         Transaction transaction = null;
         try (Session session = getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
             // save the entity object
-            session.save(entity);
+            int id = (Integer) session.save(entity);
             // commit transaction
             transaction.commit();
+            // return the ID ofh the entity
+            return id;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
+            return -1;
         }
     }
 
