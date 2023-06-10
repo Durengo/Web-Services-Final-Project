@@ -1,19 +1,19 @@
 import "../css/App.css";
 
 import React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import WeatherMain from "../components/WeatherMain";
 
 function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/:path(|1_160)">
-          <WeatherMain {...weatherMainData} />
-        </Route>
-      </Switch>
-    </Router>
-  );
+    return (
+        <Router>
+            <Switch>
+                <Route path="/:path(|1_160)">
+                    <WeatherMain {...weatherMainData} />
+                </Route>
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;

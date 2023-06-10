@@ -9,16 +9,22 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.18.1",
+    "axios": "^1.4.0",
     "babel": "^6.23.0",
     "bootstrap": "^5.3.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.7",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "redux-toolkit": "^1.1.2"
   },
   "devDependencies": {
     "browserslist": "^4.21.5",
+    "buffer": "^6.0.3",
     "parcel": "^2.9.1",
     "parcel-reporter-static-files-copy": "^1.5.0",
     "process": "^0.11.10"
