@@ -3,7 +3,6 @@ import "../css/App.css";
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import WeatherMain from "../components/WeatherMain";
-
 function App() {
   return (
     <Router>
