@@ -660,30 +660,22 @@
 .hourly1 {
     align-items: flex-end;
     display: flex;
-    height: 220px;
-    margin-right: 1.0px;
-    margin-top: 27px;
-    width: 1000px;
-}
-.carousel {
-    position: relative;
+    height: 17%;
     background-color: #ffffff;
     border-radius: 10px;
-    overflow: hidden;
+    margin-top: 20px;
+    width: 62%;
 }
+.itemclass1 {
+    font-family: var(--font-family-inter);
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    border-right: 1px solid #ccc;
+    padding-bottom: 10px;
 
-.carousel .slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    background-color: #f2f2f2;
 }
-
-.carousel .slide:not(:last-child) {
-    border-bottom: 1px solid #dddddd;
-}
-
 .carousel .slide .time {
     font-size: 18px;
     font-weight: bold;
@@ -694,32 +686,23 @@
     width: 50px;
     height: 50px;
 }
-
-.carousel .slide .degrees {
-    font-size: 24px;
+.time {
+    margin-bottom: 5px;
 }
 
-.carousel .arrow-prev,
-.carousel .arrow-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ffffff;
-    border: none;
-    color: #000000;
-    font-size: 20px;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 50%;
+.weather-icon {
+    margin-bottom: 5px;
 }
 
-.carousel .arrow-prev {
-    left: 10px;
+.degrees {
+    margin-bottom: 5px;
 }
 
-.carousel .arrow-next {
-    right: 10px;
-}
+
+
+
+
+
 
 
 

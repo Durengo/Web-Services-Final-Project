@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="separated page into appropriate components">
-      <change afterPath="$PROJECT_DIR$/weather-app/client/src/components/TestSlider/index.jsx" afterDir="false" />
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/CurrentConditions/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/CurrentConditions/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/Slider/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/Slider/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/css/Globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/css/Globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/js/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/MapContainer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/MapContainer/index.jsx" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +24,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="zerpollo &lt;93397349+zerpollo@users.noreply.github.com&gt;" />
         <option value="zerpollo" />
       </list>
     </option>
@@ -173,7 +167,9 @@
       <workItem from="1685990240328" duration="5037000" />
       <workItem from="1686041224490" duration="4817000" />
       <workItem from="1686214525397" duration="6226000" />
-      <workItem from="1686393650070" duration="297000" />
+      <workItem from="1686393650070" duration="7330000" />
+      <workItem from="1686404758123" duration="1987000" />
+      <workItem from="1686407504116" duration="16668000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
       <created>1685023932871</created>
@@ -217,7 +213,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685902904108</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tried to add responsiveness to the page but no success. Added dependency for the slider &quot;react-responsive-carousel&quot;. Added test component &quot;TestSlider&quot; to test the newly added dependency.">
+      <created>1686394175426</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686394175426</updated>
+    </task>
+    <task id="LOCAL-00008" summary="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component">
+      <created>1686417082771</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686417082771</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +262,8 @@
     <MESSAGE value="Added history" />
     <MESSAGE value="centered page, centered and moved google map api" />
     <MESSAGE value="separated page into appropriate components" />
-    <option name="LAST_COMMIT_MESSAGE" value="separated page into appropriate components" />
+    <MESSAGE value="tried to add responsiveness to the page but no success. Added dependency for the slider &quot;react-responsive-carousel&quot;. Added test component &quot;TestSlider&quot; to test the newly added dependency." />
+    <MESSAGE value="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component" />
   </component>
 </project>
