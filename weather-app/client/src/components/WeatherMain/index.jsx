@@ -17,6 +17,7 @@ import { weatherMainData } from "../../js/App";
 import {fetchCurrentLocation} from "../../js/fetchCurrentLocation";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchWeatherInformation} from "../../js/fetchWeatherInformation";
+import {getSunriseAndSunset} from "../../js/conversion";
 
 
 function WeatherMain(props) {
@@ -40,6 +41,7 @@ function WeatherMain(props) {
 
     // if (!fetchingCurrentLocation)
 
+    // console.log(getSunriseAndSunset(54.6872, 25.2797));
 
     return (
         <div className="weather-site1">

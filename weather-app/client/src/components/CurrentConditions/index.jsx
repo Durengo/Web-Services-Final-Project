@@ -3,16 +3,18 @@ import {useDispatch, useSelector} from "react-redux";
 import {setData} from "../../redux/actions/actions";
 import {fetchCurrentLocation} from "../../js/fetchCurrentLocation";
 import {convertToFahrenheit} from "../../js/conversion";
+import {SET_TEMPERATURE_UNIT, setTemperatureUnit} from "../../redux/actions/weatherUnits";
 
 function CurrentConditionsComponent(props) {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const currentLocation = useSelector((state) => state.currentLocation);
     const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
     const weatherInformation = useSelector((state) => state.weatherInformation);
     const isFetchingWeatherInformation = useSelector((state) => state.isFetchingWeatherInformation);
+    const isChangingUnits = useSelector((state) => state.isChangingUnits);
     const [displayTemperature, setDisplayTemperature] = useState("");
     const [feelsLikeTemperature, setFeelsLikeTemperature] = useState("");
-    const [celsius, setCelsius] = useState(true);
+    const temperatureUnit = useSelector((state) => state.temperatureUnit);
 
     // useEffect(() => {
     //     console.log("TESTING HOOK");
@@ -36,8 +38,13 @@ function CurrentConditionsComponent(props) {
 
     useEffect(() => {
         if (weatherInformation.current) {
-            setDisplayTemperature(weatherInformation.current.temp_c);
-            setFeelsLikeTemperature(weatherInformation.current.feelslike_c);
+            if (temperatureUnit) {
+                setDisplayTemperature(weatherInformation.current.temp_c);
+                setFeelsLikeTemperature(weatherInformation.current.feelslike_c);
+            } else {
+                setDisplayTemperature(weatherInformation.current.temp_f);
+                setFeelsLikeTemperature(weatherInformation.current.feelslike_f);
+            }
         }
     }, [weatherInformation.current]);
 
@@ -51,37 +58,34 @@ function CurrentConditionsComponent(props) {
         spanText2,
     } = props;
 
-    if (isFetchingCurrentLocation || isFetchingWeatherInformation)
-    {
+    if (isFetchingCurrentLocation || isFetchingWeatherInformation) {
         return <div>LOADING...</div>;
     }
 
     const handleConversion = () => {
-        if (celsius)
-        {
+        if (temperatureUnit) {
+            dispatch(setTemperatureUnit(false));
             setDisplayTemperature(weatherInformation.current.temp_f);
             setFeelsLikeTemperature(weatherInformation.current.feelslike_f);
-            setCelsius(false);
-        }
-        else
-        {
+        } else {
+            dispatch(setTemperatureUnit(true));
             setDisplayTemperature(weatherInformation.current.temp_c);
             setFeelsLikeTemperature(weatherInformation.current.feelslike_c);
-            setCelsius(true);
         }
     };
     // setDisplayTemperature(weatherInformation.current.temp_c);
 
-                       // <button className="testbtn" onClick={() => {
-                       //      const converted = convertToFahrenheit(weatherInformation.current.temp_c);
-                       //  }}>Convert to Fahrenheit</button>
+    // <button className="testbtn" onClick={() => {
+    //      const converted = convertToFahrenheit(weatherInformation.current.temp_c);
+    //  }}>Convert to Fahrenheit</button>
     return (
         <div className="current-conditions">
             <div className="overlap-group11">
                 <div className="overlap-group10">
                     <div className="today-container">
                         <h1 className="city-today">{currentLocation.city.name}</h1>
-                        <div className="current-region-today">{currentLocation.area.name + ", " + currentLocation.country.name}</div>
+                        <div
+                            className="current-region-today">{currentLocation.area.name + ", " + currentLocation.country.name}</div>
                     </div>
                     <div className="condition-container">
                         <img
@@ -104,9 +108,7 @@ function CurrentConditionsComponent(props) {
               <span className="span1">{spanText2}</span>
             </span>
                     </div>
-                    <img className="line-1" src="/img/line-1.svg" alt="Line 1" />
-                    <button className="testbtn" onClick={handleConversion}>Convert</button>
-
+                    <img className="line-1" src="/img/line-1.svg" alt="Line 1"/>
                 </div>
             </div>
 

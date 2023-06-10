@@ -1,4 +1,5 @@
 import {initialState} from "./initialStates";
+import {SET_PRESSURE_UNIT, SET_VISIBILITY_UNIT, SET_WIND_SPEED_UNIT} from "./actions/weatherUnits";
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "SET_DATA":
@@ -31,6 +32,31 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetchingWeatherInformation: action.payload,
+            };
+        case "SET_TEMPERATURE_UNIT":
+            return {
+                ...state,
+                temperatureUnit: action.payload,
+            };
+        case "SET_WIND_SPEED_UNIT":
+            return {
+                ...state,
+                windSpeedUnit: action.payload,
+            };
+        case "SET_VISIBILITY_UNIT":
+            return {
+                ...state,
+                visibilityUnit: action.payload,
+            };
+        case "SET_PRECIPITATION_UNIT":
+            return {
+                ...state,
+                precipitationUnit: action.payload,
+            };
+        case "SET_PRESSURE_UNIT":
+            return {
+                ...state,
+                pressureUnit: action.payload,
             };
         default:
             return state;

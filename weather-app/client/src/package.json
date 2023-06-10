@@ -20,7 +20,8 @@
     "react-router-dom": "^5.3.4",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
-    "redux-toolkit": "^1.1.2"
+    "redux-toolkit": "^1.1.2",
+    "suncalc": "^1.9.0"
   },
   "devDependencies": {
     "browserslist": "^4.21.5",

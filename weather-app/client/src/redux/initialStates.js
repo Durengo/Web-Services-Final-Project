@@ -115,5 +115,17 @@ export const initialState = {
                 }
         },
     isFetchingWeatherInformation: false,
+    // Toggle component load when units are changed.
+    isChangingUnits: false,
+    // True for Celsius, false for Fahrenheit
     temperatureUnit: true,
+    // True for kilometers per hour (kph), false for miles per hour (mph)
+    windSpeedUnit: true,
+    // True for kilometers (km), false for miles (miles)
+    visibilityUnit: true,
+    // True for millimeters (mm), false for inches (in)
+    precipitationUnit: true,
+    // True for millibars (mm), false for inches (in)
+    pressureUnit: true,
+
 };
