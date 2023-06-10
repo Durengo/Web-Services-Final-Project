@@ -39,11 +39,11 @@ function CurrentConditionsComponent(props) {
     useEffect(() => {
         if (weatherInformation.current) {
             if (temperatureUnit) {
-                setDisplayTemperature(weatherInformation.current.temp_c);
-                setFeelsLikeTemperature(weatherInformation.current.feelslike_c);
+                setDisplayTemperature(weatherInformation.current.temp_c + "⁰");
+                setFeelsLikeTemperature(weatherInformation.current.feelslike_c + "⁰");
             } else {
-                setDisplayTemperature(weatherInformation.current.temp_f);
-                setFeelsLikeTemperature(weatherInformation.current.feelslike_f);
+                setDisplayTemperature(weatherInformation.current.temp_f + "F");
+                setFeelsLikeTemperature(weatherInformation.current.feelslike_f + "F");
             }
         }
     }, [weatherInformation.current, temperatureUnit]);
@@ -94,7 +94,7 @@ function CurrentConditionsComponent(props) {
                             alt="ConditionIconToday"
                         />
                         <div className="feels-like-condition-today">
-                            {"Feels like " + feelsLikeTemperature + "⁰"}
+                            {"Feels like " + feelsLikeTemperature}
                         </div>
                     </div>
                     <div className="text-condition-today">{weatherInformation.current.condition.text}</div>
@@ -105,7 +105,7 @@ function CurrentConditionsComponent(props) {
               <span className="inter-normal-midnight-blue-60px">
                 {displayTemperature}
               </span>
-              <span className="span1">{spanText2}</span>
+              <span className="span1"></span>
             </span>
                     </div>
                     <img className="line-1" src="/img/line-1.svg" alt="Line 1"/>
