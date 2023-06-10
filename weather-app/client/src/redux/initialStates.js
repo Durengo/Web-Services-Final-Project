@@ -127,5 +127,35 @@ export const initialState = {
     precipitationUnit: true,
     // True for millibars (mm), false for inches (in)
     pressureUnit: true,
-
+    // Current Session User
+    currentUser:
+        {
+            data:
+                {
+                    username: null,
+                    mail: null,
+                    password: null,
+                    favoriteAddresses:
+                        {
+                            address: null,
+                            criteriaWeathers:
+                                {
+                                    less_equals_more: null,
+                                    criteriaName: null,
+                                    criteriaValue: null,
+                                    subscriptionAddress: null,
+                                },
+                            subscriptionAddresses: null,
+                        },
+                    subscriptionAddresses:
+                        {
+                            address: null,
+                        },
+                    userdId: null,
+                },
+            message: null,
+            status: null,
+        },
+    isFetchingCurrentUser: false,
+    session: false,
 };

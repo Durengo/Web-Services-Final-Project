@@ -3,6 +3,7 @@ import UserMenu from "../UserMenu";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {ReactDimmer} from "react-dimmer";
 import UnitMenu from "../UnitMenu";
+import {useSelector} from "react-redux";
 
 function NavbarComponent(props) {
     const [isUserMenuVisible, setUserMenuVisibility] = useState(false);

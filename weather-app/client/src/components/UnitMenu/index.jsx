@@ -11,9 +11,9 @@ import {
 } from "../../redux/actions/weatherUnits";
 
 const UnitsMenuComponent = ( { isUnitsMenuOpen } ) => {
+    const dispatch = useDispatch();
     const [showOverlay, setShowOverlay] = useState(false);
 
-    const dispatch = useDispatch();
     const currentLocation = useSelector((state) => state.currentLocation);
     const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
     const weatherInformation = useSelector((state) => state.weatherInformation);

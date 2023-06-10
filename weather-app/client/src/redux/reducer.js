@@ -58,6 +58,25 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 pressureUnit: action.payload,
             };
+        case "SET_CURRENT_USER":
+            return {
+                ...state,
+                // currentUser: action.payload,
+                currentUser: {
+                    ...state.currentUser,
+                    ...action.payload,
+                }
+            };
+        case "SET_IS_FETCHING_CURRENT_USER":
+            return {
+                ...state,
+                isFetchingCurrentUser: action.payload,
+            };
+        case "SET_SESSION_LOGGED_IN":
+            return {
+                ...state,
+                session: action.payload,
+            };
         default:
             return state;
     }
