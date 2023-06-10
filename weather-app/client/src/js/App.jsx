@@ -98,5 +98,8 @@ export const weatherMainData = {
     spanText25: "10",
     spanText26: "⁰",
     textLabelMap: "Map of weather conditions",
+    img1: "/img/1.jpg",
+    img2: "/img/2.jpg",
+    img3: "/img/3.jpg",
 };
 

@@ -6,6 +6,7 @@ import CurrentConditionsComponent from "../CurrentConditions";
 import { weatherMainData } from "../../js/App";
 import SliderComponent from "../Slider";
 import NavbarComponent from "../Navbar";
+import TestSliderComponent from "../TestSlider";
 
 function WeatherMain(props) {
     const {
@@ -20,7 +21,8 @@ function WeatherMain(props) {
                 <CurrentConditionsComponent {...weatherMainData}/>
                 <DetailsComponent {...weatherMainData}/>
             </div>
-            <SliderComponent {...weatherMainData}/>
+
+            <TestSliderComponent/>
             <div className="text-label-map">Map of weather conditions</div>
             <MapContainer />
         </div>

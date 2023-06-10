@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="centered page, centered and moved google map api">
-      <changelist_data name="zerpollo" email="" />
-      <change afterPath="$PROJECT_DIR$/weather-app/client/src/components/CurrentConditions/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weather-app/client/src/components/Details/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weather-app/client/src/components/Navbar/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/weather-app/client/src/components/Slider/index.jsx" afterDir="false" />
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="separated page into appropriate components">
+      <change afterPath="$PROJECT_DIR$/weather-app/client/src/components/TestSlider/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/CurrentConditions/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/CurrentConditions/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/Slider/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/Slider/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/css/Globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/css/Globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-app/client/src/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/js/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/package.json" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,6 +129,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="install" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/weather-app/client/src/package.json" />
+      <command value="install" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/weather-app/client/src/package.json" />
       <command value="start" />
@@ -144,6 +152,7 @@
     </configuration>
     <list>
       <item itemvalue="npm.start" />
+      <item itemvalue="npm.install" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -157,7 +166,14 @@
       <workItem from="1685479961796" duration="1594000" />
       <workItem from="1685521788997" duration="6581000" />
       <workItem from="1685814188425" duration="9344000" />
-      <workItem from="1685888417773" duration="7384000" />
+      <workItem from="1685888417773" duration="10140000" />
+      <workItem from="1685952488409" duration="5888000" />
+      <workItem from="1685975826104" duration="6838000" />
+      <workItem from="1685988733204" duration="1431000" />
+      <workItem from="1685990240328" duration="5037000" />
+      <workItem from="1686041224490" duration="4817000" />
+      <workItem from="1686214525397" duration="6226000" />
+      <workItem from="1686393650070" duration="297000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
       <created>1685023932871</created>
@@ -194,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685824306638</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="separated page into appropriate components">
+      <created>1685902904108</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685902904108</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +251,7 @@
     <MESSAGE value="??" />
     <MESSAGE value="Added history" />
     <MESSAGE value="centered page, centered and moved google map api" />
-    <option name="LAST_COMMIT_MESSAGE" value="centered page, centered and moved google map api" />
+    <MESSAGE value="separated page into appropriate components" />
+    <option name="LAST_COMMIT_MESSAGE" value="separated page into appropriate components" />
   </component>
 </project>

@@ -3,21 +3,21 @@
     background-color: #dadde9;
     display: flex;
     flex-direction: column;
-    height: 1200px;
-    padding: 46px 0;
-    width: 1940px;
+    height: 75rem;
+    padding: 2.875rem 0;
+    width: 100%;
 }
 
 .flex-row {
     align-items: center;
     display: flex;
-    margin-left: 15.0px;
+    margin-left: 15px;
     min-width: 1185px;
 }
 
 .today-date {
     color: var(--black-2);
-    font-family: var(--font-family-inter);
+    font-family: var(--font-family-inter); 
     font-size: var(--font-size-l);
     font-weight: 500;
     letter-spacing: 0;
@@ -239,7 +239,7 @@
 
 .temperature-today {
     height: 101px;
-    letter-spacing: 3.00px;
+    letter-spacing: 3px;
     line-height: normal;
     text-align: center;
     width: 103px;
@@ -614,101 +614,7 @@
     top: 0;
 }
 
-.partly-cloud-icon {
-    height: 50px;
-    left: 165px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
 
-.partly-cloud-icon-1 {
-    height: 50px;
-    left: 254px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.partly-cloud-icon-2 {
-    height: 50px;
-    left: 432px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.partly-cloud-icon-3 {
-    height: 50px;
-    left: 610px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.partly-cloud-icon-4 {
-    height: 50px;
-    left: 699px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.partly-cloud-icon-5 {
-    height: 50px;
-    left: 81px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.sunny-icon {
-    height: 50px;
-    left: 346px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.sunny-icon-1 {
-    height: 50px;
-    left: 524px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.cloudyn {
-    height: 50px;
-    left: 969px;
-    position: absolute;
-    top: 105px;
-    width: 50px;
-}
-
-.cloudyn-1 {
-    height: 50px;
-    left: 1055px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.mostly-sunnyn {
-    height: 50px;
-    left: 787px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
-
-.mostly-sunnyn-1 {
-    height: 50px;
-    left: 878px;
-    position: absolute;
-    top: 104px;
-    width: 50px;
-}
 
 .right-icon {
     height: 62px;
@@ -726,222 +632,6 @@
     width: 22px;
 }
 
-.time1 {
-    left: 90px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time6 {
-    left: 527px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time2 {
-    left: 171px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time3 {
-    left: 259px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time4 {
-    left: 351px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time5 {
-    left: 437px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time7 {
-    left: 615px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time8 {
-    left: 705px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time9 {
-    left: 792px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time10 {
-    left: 883px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time11 {
-    left: 972px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.time12 {
-    left: 1061px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 71px;
-}
-
-.degree1 {
-    height: 41px;
-    left: 87px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree2 {
-    height: 41px;
-    left: 171px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree3 {
-    height: 41px;
-    left: 260px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree4 {
-    height: 41px;
-    left: 352px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree5 {
-    height: 41px;
-    left: 438px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree6 {
-    height: 41px;
-    left: 527px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree7 {
-    height: 41px;
-    left: 616px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree8 {
-    height: 41px;
-    left: 705px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 168px;
-}
-
-.degree9 {
-    height: 41px;
-    left: 796px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree10 {
-    height: 41px;
-    left: 886px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 167px;
-}
-
-.degree11 {
-    height: 41px;
-    left: 979px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 168px;
-}
-
-.degree12 {
-    height: 41px;
-    left: 1062px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 168px;
-}
-
 .text-label-map {
     align-self: flex-start;
     color: #808080f0;
@@ -950,7 +640,7 @@
     font-weight: 600;
     letter-spacing: 0;
     line-height: normal;
-    margin-left: 390px;
+    margin-left: 10%; /* Adjust this value according to your layout */
     margin-top: 26px;
     min-height: 22px;
     white-space: nowrap;
@@ -960,7 +650,77 @@
     height: 1300px;
     margin-left: 7.0px;
     margin-top: 28px;
-    object-fit: cover;
+    object-fit: none;
     width: 1177px;
 }
+.testbtn {
+    margin-bottom: -1px;
+    margin-right: -5px;
+}
+.hourly1 {
+    align-items: flex-end;
+    display: flex;
+    height: 220px;
+    margin-right: 1.0px;
+    margin-top: 27px;
+    width: 1000px;
+}
+.carousel {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: #f2f2f2;
+}
+
+.carousel .slide:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+}
+
+.carousel .slide .time {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.carousel .slide .weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.carousel .slide .degrees {
+    font-size: 24px;
+}
+
+.carousel .arrow-prev,
+.carousel .arrow-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel .arrow-prev {
+    left: 10px;
+}
+
+.carousel .arrow-next {
+    right: 10px;
+}
+
+
+
 
