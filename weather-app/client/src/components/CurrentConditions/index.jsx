@@ -46,7 +46,7 @@ function CurrentConditionsComponent(props) {
                 setFeelsLikeTemperature(weatherInformation.current.feelslike_f);
             }
         }
-    }, [weatherInformation.current]);
+    }, [weatherInformation.current, temperatureUnit]);
 
     const {
         citytoday,

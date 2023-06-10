@@ -79,55 +79,55 @@ function DetailsComponent(props) {
     }, [weatherInformation.current, temperatureUnit, windSpeedUnit, visibilityUnit, precipitationUnit, pressureUnit]);
 
 
-    const handleTemperatureConversion = () => {
-        if (temperatureUnit) {
-            dispatch(setTemperatureUnit(false));
-            setDisplayTemperature(weatherInformation.current.temp_f);
-        } else {
-            dispatch(setTemperatureUnit(true));
-            setDisplayTemperature(weatherInformation.current.temp_c);
-        }
-    };
-
-    const handleWindSpeedConversion = () => {
-        if (windSpeedUnit) {
-            dispatch(setWindSpeedUnit(false));
-            setDisplayWindSpeed(weatherInformation.current.wind_kph);
-        } else {
-            dispatch(setWindSpeedUnit(true));
-            setDisplayWindSpeed(weatherInformation.current.wind_mph);
-        }
-    };
-
-    const handleVisibilityConversion = () => {
-        if (visibilityUnit) {
-            dispatch(setVisibilityUnit(false));
-            setDisplayVisibility(weatherInformation.current.vis_km);
-        } else {
-            dispatch(setVisibilityUnit(true));
-            setDisplayVisibility(weatherInformation.current.vis_miles);
-        }
-    };
-
-    const handlePrecipitationUnit = () => {
-        if (precipitationUnit) {
-            dispatch(setPrecipitationUnit(false));
-            setDisplayPrecipitation(weatherInformation.current.precip_mm);
-        } else {
-            dispatch(setPrecipitationUnit(true));
-            setDisplayPrecipitation(weatherInformation.current.precip_in);
-        }
-    };
-
-    const handlePressureUnit = () => {
-        if (pressureUnit) {
-            dispatch(setPressureUnit(false));
-            setDisplayPressure(weatherInformation.current.pressure_mb);
-        } else {
-            dispatch(setPressureUnit(true));
-            setDisplayPressure(weatherInformation.current.pressure_in);
-        }
-    };
+    // const handleTemperatureConversion = () => {
+    //     if (temperatureUnit) {
+    //         dispatch(setTemperatureUnit(false));
+    //         setDisplayTemperature(weatherInformation.current.temp_f);
+    //     } else {
+    //         dispatch(setTemperatureUnit(true));
+    //         setDisplayTemperature(weatherInformation.current.temp_c);
+    //     }
+    // };
+    //
+    // const handleWindSpeedConversion = () => {
+    //     if (windSpeedUnit) {
+    //         dispatch(setWindSpeedUnit(false));
+    //         setDisplayWindSpeed(weatherInformation.current.wind_kph);
+    //     } else {
+    //         dispatch(setWindSpeedUnit(true));
+    //         setDisplayWindSpeed(weatherInformation.current.wind_mph);
+    //     }
+    // };
+    //
+    // const handleVisibilityConversion = () => {
+    //     if (visibilityUnit) {
+    //         dispatch(setVisibilityUnit(false));
+    //         setDisplayVisibility(weatherInformation.current.vis_km);
+    //     } else {
+    //         dispatch(setVisibilityUnit(true));
+    //         setDisplayVisibility(weatherInformation.current.vis_miles);
+    //     }
+    // };
+    //
+    // const handlePrecipitationUnit = () => {
+    //     if (precipitationUnit) {
+    //         dispatch(setPrecipitationUnit(false));
+    //         setDisplayPrecipitation(weatherInformation.current.precip_mm);
+    //     } else {
+    //         dispatch(setPrecipitationUnit(true));
+    //         setDisplayPrecipitation(weatherInformation.current.precip_in);
+    //     }
+    // };
+    //
+    // const handlePressureUnit = () => {
+    //     if (pressureUnit) {
+    //         dispatch(setPressureUnit(false));
+    //         setDisplayPressure(weatherInformation.current.pressure_mb);
+    //     } else {
+    //         dispatch(setPressureUnit(true));
+    //         setDisplayPressure(weatherInformation.current.pressure_in);
+    //     }
+    // };
 
     const {
         detailsLabel,
@@ -221,17 +221,16 @@ function DetailsComponent(props) {
                     <div className="place-1 inter-normal-black-14px">{place2}</div>
                 </div>
             </div>
-            <div>
-                <button className="testbtn" onClick={handleTemperatureConversion}>Temp</button>
-                <button className="testbtn" onClick={handleWindSpeedConversion}>Wind</button>
-                <button className="testbtn" onClick={handleVisibilityConversion}>Visibility</button>
-                <button className="testbtn" onClick={handlePrecipitationUnit}>Precipitation</button>
-                <button className="testbtn" onClick={handlePressureUnit}>Pressure</button>
-            </div>
-
-
         </div>
     );
 }
+
+// <div>
+//     <button className="testbtn" onClick={handleTemperatureConversion}>Temp</button>
+//     <button className="testbtn" onClick={handleWindSpeedConversion}>Wind</button>
+//     <button className="testbtn" onClick={handleVisibilityConversion}>Visibility</button>
+//     <button className="testbtn" onClick={handlePrecipitationUnit}>Precipitation</button>
+//     <button className="testbtn" onClick={handlePressureUnit}>Pressure</button>
+// </div>
 
 export default DetailsComponent;
