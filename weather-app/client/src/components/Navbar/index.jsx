@@ -43,7 +43,7 @@ function NavbarComponent(props) {
                 </div>
             </div>
             </Link>
-            <Link to="/weekmonth" className={`nav-btn ${activePage === "weekmonth" ? "active" : ""}`} onClick={() => handlePageChange("weekmonth")}>
+            <Link to="/X2" className={`nav-btn ${activePage === "X2" ? "active" : ""}`} onClick={() => handlePageChange("X2")}>
             <div className="week-month">
                 <div className="overlap-group13">
                     <div className="week-mo">WEEK/MONTH</div>
