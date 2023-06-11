@@ -2,12 +2,8 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import "./UserMenu.css"
 import {fetchUser} from "../../js/fetchUser";
-import {fetchCurrentLocation} from "../../js/fetchCurrentLocation";
 
-// <div className={`app-menu ${isUserMenuOpen ? "menu-open" : ""}`}>
-
-
-const UserMenuComponent = ( { isUserMenuOpen } ) => {
+const UserMenuComponent = ({isUserMenuOpen}) => {
     const dispatch = useDispatch();
     const [showOverlay, setShowOverlay] = useState(false);
 
@@ -21,17 +17,6 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
     const [email, setEmail] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // useEffect(() => {
-    //     console.log("test effect");
-    //     console.log("current user = ", currentUser);
-    //     console.log("equals: ", currentUser.data.password === password);
-    //     console.log("passwords: ", currentUser.data.password, password);
-    //     if (currentUser !== null && currentUser.data.password === password) {
-    //         console.log("Login:", username, password);
-    //         setIsLoggedIn(true);
-    //     }
-    // }, [currentUser]);
-
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -41,8 +26,7 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
             return;
         }
 
-        try
-        {
+        try {
             // Perform login logic with username and password
             await dispatch(fetchUser(username, password));
 
@@ -53,8 +37,7 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
             //     console.log("Login:", username, password);
             //     setIsLoggedIn(true);
             // }
-        } catch (error)
-        {
+        } catch (error) {
             console.error("Login failed:", error);
         }
     };
@@ -94,7 +77,7 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                         </label>
-                        <br />
+                        <br/>
                         <label>
                             Password:
                             <input
@@ -103,7 +86,7 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
-                        <br />
+                        <br/>
                         <button type="submit">Login</button>
                     </form>
 
@@ -117,7 +100,7 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                         </label>
-                        <br />
+                        <br/>
                         <label>
                             Password:
                             <input
@@ -126,7 +109,7 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </label>
-                        <br />
+                        <br/>
                         <label>
                             Email:
                             <input
@@ -135,7 +118,7 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </label>
-                        <br />
+                        <br/>
                         <button type="submit">Register</button>
                     </form>
                 </div>
@@ -143,7 +126,4 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
         </div>
     );
 };
-
-
-
 export default UserMenuComponent;

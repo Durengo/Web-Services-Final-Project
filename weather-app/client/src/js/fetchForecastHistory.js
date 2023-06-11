@@ -1,20 +1,17 @@
-import axios, {get} from "axios";
+import axios from "axios";
 import {LOCAL_API_URL} from "../env/env";
-import {getClientIP} from "./getClientIP";
 import {setForecastHistory, setIsFetchingForecastHistory} from "../redux/actions/forecastHistoryActions";
-import {fetchCurrentLocationByIp} from "./fetchCurrentLocation";
 import store from "../redux/store";
 
 export const fetchForecastHistoryByIp = (startDate, endDate) => {
     return async (dispatch) => {
         dispatch(setIsFetchingForecastHistory(true)); // Set the fetching flag to true to indicate the state is being fetched
-        if(!startDate || !endDate)
-        {
+        if (!startDate || !endDate) {
             dispatch(setIsFetchingForecastHistory(false));
             console.log("Canceling dispatch start or end date is null.");
             return;
         }
-        console.log("REQUEST: " + `${LOCAL_API_URL}/history/coordinates?start=` + startDate +"&end=" + endDate);
+        console.log("REQUEST: " + `${LOCAL_API_URL}/history/coordinates?start=` + startDate + "&end=" + endDate);
         try {
             // const ip = await dispatch(fetchCurrentLocationByIp());
             const state = await store.getState();
@@ -36,15 +33,14 @@ export const fetchForecastHistoryByIp = (startDate, endDate) => {
 export const fetchForecastHistoryByCoordinates = (latitude, longitude, startDate, endDate) => {
     return async (dispatch) => {
         dispatch(setIsFetchingForecastHistory(true)); // Set the fetching flag to true to indicate the state is being fetched
-        if(!latitude || !longitude)
-        {
+        if (!latitude || !longitude) {
             dispatch(setIsFetchingForecastHistory(false));
             console.log("Canceling dispatch latitude or longitude is null.");
             return;
         }
-        console.log("REQUEST: " + `${LOCAL_API_URL}/history/coordinates?lat=` + latitude + "&lon=" + longitude + "&start=" + startDate +"&end=" + endDate);
+        console.log("REQUEST: " + `${LOCAL_API_URL}/history/coordinates?lat=` + latitude + "&lon=" + longitude + "&start=" + startDate + "&end=" + endDate);
         try {
-            const response = await axios.get(`${LOCAL_API_URL}/history/coordinates?lat=` + latitude + "&lon=" + longitude + "&start=" + startDate +"&end=" + endDate); // Perform the asynchronous operation to fetch the location
+            const response = await axios.get(`${LOCAL_API_URL}/history/coordinates?lat=` + latitude + "&lon=" + longitude + "&start=" + startDate + "&end=" + endDate); // Perform the asynchronous operation to fetch the location
             const forecast = response.data; // Extract the location data from the response
             console.log("Retrieved Data! Current Forecast History: ", forecast);
             dispatch(setForecastHistory(forecast)); // Dispatch an action to set the fetched location state in Redux

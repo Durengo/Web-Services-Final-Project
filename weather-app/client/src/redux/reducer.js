@@ -140,8 +140,8 @@ export const reducer = (state = initialState, action) => {
             };
         case SET_IS_FETCHING_MAP_COORDINATES:
             return {
-              ...state,
-              isFetchingMapCoordinates: action.payload,
+                ...state,
+                isFetchingMapCoordinates: action.payload,
             };
         case SET_MAP_COORDINATES_FIRST_TIME:
             return {
