@@ -82,3 +82,26 @@ export const fetchForecastHistoryByCoordinatesAhead = (latitude, longitude, star
         }
     };
 };
+
+export const fetchForecastHistoryByCoordinatesAndDays = (latitude, longitude, days) => {
+    return async (dispatch) => {
+        dispatch(setIsFetchingForecastHistory(true)); // Set the fetching flag to true to indicate the state is being fetched
+        if (!latitude || !longitude) {
+            dispatch(setIsFetchingForecastHistory(false));
+            console.log("Canceling dispatch latitude or longitude is null.");
+            return;
+        }
+        console.log("REQUEST: " + `${LOCAL_API_URL}/forecast/coordinates?lat=` + latitude + "&lon=" + longitude + "&days=" + days);
+        try {
+            const response = await axios.get(`${LOCAL_API_URL}/forecast/coordinates?lat=` + latitude + "&lon=" + longitude + "&days=" + days); // Perform the asynchronous operation to fetch the location
+            const forecast = response.data; // Extract the location data from the response
+            console.log("Retrieved Data! Current Forecast History: ", forecast);
+            dispatch(setForecastHistory(forecast)); // Dispatch an action to set the fetched location state in Redux
+        } catch (error) {
+            console.error("Error fetching weather information:", error);
+            dispatch(setForecastHistory(null)); // Set the fetching flag to false in case of an error
+        } finally {
+            dispatch(setIsFetchingForecastHistory(false));
+        }
+    };
+};

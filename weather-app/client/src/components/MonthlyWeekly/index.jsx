@@ -14,7 +14,10 @@ import {
     setMapCoordinatesFirstTime,
     setPreviousMapCoordinates
 } from "../../redux/actions/mapCoordinatesActions";
-import {fetchForecastHistoryByCoordinatesAhead} from "../../js/fetchForecastHistory";
+import {
+    fetchForecastHistoryByCoordinatesAhead,
+    fetchForecastHistoryByCoordinatesAndDays
+} from "../../js/fetchForecastHistory";
 
 function X2(props) {
     const dispatch = useDispatch();
@@ -107,8 +110,10 @@ function X2(props) {
             if (sessionUsingIp) {
                 //dispatch(fetchForecastHistoryByIp(`${formattedDate}`, `${formattedDateAhead}`));
             } else {
-                dispatch(fetchForecastHistoryByCoordinatesAhead(mapCoordinates.latitude, mapCoordinates.longitude, `${formattedDate}`, `${formattedDate}`));
+                //dispatch(fetchForecastHistoryByCoordinatesAhead(mapCoordinates.latitude, mapCoordinates.longitude, `${formattedDate}`, `${formattedDate}`));
                 // dispatch(fetchForecastHistoryByCoordinates(mapCoordinates.latitude, mapCoordinates.longitude, `${formattedDate}`, `${formattedDateAhead}`));
+                dispatch(fetchForecastHistoryByCoordinatesAndDays(mapCoordinates.latitude, mapCoordinates.longitude, 14));
+
             }
         }
     }, [dispatch, weatherInformation, isFetchingWeatherInformation, sessionDateToday, isUpdatingSessionDateToday]);

@@ -81,6 +81,8 @@ function DayForecast(props) {
 
     return (
         <div className="frame-50">
+            {console.log(`${hourlyData}`)}
+            {console.log(`${forecastHistory}`)}
             <div className="overlap-group50 inter-extra-bold-black-14px">
                 <div className="overlap-group51">
                     <div className="title-7-day-forecast inter-bold-black-20px">
