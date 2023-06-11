@@ -7,7 +7,7 @@ import DetailsComponent from "../Details";
 import CurrentConditionsComponent from "../CurrentConditions";
 import SliderComponent from "../Slider";
 import NavbarComponent from "../Navbar";
-import TestSliderComponent from "../TestSlider";
+
 
 // Scripts
 // import { getClientIP } from "../../js/getClientIP.js";
@@ -64,7 +64,7 @@ function WeatherMain(props) {
                 <DetailsComponent {...weatherMainData}/>
             </div>
 
-            <TestSliderComponent/>
+            <SliderComponent/>
             <div className="text-label-map">Map of weather conditions</div>
             <MapContainer />
         </div>

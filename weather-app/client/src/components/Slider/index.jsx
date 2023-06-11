@@ -1,69 +1,95 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import {useSelector} from "react-redux";
 
-function SliderComponent(props) {
-    const {
-        overlapGroup,
-        todayslabelforgrid,
-        partlyCloudIcon1,
-        partlyCloudIcon2,
-        partlyCloudIcon3,
-        partlyCloudIcon4,
-        partlyCloudIcon5,
-        partlyCloudIcon6,
-        sunnyIcon1,
-        sunnyIcon2,
-        cloudyN1,
-        cloudyN2,
-        mostlySunnyN1,
-        mostlySunnyN2,
-        time1,
-        time6,
-        time2,
-        time3,
-        time4,
-        time5,
-        time7,
-        time8,
-        time9,
-        time10,
-        time11,
-        time12,
-        spanText3,
-        spanText4,
-        spanText5,
-        spanText6,
-        spanText7,
-        spanText8,
-        spanText9,
-        spanText10,
-        spanText11,
-        spanText12,
-        spanText13,
-        spanText14,
-        spanText15,
-        spanText16,
-        spanText17,
-        spanText18,
-        spanText19,
-        spanText20,
-        spanText21,
-        spanText22,
-        spanText23,
-        spanText24,
-        spanText25,
-        spanText26,
-    } = props;
+function SliderComponent() {
+    const currentLocation = useSelector((state) => state.currentLocation);
+    const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
+    const weatherInformation = useSelector((state) => state.weatherInformation);
+    const isFetchingWeatherInformation = useSelector((state) => state.isFetchingWeatherInformation);
+    const forecastHistory = useSelector((state) => state.forecastHistory);
+    const isFetchingForecastHistory = useSelector((state) => state.isFetchingForecastHistory);
+
+    const [hourlyData, setHourlyData] = useState([]);
+
+    // const hourlyData = [];
+
+
+    useEffect(() => {
+        console.log("Forecast History: ", forecastHistory);
+        console.log("Forecast: ", forecastHistory.forecast);
+        console.log("Forecast Day: ", forecastHistory.forecast.forecastday[2]);
+        console.log("Forecast Hour: ", forecastHistory.forecast.forecastday[0].hour[0].time);
+        if (forecastHistory) {
+            const newHourlyData = [];
+            // console.log("SPLIT!: ", forecastHistory.forecast.forecastday[2]);
+
+            // const arraySize = forecastHistory.forecast.forecastday.length;
+            // const daySize = forecastHistory.forecast.forecastday.
+            for (let i = 0; i < forecastHistory.forecast.forecastday.length; i++) {
+                for (let k = 0; k < forecastHistory.forecast.forecastday[i].hour.length; k++)
+                {
+                    const hourData = {
+                        time: String(forecastHistory.forecast.forecastday[i].hour[k].time).split(" ")[1],
+                        weatherIcon: forecastHistory.forecast.forecastday[i].hour[k].condition.icon,
+                        degrees: forecastHistory.forecast.forecastday[i].hour[k].temp_c
+                    };
+                    newHourlyData.push(hourData);
+                }
+            }
+            setHourlyData(newHourlyData);
+        }
+    }, [forecastHistory]);
+
+    const responsive = {
+        // Define the responsive configurations for different screen sizes
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 12, // Number of items to show on desktop
+            slidesToSlide: 3, // Number of slides to scroll per action
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2, // Number of items to show on tablet
+            slidesToSlide: 2, // Number of slides to scroll per action
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1, // Number of items to show on mobile
+            slidesToSlide: 1, // Number of slides to scroll per action
+        },
+    };
+
+    if (isFetchingCurrentLocation || isFetchingWeatherInformation || isFetchingForecastHistory) {
+        return <div>LOADING...</div>;
+    }
 
     return (
-        <div className="hourly">
-            <div className="overlap-group12">
-                <div className="overlap-group" style={{ backgroundImage: `url(${overlapGroup})` }}>
-                    <div className="s-label bakbakone-normal-black-20px">{todayslabelforgrid}</div>
-                </div>
-                <img className="right-icon" src="/img/right-icon.svg" alt="Right-icon" />
-                <img className="left-icon" src="/img/left-icon.svg" alt="Left-icon" />
-            </div>
-        </div>
+            <Carousel
+                swipeable={false}
+                draggable={false}
+                showDots={false}
+                partialVisbile={false}
+                arrows={true}
+                centerMode={true}
+                infinite={true}
+
+                containerClass={"hourly"}
+                itemClass={"itemclass"}
+                responsive={responsive}>
+                {hourlyData.map((data, index) => (
+                    <div key={index}>
+                        <div className="time">{data.time}</div>
+                        <img
+                            className="weather-icon"
+                            src={data.weatherIcon}
+                            alt="Weather Icon"
+                        />
+                        <div className="degrees">{data.degrees}&deg;C</div>
+                    </div>
+                ))}
+            </Carousel>
     );
 }
 

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component">
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="fixed position of current degrees">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/Slider/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/Slider/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/TestSlider/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/index.jsx" afterDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +172,8 @@
       <workItem from="1686393650070" duration="7330000" />
       <workItem from="1686404758123" duration="1987000" />
       <workItem from="1686407504116" duration="19974000" />
-      <workItem from="1686437014588" duration="7782000" />
+      <workItem from="1686437014588" duration="8495000" />
+      <workItem from="1686470160918" duration="1702000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
       <created>1685023932871</created>
@@ -249,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686443634451</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed position of current degrees">
+      <created>1686445014733</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686445014733</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +299,7 @@
     <MESSAGE value="added more functionality for google map, circle with area is drawn on the map, also the circle is made somewhat scalable" />
     <MESSAGE value="fixed carousel, fixed intersection of current location with other elements" />
     <MESSAGE value="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component" />
+    <MESSAGE value="fixed position of current degrees" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed position of current degrees" />
   </component>
 </project>

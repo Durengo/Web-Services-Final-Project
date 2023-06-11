@@ -594,10 +594,11 @@
 .hourly {
     align-items: flex-end;
     display: flex;
-    height: 257px;
-    margin-right: 1.0px;
-    margin-top: 27px;
-    width: 1185px;
+    height: 17%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 62%;
 }
 
 .overlap-group12 {
@@ -618,23 +619,6 @@
     top: 0;
 }
 
-
-
-.right-icon {
-    height: 62px;
-    left: 1147px;
-    position: absolute;
-    top: 95px;
-    width: 22px;
-}
-
-.left-icon {
-    height: 62px;
-    left: 17px;
-    position: absolute;
-    top: 95px;
-    width: 22px;
-}
 
 .text-label-map {
     align-self: flex-start;
@@ -657,20 +641,7 @@
     object-fit: none;
     width: 1177px;
 }
-.testbtn {
-    margin-bottom: -1px;
-    margin-right: -5px;
-}
-.hourly1 {
-    align-items: flex-end;
-    display: flex;
-    height: 17%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    margin-top: 20px;
-    width: 62%;
-}
-.itemclass1 {
+.itemclass {
     font-family: var(--font-family-inter);
     font-size: 19px;
     font-weight: bold;
