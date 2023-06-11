@@ -1,27 +1,74 @@
-import React, {useEffect, useRef} from "react";
-import {Circle, GoogleMap, LoadScript} from "@react-google-maps/api";
-import React, { useState } from "react";
-import {useSelector} from "react-redux";
+import React, {useEffect, useRef, useState} from "react";
+import {Circle, GoogleMap} from "@react-google-maps/api";
+import {useDispatch, useSelector} from "react-redux";
+import {setMapCoordinates, setMapCoordinatesFirstTime} from "../../redux/actions/mapCoordinatesActions";
 
 const MapContainer = () => {
+    const dispatch = useDispatch();
+
     const currentLocation = useSelector((state) => state.currentLocation);
     const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
     const weatherInformation = useSelector((state) => state.weatherInformation);
     const isFetchingWeatherInformation = useSelector((state) => state.isFetchingWeatherInformation);
+    const mapCoordinates = useSelector((state) => state.mapCoordinates);
+    const isFetchingMapCoordinates = useSelector((state) => state.isFetchingMapCoordinates);
 
     const [circleCenter, setCircleCenter] = useState(null);
     const [isCircleVisible, setIsCircleVisible] = useState(true);
     const mapRef = useRef(null);
 
+    const firstTime = false;
+
+    // useEffect(() => {
+    //     if(currentLocation && !isFetchingCurrentLocation)
+    //     {
+    //         if(!currentLocation.location.latitude || !currentLocation.location.longitude)
+    //         {
+    //             // break;
+    //         }
+    //         else
+    //         {
+    //             console.log(`Current location: ${currentLocation.location.latitude}:${currentLocation.location.longitude}`)
+    //             // dispatch(setMapCoordinates(currentLocation.location.latitude, currentLocation.location.longitude));
+    //             setCircleCenter({
+    //                 lat: currentLocation.location.latitude,
+    //                 lng: currentLocation.location.longitude,
+    //             });
+    //             setIsCircleVisible(true);
+    //             // changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude);
+    //             // setCircleCenter({lat: mapCoordinates.latitude, lng: mapCoordinates.longitude});
+    //         }
+    //
+    //     }
+    // }, [dispatch, currentLocation, isFetchingCurrentLocation]);
+
+    // useEffect(() => {
+    //    if(circleCenter)
+    //    {
+    //        setCircleCenter(clickedCoordinates);
+    //        setIsCircleVisible(true);
+    //
+    //    }
+    // }, [circleCenter, currentLocation, clickedCoordinates]);
+    //
+
+
+
     useEffect(() => {
-        if(currentLocation)
+        if(mapCoordinates && !isFetchingMapCoordinates)
         {
-            setCircleCenter({
-                lat: currentLocation.location.latitude,
-                lng: currentLocation.location.longitude,
-            });
+            console.log(`Map Coordinates: ${mapCoordinates.latitude}:${mapCoordinates.longitude}`);
+            setCircleCenter({lat: mapCoordinates.latitude, lng: mapCoordinates.longitude});
+            setIsCircleVisible(true);
+            // const timeout = setTimeout(() => {
+            //     dispatch(changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
+            // }, 1000);
+            // dispatch(changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
         }
-    }, [currentLocation]);
+    }, [dispatch, mapCoordinates, isFetchingMapCoordinates]);
+
+
+
 
     // const [circleCenter, setCircleCenter] = useState({
     //     // lat: 55.1735998,
@@ -79,14 +126,52 @@ const MapContainer = () => {
     };
 
     const handleMapClick = (e) => {
-        const clickedLatLng = {
-            lat: e.latLng.lat(),
-            lng: e.latLng.lng(),
-        };
-        console.log(`${clickedLatLng.lat}:${clickedLatLng.lng}`);
-        setCircleCenter(clickedLatLng);
-        setIsCircleVisible(true);
+        // dispatch(setMapCoordinatesFirstTime(false));
+        const latitude = e.latLng.lat();
+        const longitude = e.latLng.lng();
+
+
+
+        console.log(`OnClick coordinates: ${latitude}:${longitude}`);
+        // setClickedCoordinates({
+        //     latitude: e.latLng.lat(),
+        //     longitude: e.latLng.lng(),
+        // });
+        // dispatch(setMapCoordinates(e.latLng.lat(), e.latLng.lng()));
+        dispatch(setMapCoordinates(latitude, longitude));
+        dispatch(setMapCoordinatesFirstTime(true));
+        // dispatch(setMapCoordinatesFirstTime(false));
+
+        // dispatch(changeCoordinates(latitude, longitude));
+        // mapCoordinates.latitude = e.latLng.lat();
+        // mapCoordinates.longitude = e.latLng.lng();
+
+        // setClickedCoordinatesLatitude(e.latLng.lat());
+        // setClickedCoordinatesLongitude(e.latLng.lng());
+
+
+        // setCircleCenter({lat: clickedCoordinates.latitude, lng: clickedCoordinates.longitude});
+        // setIsCircleVisible(true);
+
+
+        // const clickedLatLng = {
+        //     lat: e.latLng.lat(),
+        //     lng: e.latLng.lng(),
+        // };
+        // console.log(`${clickedLatLng.lat}:${clickedLatLng.lng}`);
+
+        // console.log(`${clickedCoordinates.latitude}:${clickedCoordinates.longitude}`);
+
+
+        // dispatch(setMapCoordinates({latitude: clickedLatLng.lat, longitude: clickedLatLng.lng}));
     };
+
+    // useEffect(() => {
+    //    if(circleCenter)
+    //    {
+    //
+    //    }
+    // });
 
     const handleMapLoad = (map) => {
         mapRef.current = map; // Store the map reference in the ref
@@ -94,8 +179,7 @@ const MapContainer = () => {
 
     const handleMapZoomChanged = () => {
         const zoomLevel = mapRef.current?.getZoom(); // Get the zoom level from the map reference
-        const circleRadius = calculateCircleRadius(zoomLevel);
-        circleOptions.radius = circleRadius;
+        circleOptions.radius = calculateCircleRadius(zoomLevel);
         setCircleCenter({ ...circleCenter }); // Trigger re-render
     };
 
