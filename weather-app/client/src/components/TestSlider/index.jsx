@@ -20,14 +20,14 @@ function TestSliderComponent() {
         { time: "2 AM", weatherIcon: "img/sunny-icon.png", degrees: 18 },
         { time: "12 AM", weatherIcon: "img/partly-cloud-icon.png", degrees: 20 },
         { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
-        { time: "1 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 19 },
+        { time: "2 AM", weatherIcon: "img/partly-cloud-icon.png", degrees: 20 },
+        { time: "3 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 21 },
+        { time: "4 AM", weatherIcon: "img/partly-cloud-icon.png", degrees: 22 },
+        { time: "5 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 23 },
+        { time: "6 AM", weatherIcon: "img/partly-cloud-icon.png", degrees: 24 },
+        { time: "7 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 25 },
+        { time: "8 AM", weatherIcon: "img/partly-cloud-icon.png", degrees: 26 },
+        { time: "9 AM", weatherIcon: "img/mostly-sunny-n-.png", degrees: 27 },
 
 
     ];
@@ -58,6 +58,7 @@ function TestSliderComponent() {
                 partialVisbile={false}
                 arrows={true}
                 centerMode={true}
+                infinite={true}
 
                 containerClass={"hourly1"}
                 itemClass={"itemclass1"}

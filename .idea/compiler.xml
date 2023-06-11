@@ -6,10 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="weather-app-server" />
+        <module name="weather-app-client" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="weather-app-client" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
