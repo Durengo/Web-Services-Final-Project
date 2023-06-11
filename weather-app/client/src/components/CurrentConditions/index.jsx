@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {setData} from "../../redux/actions/actions";
-import {fetchCurrentLocation} from "../../js/fetchCurrentLocation";
+import {fetchCurrentLocation, fetchCurrentLocationByIp} from "../../js/fetchCurrentLocation";
 import {convertToFahrenheit} from "../../js/conversion";
 import {SET_TEMPERATURE_UNIT, setTemperatureUnit} from "../../redux/actions/weatherUnits";
+import {setSessionUsingIp} from "../../redux/actions/session";
+import {fetchWeatherInformation} from "../../js/fetchWeatherInformation";
 
 function CurrentConditionsComponent(props) {
     const dispatch = useDispatch();
-    const currentLocation = useSelector((state) => state.currentLocation);
     const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
     const weatherInformation = useSelector((state) => state.weatherInformation);
     const isFetchingWeatherInformation = useSelector((state) => state.isFetchingWeatherInformation);
@@ -15,6 +15,7 @@ function CurrentConditionsComponent(props) {
     const [displayTemperature, setDisplayTemperature] = useState("");
     const [feelsLikeTemperature, setFeelsLikeTemperature] = useState("");
     const temperatureUnit = useSelector((state) => state.temperatureUnit);
+    const sessionUsingIp = useSelector((state) => state.sessionUsingIp);
 
     // useEffect(() => {
     //     console.log("TESTING HOOK");
@@ -35,6 +36,16 @@ function CurrentConditionsComponent(props) {
     //         dispatch(setData(newData));
     //     }, 1000);
     // }, [dispatch]);
+
+    // useEffect(() => {
+    //     if (sessionUsingIp) {
+    //         dispatch(fetchCurrentLocationByIp());
+    //
+    //         // dispatch(setMapCoordinates(currentLocation.location.latitude, currentLocation.location.longitude));
+    //         console.log("ONE CALL ONLY");
+    //         dispatch(setSessionUsingIp(false));
+    //     }
+    // }, []);
 
     useEffect(() => {
         if (weatherInformation.current) {
@@ -58,7 +69,7 @@ function CurrentConditionsComponent(props) {
         spanText2,
     } = props;
 
-    if (isFetchingCurrentLocation || isFetchingWeatherInformation) {
+    if (!weatherInformation || isFetchingCurrentLocation || isFetchingWeatherInformation) {
         return <div>LOADING...</div>;
     }
 
@@ -83,9 +94,9 @@ function CurrentConditionsComponent(props) {
             <div className="overlap-group11">
                 <div className="overlap-group10">
                     <div className="today-container">
-                        <h1 className="city-today">{currentLocation.city.name}</h1>
+                        <h1 className="city-today">{weatherInformation.location.name}</h1>
                         <div
-                            className="current-region-today">{currentLocation.area.name + ", " + currentLocation.country.name}</div>
+                            className="current-region-today">{weatherInformation.location.region + ", " + weatherInformation.location.country}</div>
                     </div>
                     <div className="condition-container">
                         <img
