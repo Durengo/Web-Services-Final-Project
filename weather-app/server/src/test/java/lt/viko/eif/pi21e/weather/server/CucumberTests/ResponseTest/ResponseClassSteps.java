@@ -1,9 +1,9 @@
-package lt.viko.eif.pi21e.weather.server.CucumberTests;
+package lt.viko.eif.pi21e.weather.server.CucumberTests.ResponseTest;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lt.viko.eif.pi21e.weather.server.rest.responses.ResponseClass;
+import lt.viko.eif.pi21e.weather.server.responses.ResponseClass;
 import org.junit.Assert;
 
 /**
