@@ -45,9 +45,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="zerpollo &lt;93397349+zerpollo@users.noreply.github.com&gt;" />
+        <option value="zerpollo" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="backend-rest-database-working" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,6 +67,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2QHuKkHXJ2PNOzTBuJZRGHH1j1I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -83,13 +92,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zerpollo\WebstormProjects\Web-Services-Final-Project\weather-app\client\src\components\Details" />
       <recent name="C:\Users\Nazar\IdeaProjects\Web-Services-Final-Project\weather-app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nazar\IdeaProjects\Web-Services-Final-Project\weather-app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lt.viko.eif.pi21e.weather.server.rest.api.weatherapi.test.MainTest" />
       <module name="weather-app-server" />
@@ -116,6 +126,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="install" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/weather-app/client/src/package.json" />
+      <command value="install" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/weather-app/client/src/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2">
+        <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/weather-app/client/src/package.json" />
+          <command value="install" />
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="npm.install" />
+      <item itemvalue="npm.start" />
+    </list>
     <configuration name="Test.testDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weather-app-server" />
       <extension name="coverage">
@@ -150,6 +185,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685022766159</updated>
+      <workItem from="1685479961796" duration="1594000" />
+      <workItem from="1685521788997" duration="6581000" />
+      <workItem from="1685814188425" duration="9344000" />
+      <workItem from="1685888417773" duration="10140000" />
+      <workItem from="1685952488409" duration="5888000" />
+      <workItem from="1685975826104" duration="6838000" />
+      <workItem from="1685988733204" duration="1431000" />
+      <workItem from="1685990240328" duration="5037000" />
+      <workItem from="1686041224490" duration="4817000" />
+      <workItem from="1686214525397" duration="6226000" />
+      <workItem from="1686393650070" duration="7330000" />
+      <workItem from="1686404758123" duration="1987000" />
+      <workItem from="1686407504116" duration="19974000" />
+      <workItem from="1686437014588" duration="8495000" />
+      <workItem from="1686470160918" duration="1702000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
       <created>1685023932871</created>
@@ -244,8 +294,14 @@
     <MESSAGE value="added readme" />
     <MESSAGE value="??" />
     <MESSAGE value="Added history" />
-    <MESSAGE value="Changes by Nazar" />
-    <MESSAGE value="Some new classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some new classes" />
+    <MESSAGE value="centered page, centered and moved google map api" />
+    <MESSAGE value="separated page into appropriate components" />
+    <MESSAGE value="tried to add responsiveness to the page but no success. Added dependency for the slider &quot;react-responsive-carousel&quot;. Added test component &quot;TestSlider&quot; to test the newly added dependency." />
+    <MESSAGE value="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component" />
+    <MESSAGE value="added more functionality for google map, circle with area is drawn on the map, also the circle is made somewhat scalable" />
+    <MESSAGE value="fixed carousel, fixed intersection of current location with other elements" />
+    <MESSAGE value="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component" />
+    <MESSAGE value="fixed position of current degrees" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed position of current degrees" />
   </component>
 </project>

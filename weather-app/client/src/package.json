@@ -1,0 +1,37 @@
+{
+  "name": "weather-app",
+  "version": "0.0.1a",
+  "main": "js/index.js",
+  "description": "client for REST application",
+  "scripts": {
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html --public-url ./ --no-scope-hoist"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.18.1",
+    "axios": "^1.4.0",
+    "babel": "^6.23.0",
+    "bootstrap": "^5.3.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-dimmer": "^1.0.7",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
+    "react-redux": "^8.0.7",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^5.3.4",
+    "react-social-login-buttons": "^3.9.1",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "redux-toolkit": "^1.1.2",
+    "suncalc": "^1.9.0",
+    "react-multi-carousel": "^2.8.4"
+  },
+  "devDependencies": {
+    "browserslist": "^4.21.5",
+    "buffer": "^6.0.3",
+    "parcel": "^2.9.1",
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "process": "^0.11.10"
+  }
+}

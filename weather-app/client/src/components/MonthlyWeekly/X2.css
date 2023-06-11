@@ -1,0 +1,1744 @@
+.x2 {
+  align-items: center;
+  background-color: #c4d7cf;
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 1500px;
+  padding: 49px 0;
+  width: 1440px;
+}
+
+.flex-row {
+  align-items: center;
+  display: flex;
+  margin-left: 15.0px;
+  min-width: 1185px;
+}
+
+.today-date {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 24px;
+  min-width: 116px;
+  white-space: nowrap;
+}
+
+.today-button {
+  align-items: flex-start;
+  border-radius: 5px;
+  display: flex;
+  height: 25px;
+  margin-left: 277px;
+  margin-top: 3.0px;
+  overflow: hidden;
+  width: 110px;
+}
+
+.overlap-group12 {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: 27px;
+  margin-top: -2px;
+  min-width: 110px;
+  padding: 0 20px;
+}
+
+.today {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 17px;
+  text-align: center;
+  text-shadow: 0px 4px 4px #00000040;
+  width: 69px;
+}
+
+.weekmo-button {
+  align-items: flex-start;
+  border-radius: 5px;
+  box-shadow: inset 0px 4px 4px #00000040;
+  display: flex;
+  height: 25px;
+  margin-left: 31px;
+  margin-top: 3.0px;
+  overflow: hidden;
+  width: 110px;
+}
+
+.overlap-group13 {
+  align-items: center;
+  background-color: blue;
+  display: flex;
+  height: 27px;
+  margin-top: -2px;
+  min-width: 110px;
+  padding: 0 4px;
+}
+
+.today-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 17px;
+  min-width: 100px;
+  text-align: center;
+  text-shadow: 0px 4px 4px #00000040;
+}
+
+.profile-circle {
+  height: 40px;
+  margin-left: 446px;
+  width: 40px;
+}
+
+.settings {
+  height: 40px;
+  margin-left: 15px;
+  width: 40px;
+}
+
+.line-2 {
+  height: 1px;
+  margin-top: 4px;
+  width: 1200px;
+}
+
+.flex-row-1 {
+  align-items: flex-end;
+  display: flex;
+  gap: 9px;
+  margin-right: 2.0px;
+  margin-top: 4px;
+  min-width: 1186px;
+}
+
+.current-conditions {
+  align-items: flex-end;
+  display: flex;
+  height: 310px;
+  overflow: hidden;
+  padding: 0 4px;
+  width: 653px;
+}
+
+.overlap-group11 {
+  height: 340px;
+  margin-bottom: -35px;
+  position: relative;
+  width: 627px;
+}
+
+.overlap-group10 {
+  height: 305px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 627px;
+}
+
+.today-container {
+  height: 105px;
+  left: 0;
+  position: absolute;
+  top: 31px;
+  width: 275px;
+}
+
+.city-today {
+  left: 0;
+  letter-spacing: 7.10px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.current-region-today {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 81px;
+  white-space: nowrap;
+}
+
+.condition-container {
+  height: 305px;
+  left: 120px;
+  position: absolute;
+  top: 0;
+  width: 507px;
+}
+
+.condition-icon-today {
+  height: 305px;
+  left: 194px;
+  position: absolute;
+  top: 0;
+  width: 313px;
+}
+
+.feels-like-condition-today {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0px 4px 4px #00000040;
+  top: 268px;
+  white-space: nowrap;
+}
+
+.text-condition-today {
+  left: 120px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0px 4px 4px #00000040;
+  top: 244px;
+  white-space: nowrap;
+}
+
+.flex-row-2 {
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  height: 101px;
+  left: 1px;
+  min-width: 112px;
+  position: absolute;
+  top: 239px;
+}
+
+.temperature-today {
+  height: 101px;
+  letter-spacing: 3.00px;
+  line-height: normal;
+  text-align: center;
+  width: 103px;
+}
+
+.line-1-1 {
+  height: 53px;
+  margin-top: 9px;
+  width: 1px;
+}
+
+.details {
+  align-items: flex-start;
+  background-color: var(--cultured-pearl);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 294px;
+  overflow: hidden;
+  padding: 11px 23px;
+  width: 524px;
+}
+
+.flex-row-3 {
+  align-items: flex-end;
+  display: flex;
+  height: 85px;
+  margin-left: 3px;
+  min-width: 426px;
+}
+
+.flex-col {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 85px;
+  width: 84px;
+}
+
+.details-label {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 28px;
+}
+
+.realfeel-container {
+  align-items: flex-start;
+  display: flex;
+  gap: 6px;
+  margin-top: 7px;
+  min-width: 84px;
+}
+
+.real-feel-label-today {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: 1px;
+  min-height: 9px;
+  white-space: nowrap;
+  width: 60px;
+}
+
+.real-feel-icon-today {
+  height: 20px;
+  width: 18px;
+}
+
+.real-feel-condition-today {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: 1px;
+  min-height: 29px;
+}
+
+.overlap-group4 {
+  height: 49px;
+  margin-left: 81px;
+  position: relative;
+  width: 106px;
+}
+
+.ontoday-container-1 {
+  height: 48px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 106px;
+}
+
+.wind-icon-today {
+  height: 20px;
+  left: 40px;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.wind-condition-today {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 19px;
+}
+
+.wind-label-today {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 34px;
+}
+
+.uvindex-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 70px;
+  min-height: 49px;
+  width: 60px;
+}
+
+.uv-index-label-today {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 10px;
+  white-space: nowrap;
+}
+
+.uv-index-condition-today {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 29px;
+}
+
+.icon-brightness {
+  align-self: center;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 9.0px;
+  width: 20px;
+}
+
+.flex-row-4 {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 3px;
+  margin-top: 19px;
+  min-width: 444px;
+}
+
+.humidity-label-today {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 9px;
+  white-space: nowrap;
+  width: 59px;
+}
+
+.humidity-icon-today {
+  height: 20px;
+  margin-left: 6px;
+  width: 20px;
+}
+
+.visibility-label-today {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 80px;
+  min-height: 10px;
+  white-space: nowrap;
+  width: 55px;
+}
+
+.visibility-icon-today {
+  align-self: center;
+  height: 13px;
+  margin-left: 5px;
+  margin-top: 1.0px;
+  width: 20px;
+}
+
+.precipitation-label-today {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 96px;
+  min-height: 10px;
+  white-space: nowrap;
+  width: 83px;
+}
+
+.precipitation-icon-today {
+  align-self: center;
+  height: 18px;
+  margin-left: 2px;
+  width: 18px;
+}
+
+.conditiontoday-container {
+  align-items: flex-start;
+  display: flex;
+  height: 29px;
+  margin-left: 3px;
+  margin-top: 8px;
+  min-width: 430px;
+}
+
+.humidity-condition-today {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 29px;
+  min-width: 33px;
+}
+
+.visibility-condition-today {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 132px;
+  min-height: 29px;
+  min-width: 69px;
+}
+
+.precipitation-condition-today {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 107px;
+  min-height: 29px;
+}
+
+.overlap-group-container {
+  align-items: flex-start;
+  display: flex;
+  margin-top: 23px;
+  min-width: 443px;
+}
+
+.overlap-group7 {
+  height: 50px;
+  position: relative;
+  width: 124px;
+}
+
+.pressure-container {
+  height: 49px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 124px;
+}
+
+.pressure-icon-today {
+  height: 18px;
+  left: 67px;
+  position: absolute;
+  top: 0;
+  width: 18px;
+}
+
+.pressure-condition-today {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 17px;
+  width: 124px;
+}
+
+.pressure-label-today {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 58px;
+}
+
+.overlap-group6 {
+  height: 46px;
+  margin-left: 44px;
+  position: relative;
+  width: 99px;
+}
+
+.ontoday-container {
+  height: 46px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 99px;
+}
+
+.x-condition-today {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 18px;
+  white-space: nowrap;
+  width: 99px;
+}
+
+.x-icon-today {
+  height: 19px;
+  left: 50px;
+  position: absolute;
+  top: 0;
+  width: 25px;
+}
+
+.place {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.overlap-group5 {
+  height: 46px;
+  margin-left: 77px;
+  margin-top: 1px;
+  position: relative;
+  width: 99px;
+}
+
+.place-1 {
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 46px;
+}
+
+.frame-container {
+  align-items: flex-start;
+  display: flex;
+  gap: 29px;
+  margin-right: 5.0px;
+  margin-top: 31px;
+  min-width: 1189px;
+}
+
+.frame-1 {
+  align-items: flex-start;
+  display: flex;
+  margin-top: 5px;
+  width: 383px;
+}
+
+.overlap-group14 {
+  border-radius: 30px;
+  height: 730px;
+  margin-left: 2px;
+  position: relative;
+  width: 381px;
+}
+
+.overlap-group {
+  align-items: flex-start;
+  background-color: var(--cultured-pearl);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  min-height: 730px;
+  padding: 19px 0;
+  position: absolute;
+  top: 0;
+  width: 381px;
+}
+
+.title-7-day-forecast {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 35px;
+  min-height: 24px;
+  white-space: nowrap;
+}
+
+.today-2 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 38px;
+  margin-top: 54px;
+  min-height: 17px;
+  width: 48px;
+}
+
+.line-6 {
+  align-self: center;
+  height: 1px;
+  margin-left: 1.0px;
+  margin-top: 36px;
+  width: 310px;
+}
+
+.tue {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 39px;
+  margin-top: 42px;
+  min-height: 17px;
+  width: 30px;
+}
+
+.line {
+  align-self: center;
+  height: 1px;
+  margin-left: 1.0px;
+  margin-top: 38px;
+  width: 310px;
+}
+
+.wed {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 39px;
+  margin-top: 41px;
+  min-height: 17px;
+  width: 30px;
+}
+
+.thu {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 39px;
+  margin-top: 39px;
+  min-height: 17px;
+  width: 31px;
+}
+
+.line-1 {
+  align-self: center;
+  height: 1px;
+  margin-left: 1.0px;
+  margin-top: 41px;
+  width: 310px;
+}
+
+.fri {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 38px;
+  margin-top: 38px;
+  min-height: 17px;
+  width: 30px;
+}
+
+.sat {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 39px;
+  margin-top: 38px;
+  min-height: 17px;
+  width: 29px;
+}
+
+.line-11 {
+  align-self: center;
+  height: 1px;
+  margin-left: 1.0px;
+  margin-top: 42px;
+  width: 310px;
+}
+
+.place-2 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: 39px;
+  margin-top: 37px;
+  min-height: 17px;
+  width: 31px;
+}
+
+.x1day-temp {
+  left: 281px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 94px;
+}
+
+.x2day-temp {
+  left: 281px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 190px;
+}
+
+.x3day-temp {
+  left: 281px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 286px;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.x4day-temp {
+  left: 281px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 382px;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.x5day-temp {
+  left: 280px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 480px;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.x6day-temp {
+  left: 281px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 573px;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.x7day-temp {
+  left: 280px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 669px;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.sunny {
+  left: 174px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 94px;
+  white-space: nowrap;
+  width: 44px;
+}
+
+.cloudy {
+  left: 171px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 190px;
+  white-space: nowrap;
+  width: 50px;
+}
+
+.cloudy-1 {
+  left: 171px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 381px;
+  white-space: nowrap;
+  width: 50px;
+}
+
+.rainy {
+  left: 177px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 476px;
+  width: 39px;
+}
+
+.rainy-1 {
+  left: 177px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 572px;
+  white-space: nowrap;
+  width: 39px;
+}
+
+.rainy-2 {
+  left: 177px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 668px;
+  white-space: nowrap;
+  width: 39px;
+}
+
+.cloudy-2 {
+  left: 171px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 285px;
+  width: 50px;
+}
+
+.week-icons {
+  height: 615px;
+  left: 109px;
+  position: absolute;
+  top: 86px;
+  width: 41px;
+}
+
+.frame-2 {
+  align-items: flex-end;
+  display: flex;
+  height: 932px;
+  padding: 0 1px;
+  width: 777px;
+}
+
+.overlap-group15 {
+  border-radius: 30px;
+  height: 927px;
+  position: relative;
+  width: 770px;
+}
+
+.overlap-group-1 {
+  align-items: flex-start;
+  background-color: var(--cultured-pearl);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  left: 0;
+  min-height: 927px;
+  padding: 19px 40px;
+  position: absolute;
+  top: 0;
+  width: 770px;
+}
+
+.month-container {
+  align-items: flex-end;
+  display: flex;
+  gap: 433px;
+  height: 24px;
+  margin-left: 3px;
+  min-width: 664px;
+}
+
+.title-month-forecast {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 24px;
+  min-width: 191px;
+  white-space: nowrap;
+}
+
+.title-month {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 22px;
+  min-width: 40px;
+}
+
+.line-container {
+  height: 797px;
+  position: relative;
+  width: 677px;
+}
+
+.line-21 {
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 150px;
+  width: 672px;
+}
+
+.line-19 {
+  height: 2px;
+  left: 7px;
+  position: absolute;
+  top: 324px;
+  width: 664px;
+}
+
+.line-20 {
+  height: 1px;
+  left: 8px;
+  position: absolute;
+  top: 491px;
+  width: 664px;
+}
+
+.line-22 {
+  height: 1px;
+  left: 13px;
+  position: absolute;
+  top: 661px;
+  width: 664px;
+}
+
+.line-13 {
+  height: 797px;
+  left: 89px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.line-14 {
+  height: 797px;
+  left: 286px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.line-16 {
+  height: 797px;
+  left: 187px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.line-15 {
+  height: 797px;
+  left: 482px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.line-18 {
+  height: 797px;
+  left: 580px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.line-17 {
+  height: 797px;
+  left: 384px;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.x1day-condition {
+  height: 74px;
+  left: 46px;
+  position: absolute;
+  top: 122px;
+  width: 76px;
+}
+
+.x8day-condition {
+  height: 74px;
+  left: 46px;
+  position: absolute;
+  top: 284px;
+  width: 76px;
+}
+
+.x15day-condition {
+  height: 74px;
+  left: 46px;
+  position: absolute;
+  top: 460px;
+  width: 76px;
+}
+
+.x22day-condition {
+  height: 74px;
+  left: 46px;
+  position: absolute;
+  top: 623px;
+  width: 76px;
+}
+
+.x2day-condition {
+  height: 74px;
+  left: 139px;
+  position: absolute;
+  top: 122px;
+  width: 76px;
+}
+
+.x9day-condition {
+  height: 74px;
+  left: 139px;
+  position: absolute;
+  top: 284px;
+  width: 76px;
+}
+
+.x16day-condition {
+  height: 74px;
+  left: 139px;
+  position: absolute;
+  top: 460px;
+  width: 76px;
+}
+
+.x23day-condition {
+  height: 74px;
+  left: 139px;
+  position: absolute;
+  top: 623px;
+  width: 76px;
+}
+
+.x3day-condition {
+  height: 74px;
+  left: 241px;
+  position: absolute;
+  top: 124px;
+  width: 76px;
+}
+
+.x10day-condition {
+  height: 74px;
+  left: 241px;
+  position: absolute;
+  top: 286px;
+  width: 76px;
+}
+
+.x17day-condition {
+  height: 74px;
+  left: 241px;
+  position: absolute;
+  top: 462px;
+  width: 76px;
+}
+
+.x24day-condition {
+  height: 74px;
+  left: 241px;
+  position: absolute;
+  top: 625px;
+  width: 76px;
+}
+
+.x4day-condition {
+  height: 74px;
+  left: 340px;
+  position: absolute;
+  top: 122px;
+  width: 76px;
+}
+
+.x11day-condition {
+  height: 74px;
+  left: 340px;
+  position: absolute;
+  top: 284px;
+  width: 76px;
+}
+
+.x18day-condition {
+  height: 74px;
+  left: 340px;
+  position: absolute;
+  top: 460px;
+  width: 76px;
+}
+
+.x5day-condition {
+  height: 74px;
+  left: 436px;
+  position: absolute;
+  top: 122px;
+  width: 76px;
+}
+
+.x12day-condition {
+  height: 74px;
+  left: 436px;
+  position: absolute;
+  top: 284px;
+  width: 76px;
+}
+
+.x19day-condition {
+  height: 74px;
+  left: 436px;
+  position: absolute;
+  top: 460px;
+  width: 76px;
+}
+
+.x6day-condition {
+  height: 74px;
+  left: 534px;
+  position: absolute;
+  top: 122px;
+  width: 76px;
+}
+
+.x13day-condition {
+  height: 74px;
+  left: 534px;
+  position: absolute;
+  top: 284px;
+  width: 76px;
+}
+
+.x20day-condition {
+  height: 74px;
+  left: 534px;
+  position: absolute;
+  top: 460px;
+  width: 76px;
+}
+
+.x7day-condition {
+  height: 74px;
+  left: 642px;
+  position: absolute;
+  top: 122px;
+  width: 76px;
+}
+
+.x14day-condition {
+  height: 74px;
+  left: 642px;
+  position: absolute;
+  top: 284px;
+  width: 76px;
+}
+
+.x20day-condition-1 {
+  height: 74px;
+  left: 642px;
+  position: absolute;
+  top: 460px;
+  width: 76px;
+}
+
+.x25day-condition {
+  height: 74px;
+  left: 339px;
+  position: absolute;
+  top: 623px;
+  width: 76px;
+}
+
+.x26day-condition {
+  height: 74px;
+  left: 435px;
+  position: absolute;
+  top: 623px;
+  width: 76px;
+}
+
+.x27day-condition {
+  height: 74px;
+  left: 533px;
+  position: absolute;
+  top: 623px;
+  width: 76px;
+}
+
+.x28day-condition {
+  height: 74px;
+  left: 641px;
+  position: absolute;
+  top: 623px;
+  width: 76px;
+}
+
+.x29day-condition {
+  height: 74px;
+  left: 47px;
+  position: absolute;
+  top: 791px;
+  width: 76px;
+}
+
+.x30day-condition {
+  height: 74px;
+  left: 140px;
+  position: absolute;
+  top: 791px;
+  width: 76px;
+}
+
+.x31day-condition {
+  height: 74px;
+  left: 242px;
+  position: absolute;
+  top: 793px;
+  width: 76px;
+}
+
+.x7day_temp {
+  left: 657px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 205px;
+}
+
+.x14day_temp {
+  left: 657px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 367px;
+}
+
+.x21day_temp {
+  left: 657px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 543px;
+}
+
+.x6day_temp {
+  left: 546px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 205px;
+}
+
+.x13day_temp {
+  left: 546px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 367px;
+}
+
+.x20day_temp {
+  left: 546px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 543px;
+}
+
+.x4day_temp {
+  left: 352px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 205px;
+}
+
+.x11day_temp {
+  left: 352px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 367px;
+}
+
+.x18day_temp {
+  left: 352px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 543px;
+}
+
+.x3day_temp {
+  left: 255px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 205px;
+}
+
+.x10day_temp {
+  left: 255px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 367px;
+}
+
+.x17day_temp {
+  left: 255px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 543px;
+}
+
+.x24day_temp {
+  left: 255px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 706px;
+}
+
+.x2day_temp {
+  left: 153px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 205px;
+}
+
+.x9day_temp {
+  left: 153px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 367px;
+}
+
+.x16day_temp {
+  left: 153px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 543px;
+}
+
+.x23day_temp {
+  left: 153px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 706px;
+}
+
+.x1day_temp {
+  left: 55px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 205px;
+}
+
+.x8day_temp {
+  left: 55px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 367px;
+}
+
+.x15day_temp {
+  left: 55px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 543px;
+}
+
+.x22day_temp {
+  left: 55px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 706px;
+}
+
+.x5day_temp {
+  left: 450px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 205px;
+}
+
+.x12day_temp {
+  left: 450px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 367px;
+}
+
+.x19day_temp {
+  left: 450px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 543px;
+}
+
+.x28day_temp {
+  left: 656px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 706px;
+}
+
+.x27day_temp {
+  left: 545px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 706px;
+}
+
+.x25day_temp {
+  left: 351px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 706px;
+}
+
+.x26day_temp {
+  left: 449px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 706px;
+}
+
+.x31day_temp {
+  left: 256px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 874px;
+}
+
+.x30day_temp {
+  left: 154px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 874px;
+}
+
+.x29day_temp {
+  left: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 874px;
+}
+
+.x1day {
+  left: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 88px;
+  width: 62px;
+}
+
+.x8day {
+  left: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 250px;
+  width: 62px;
+}
+
+.x15day {
+  left: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+}
+
+.x22day {
+  left: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 589px;
+}
+
+.x2day {
+  left: 150px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 88px;
+  width: 66px;
+}
+
+.x9day {
+  left: 150px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 250px;
+  width: 66px;
+}
+
+.x16day {
+  left: 150px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+  width: 66px;
+}
+
+.x23day {
+  left: 150px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 589px;
+}
+
+.x3day {
+  left: 250px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 88px;
+  width: 70px;
+}
+
+.x10day {
+  left: 250px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 250px;
+  width: 70px;
+}
+
+.x17day {
+  left: 250px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+  width: 70px;
+}
+
+.x24day {
+  left: 250px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 589px;
+  width: 70px;
+}
+
+.x4day {
+  left: 343px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 88px;
+  width: 67px;
+}
+
+.x11day {
+  left: 343px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 250px;
+  width: 67px;
+}
+
+.x18day {
+  left: 343px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+  width: 67px;
+}
+
+.x5day {
+  left: 444px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 88px;
+  width: 67px;
+}
+
+.x12day {
+  left: 444px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 250px;
+  width: 67px;
+}
+
+.x19day {
+  left: 444px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+  width: 67px;
+}
+
+.x6day {
+  left: 542px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 88px;
+  width: 67px;
+}
+
+.x13day {
+  left: 542px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 250px;
+  width: 67px;
+}
+
+.x20day {
+  left: 542px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+  width: 67px;
+}
+
+.x7day {
+  left: 650px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 88px;
+  width: 66px;
+}
+
+.x14day {
+  left: 650px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 250px;
+  width: 66px;
+}
+
+.x21day {
+  left: 650px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 426px;
+  width: 66px;
+}
+
+.x25day {
+  left: 342px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 589px;
+  width: 67px;
+}
+
+.x26day {
+  left: 443px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 589px;
+  width: 67px;
+}
+
+.x27day {
+  left: 541px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 589px;
+  width: 67px;
+}
+
+.x28day {
+  left: 649px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 589px;
+}
+
+.x29day {
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 757px;
+}
+
+.x30day {
+  left: 151px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 757px;
+}
+
+.x31day {
+  left: 251px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 757px;
+  width: 70px;
+}
+
