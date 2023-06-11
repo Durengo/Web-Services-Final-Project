@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {Circle, GoogleMap, LoadScript} from "@react-google-maps/api";
 import React, { useState } from "react";
 import {useSelector} from "react-redux";
@@ -9,12 +9,28 @@ const MapContainer = () => {
     const weatherInformation = useSelector((state) => state.weatherInformation);
     const isFetchingWeatherInformation = useSelector((state) => state.isFetchingWeatherInformation);
 
-    const [circleCenter, setCircleCenter] = useState({
-        lat: 55.1735998,
-        lng: 23.8948016,
-    });
+    const [circleCenter, setCircleCenter] = useState(null);
     const [isCircleVisible, setIsCircleVisible] = useState(true);
     const mapRef = useRef(null);
+
+    useEffect(() => {
+        if(currentLocation)
+        {
+            setCircleCenter({
+                lat: currentLocation.location.latitude,
+                lng: currentLocation.location.longitude,
+            });
+        }
+    }, [currentLocation]);
+
+    // const [circleCenter, setCircleCenter] = useState({
+    //     // lat: 55.1735998,
+    //     // lng: 23.8948016,
+    //     lat: currentLocation.location.latitude,
+    //     lng: currentLocation.location.longitude,
+    // });
+    // const [isCircleVisible, setIsCircleVisible] = useState(true);
+    // const mapRef = useRef(null);
 
     const mapStyles = {
         height: "400px",
@@ -67,6 +83,7 @@ const MapContainer = () => {
             lat: e.latLng.lat(),
             lng: e.latLng.lng(),
         };
+        console.log(`${clickedLatLng.lat}:${clickedLatLng.lng}`);
         setCircleCenter(clickedLatLng);
         setIsCircleVisible(true);
     };
@@ -82,9 +99,11 @@ const MapContainer = () => {
         setCircleCenter({ ...circleCenter }); // Trigger re-render
     };
 
-    return (
-        <LoadScript googleMapsApiKey="AIzaSyDK7JtguLvN8BXLvIVX3tb1fwoAjenC9Nc" language="lt">
+    if (isFetchingCurrentLocation || isFetchingWeatherInformation) {
+        return <div>LOADING...</div>;
+    }
 
+    return (
             <GoogleMap
                 mapContainerStyle={mapStyles}
                 zoom={13}
@@ -95,7 +114,6 @@ const MapContainer = () => {
             >
                 {isCircleVisible && <Circle options={circleOptions} />}
             </GoogleMap>
-        </LoadScript>
     );
 };
 

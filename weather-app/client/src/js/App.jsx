@@ -3,12 +3,15 @@ import "../css/App.css";
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import WeatherMain from "../components/WeatherMain";
+import {Circle, GoogleMap, LoadScript } from "@react-google-maps/api";
 function App() {
     return (
         <Router>
             <Switch>
                 <Route path="/:path(|1_160)">
+                    <LoadScript googleMapsApiKey="AIzaSyDK7JtguLvN8BXLvIVX3tb1fwoAjenC9Nc" language="lt">
                     <WeatherMain {...weatherMainData} />
+                    </LoadScript>
                 </Route>
             </Switch>
         </Router>
