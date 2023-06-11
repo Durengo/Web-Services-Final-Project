@@ -1,8 +1,14 @@
 import React, {useRef} from "react";
 import {Circle, GoogleMap, LoadScript} from "@react-google-maps/api";
 import React, { useState } from "react";
+import {useSelector} from "react-redux";
 
 const MapContainer = () => {
+    const currentLocation = useSelector((state) => state.currentLocation);
+    const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
+    const weatherInformation = useSelector((state) => state.weatherInformation);
+    const isFetchingWeatherInformation = useSelector((state) => state.isFetchingWeatherInformation);
+
     const [circleCenter, setCircleCenter] = useState({
         lat: 55.1735998,
         lng: 23.8948016,

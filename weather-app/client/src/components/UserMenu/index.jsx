@@ -21,16 +21,16 @@ const UserMenuComponent = ( { isUserMenuOpen } ) => {
     const [email, setEmail] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    useEffect(() => {
-        console.log("test effect");
-        console.log("current user = ", currentUser);
-        console.log("equals: ", currentUser.data.password === password);
-        console.log("passwords: ", currentUser.data.password, password);
-        if (currentUser !== null && currentUser.data.password === password) {
-            console.log("Login:", username, password);
-            setIsLoggedIn(true);
-        }
-    }, [currentUser]);
+    // useEffect(() => {
+    //     console.log("test effect");
+    //     console.log("current user = ", currentUser);
+    //     console.log("equals: ", currentUser.data.password === password);
+    //     console.log("passwords: ", currentUser.data.password, password);
+    //     if (currentUser !== null && currentUser.data.password === password) {
+    //         console.log("Login:", username, password);
+    //         setIsLoggedIn(true);
+    //     }
+    // }, [currentUser]);
 
     const handleLogin = async (e) => {
         e.preventDefault();

@@ -158,4 +158,100 @@ export const initialState = {
         },
     isFetchingCurrentUser: false,
     session: false,
+    forecastHistory:
+        {
+            forecast:
+                {
+                    forecastday:
+                        [{
+                            astro:
+                                {
+                                    moon_illumination: null,
+                                    moon_phase: null,
+                                    moonrise: null,
+                                    moonset: null,
+                                    sunrise: null,
+                                    sunset: null,
+                                },
+                            date: null,
+                            date_epoch: null,
+                            day:
+                                {
+                                    avghumidity: null,
+                                    avgtemp_c: null,
+                                    avgtemp_f: null,
+                                    avgvis_km: null,
+                                    avgvis_miles: null,
+                                    condition:
+                                        {
+                                            text: null,
+                                            icon: null,
+                                            code: null,
+                                        },
+                                    maxtemp_c: null,
+                                    maxtemp_f: null,
+                                    maxwind_kph: null,
+                                    maxwind_mph: null,
+                                    mintemp_c: null,
+                                    mintemp_f: null,
+                                    totalprecip_in: null,
+                                    totalprecip_mm: null,
+                                    uv: null,
+                                },
+                            hour:
+                                [{
+                                    chance_of_rain: null,
+                                    chance_of_snow: null,
+                                    cloud: null,
+                                    condition:
+                                        {
+                                            text: null,
+                                            icon: null,
+                                            code: null,
+                                        },
+                                    dewpoint_c: null,
+                                    dewpoint_f: null,
+                                    feelslike_c: null,
+                                    feelslike_f: null,
+                                    gust_kph: null,
+                                    gust_mph: null,
+                                    heatindex_c: null,
+                                    heatindex_f: null,
+                                    humidity: null,
+                                    is_day: null,
+                                    precip_in: null,
+                                    precip_mm: null,
+                                    pressure_in: null,
+                                    pressure_mb: null,
+                                    temp_c: null,
+                                    temp_f: null,
+                                    time: null,
+                                    time_epoch: null,
+                                    uv: null,
+                                    vis_km: null,
+                                    vis_miles: null,
+                                    will_it_rain: null,
+                                    will_it_snow: null,
+                                    wind_degree: null,
+                                    wind_dir: null,
+                                    wind_kph: null,
+                                    wind_mph: null,
+                                    windchill_c: null,
+                                    windchill_f: null,
+                                }],
+                        }],
+                },
+            location:
+                {
+                    country: null,
+                    lat: null,
+                    localtime: null,
+                    localtime_epoch: null,
+                    lon: null,
+                    name: null,
+                    region: null,
+                    tz_id: null,
+                },
+        },
+    isFetchingForecastHistory: false,
 };

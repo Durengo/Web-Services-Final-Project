@@ -77,6 +77,19 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 session: action.payload,
             };
+        case "SET_FORECAST_HISTORY":
+            return {
+                ...state,
+                forecastHistory: {
+                    ...state.forecastHistory,
+                    ...action.payload,
+                },
+            };
+        case "SET_IS_FETCHING_FORECAST_HISTORY":
+            return {
+                ...state,
+                isFetchingForecastHistory: action.payload,
+            };
         default:
             return state;
     }

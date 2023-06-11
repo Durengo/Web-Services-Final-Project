@@ -18,12 +18,17 @@ import {fetchCurrentLocation} from "../../js/fetchCurrentLocation";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchWeatherInformation} from "../../js/fetchWeatherInformation";
 import {getSunriseAndSunset} from "../../js/conversion";
+import {fetchForecastHistory} from "../../js/fetchForecastHistory";
 
 
 function WeatherMain(props) {
     const {} = props;
     const dispatch = useDispatch();
-
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    const formattedDate = `${year}-${month}-${day}`;
 
     const fetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
 
@@ -36,6 +41,13 @@ function WeatherMain(props) {
         if(!fetchingCurrentLocation || currentLocation !== null)
         {
             dispatch(fetchWeatherInformation(currentLocation.city.name));
+        }
+    }, [dispatch, currentLocation]);
+
+    useEffect(() => {
+        if(!fetchingCurrentLocation || currentLocation !== null)
+        {
+            dispatch(fetchForecastHistory(currentLocation.city.name, formattedDate, formattedDate));
         }
     }, [dispatch, currentLocation]);
 
