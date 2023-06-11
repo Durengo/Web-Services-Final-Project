@@ -10,6 +10,9 @@ function SliderComponent() {
     const isFetchingWeatherInformation = useSelector((state) => state.isFetchingWeatherInformation);
     const forecastHistory = useSelector((state) => state.forecastHistory);
     const isFetchingForecastHistory = useSelector((state) => state.isFetchingForecastHistory);
+    const temperatureUnit = useSelector((state) => state.temperatureUnit);
+    const sessionTodayDate = useSelector((state) => state.sessionDateToday);
+    const isUpdatingSessionDateToday= useSelector((state) => state.isUpdatingSessionDateToday);
 
     const [hourlyData, setHourlyData] = useState([]);
 
@@ -17,11 +20,11 @@ function SliderComponent() {
 
 
     useEffect(() => {
-        console.log("Forecast History: ", forecastHistory);
-        console.log("Forecast: ", forecastHistory.forecast);
-        console.log("Forecast Day: ", forecastHistory.forecast.forecastday[2]);
-        console.log("Forecast Hour: ", forecastHistory.forecast.forecastday[0].hour[0].time);
-        if (forecastHistory) {
+        // console.log("Forecast History: ", forecastHistory);
+        // console.log("Forecast: ", forecastHistory.forecast);
+        // console.log("Forecast Day: ", forecastHistory.forecast.forecastday[2]);
+        // console.log("Forecast Hour: ", forecastHistory.forecast.forecastday[0].hour[0].time);
+        if (forecastHistory && temperatureUnit !== null && sessionTodayDate && !isUpdatingSessionDateToday) {
             const newHourlyData = [];
             // console.log("SPLIT!: ", forecastHistory.forecast.forecastday[2]);
 
@@ -30,17 +33,30 @@ function SliderComponent() {
             for (let i = 0; i < forecastHistory.forecast.forecastday.length; i++) {
                 for (let k = 0; k < forecastHistory.forecast.forecastday[i].hour.length; k++)
                 {
-                    const hourData = {
-                        time: String(forecastHistory.forecast.forecastday[i].hour[k].time).split(" ")[1],
-                        weatherIcon: forecastHistory.forecast.forecastday[i].hour[k].condition.icon,
-                        degrees: forecastHistory.forecast.forecastday[i].hour[k].temp_c
-                    };
+                    let hourData
+                    if(temperatureUnit)
+                    {
+                        hourData = {
+                            time: String(forecastHistory.forecast.forecastday[i].hour[k].time).split(" ")[1],
+                            weatherIcon: forecastHistory.forecast.forecastday[i].hour[k].condition.icon,
+                            degrees: forecastHistory.forecast.forecastday[i].hour[k].temp_c
+                        };
+                    }
+                    else
+                    {
+                        hourData = {
+                            time: String(forecastHistory.forecast.forecastday[i].hour[k].time).split(" ")[1],
+                            weatherIcon: forecastHistory.forecast.forecastday[i].hour[k].condition.icon,
+                            degrees: forecastHistory.forecast.forecastday[i].hour[k].temp_f
+                        };
+                    }
+
                     newHourlyData.push(hourData);
                 }
             }
             setHourlyData(newHourlyData);
         }
-    }, [forecastHistory]);
+    }, [forecastHistory, temperatureUnit, sessionTodayDate, isUpdatingSessionDateToday]);
 
     const responsive = {
         // Define the responsive configurations for different screen sizes
@@ -86,7 +102,7 @@ function SliderComponent() {
                             src={data.weatherIcon}
                             alt="Weather Icon"
                         />
-                        <div className="degrees">{data.degrees}&deg;C</div>
+                        <div className="degrees">{data.degrees} {temperatureUnit === true ? "⁰C" : "F"}</div>
                     </div>
                 ))}
             </Carousel>
