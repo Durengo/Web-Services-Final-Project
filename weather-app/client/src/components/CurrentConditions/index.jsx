@@ -1,12 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchCurrentLocation, fetchCurrentLocationByIp} from "../../js/fetchCurrentLocation";
-import {convertToFahrenheit} from "../../js/conversion";
-import {SET_TEMPERATURE_UNIT, setTemperatureUnit} from "../../redux/actions/weatherUnits";
-import {setSessionUsingIp} from "../../redux/actions/session";
-import {fetchWeatherInformation} from "../../js/fetchWeatherInformation";
+import {setTemperatureUnit} from "../../redux/actions/weatherUnits";
 
-function CurrentConditionsComponent(props) {
+function CurrentConditionsComponent() {
     const dispatch = useDispatch();
     const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
     const weatherInformation = useSelector((state) => state.weatherInformation);
@@ -16,36 +12,6 @@ function CurrentConditionsComponent(props) {
     const [feelsLikeTemperature, setFeelsLikeTemperature] = useState("");
     const temperatureUnit = useSelector((state) => state.temperatureUnit);
     const sessionUsingIp = useSelector((state) => state.sessionUsingIp);
-
-    // useEffect(() => {
-    //     console.log("TESTING HOOK");
-    //
-    //     if (location) {
-    //         // const parsedLocation = JSON.parse(location);
-    //         // console.log(location);
-    //         console.log("IF TESTING HOOK");
-    //
-    //     }
-    // }, [location]);
-
-    // const data = useSelector((state) => state.data);
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         const newData = "Some Data";
-    //         dispatch(setData(newData));
-    //     }, 1000);
-    // }, [dispatch]);
-
-    // useEffect(() => {
-    //     if (sessionUsingIp) {
-    //         dispatch(fetchCurrentLocationByIp());
-    //
-    //         // dispatch(setMapCoordinates(currentLocation.location.latitude, currentLocation.location.longitude));
-    //         console.log("ONE CALL ONLY");
-    //         dispatch(setSessionUsingIp(false));
-    //     }
-    // }, []);
 
     useEffect(() => {
         if (weatherInformation.current) {
@@ -59,20 +25,11 @@ function CurrentConditionsComponent(props) {
         }
     }, [weatherInformation.current, temperatureUnit]);
 
-    const {
-        citytoday,
-        currentregiontoday,
-        conditionicontoday,
-        feelslikeconditiontoday,
-        textconditiontoday,
-        spanText1,
-        spanText2,
-    } = props;
-
     if (!weatherInformation || isFetchingCurrentLocation || isFetchingWeatherInformation) {
         return <div>LOADING...</div>;
     }
 
+    // Kept for internal conversion, but API provides conversion capabilities.
     const handleConversion = () => {
         if (temperatureUnit) {
             dispatch(setTemperatureUnit(false));
@@ -84,11 +41,7 @@ function CurrentConditionsComponent(props) {
             setFeelsLikeTemperature(weatherInformation.current.feelslike_c);
         }
     };
-    // setDisplayTemperature(weatherInformation.current.temp_c);
 
-    // <button className="testbtn" onClick={() => {
-    //      const converted = convertToFahrenheit(weatherInformation.current.temp_c);
-    //  }}>Convert to Fahrenheit</button>
     return (
         <div className="current-conditions">
             <div className="overlap-group11">

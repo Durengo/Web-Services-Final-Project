@@ -2,13 +2,11 @@ import axios from "axios";
 import {LOCAL_API_URL} from "../env/env";
 import {setCurrentUser, setIsFetchingCurrentUser} from "../redux/actions/sessionUser";
 import {setSessionLoggedIn} from "../redux/actions/session";
-import {useSelector} from "react-redux";
 
 export const fetchUser = (username, password) => {
     return async (dispatch) => {
         dispatch(setIsFetchingCurrentUser(true));
-        if(!username || !password)
-        {
+        if (!username || !password) {
             dispatch(setIsFetchingCurrentUser(false));
             dispatch(setSessionLoggedIn(false));
             console.log("Canceling dispatch username or password is null.");

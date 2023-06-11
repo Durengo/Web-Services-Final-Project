@@ -1,4 +1,4 @@
-import axios, {get} from "axios";
+import axios from "axios";
 import {LOCAL_API_URL} from "../env/env";
 import {getClientIP} from "./getClientIP";
 import {setCurrentLocation, setIsFetchingCurrentLocation} from "../redux/actions/currentLocationActions";

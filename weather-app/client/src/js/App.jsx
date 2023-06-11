@@ -26,9 +26,6 @@ function App() {
 
     );
 }
-
-// <Route path="/:path(|1_160)">
-// <WeatherMain {...weatherMainData} />
 export default App;
 
 export const weatherMainData = {

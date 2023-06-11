@@ -8,8 +8,7 @@ export const fetchUser = (username, password) => {
     console.log("TESTTSTST");
     return async (dispatch) => {
         dispatch(setIsFetchingCurrentUser(true));
-        if(!username || !password)
-        {
+        if (!username || !password) {
             dispatch(setIsFetchingCurrentUser(false));
             dispatch(setSessionLoggedIn(false));
             console.log("Canceling dispatch username or password is null.");
@@ -22,12 +21,9 @@ export const fetchUser = (username, password) => {
             const user = response.data; // Extract the location data from the response
             console.log("Retrieved Data! User information: ", user);
             const currentUser = useSelector((state) => state.currentUser);
-            if(user && currentUser.username === username && currentUser.password === password)
-            {
+            if (user && currentUser.username === username && currentUser.password === password) {
                 dispatch(setSessionLoggedIn(true));
-            }
-            else
-            {
+            } else {
                 dispatch(setCurrentUser(null));
                 dispatch(setSessionLoggedIn(false));
             }

@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import { GiHamburgerMenu } from "react-icons/gi";
 import "./UnitMenu.css"
 import {getSunriseAndSunset} from "../../js/conversion";
 import {
@@ -12,7 +11,7 @@ import {
 
 const UnitsMenuComponent = ( { isUnitsMenuOpen } ) => {
     const dispatch = useDispatch();
-    const [showOverlay, setShowOverlay] = useState(false);
+    // const [showOverlay, setShowOverlay] = useState(false);
 
     const currentLocation = useSelector((state) => state.currentLocation);
     const isFetchingCurrentLocation = useSelector((state) => state.isFetchingCurrentLocation);
