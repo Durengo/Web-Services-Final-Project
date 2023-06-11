@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getSunriseAndSunset} from "../../js/conversion";
 import myLine from "../../static/img1/line-6-1@2x.png";
+import "./DayForecast.css";
 function DayForecast(props) {
     const dispatch = useDispatch();
     const currentLocation = useSelector((state) => state.currentLocation);
