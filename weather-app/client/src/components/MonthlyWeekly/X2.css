@@ -1214,4 +1214,9 @@
   top: 757px;
   width: 70px;
 }
+.weather-card {
+  padding: 16px;
+  text-align: center;
+  width: 100%; /* Adjust the width as needed */
+}
 

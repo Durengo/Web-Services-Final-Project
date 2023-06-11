@@ -8,6 +8,8 @@ import {Circle, GoogleMap, LoadScript} from "@react-google-maps/api";
 import NavbarComponent from "../components/Navbar";
 import MapContainer from "../components/MapContainer";
 import X2 from "../components/MonthlyWeekly";
+import WeatherGrid from "../components/ForecastTable";
+import WeatherGridTable from "../components/ForecastTable";
 
 function App() {
     return (
