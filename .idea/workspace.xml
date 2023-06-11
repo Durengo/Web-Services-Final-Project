@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component">
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="added more functionality for google map, circle with area is drawn on the map, also the circle is made somewhat scalable">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/MapContainer/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/MapContainer/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/TestSlider/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/TestSlider/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/client/weather-app-client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/server/weather-app-server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app/weather-app.iml" beforeDir="false" />
     </list>
     <list id="425e8f38-d5f3-4dcc-844c-1ff48bbc66f9" name="Changes by skude" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +72,7 @@
     &quot;git-widget-placeholder&quot;: &quot;frontend-main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/zerpollo/WebstormProjects/Web-Services-Final-Project/weather-app/client/src/components/Details&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/zerpollo/WebstormProjects/123&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -145,8 +152,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="npm.start" />
       <item itemvalue="npm.install" />
+      <item itemvalue="npm.start" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -169,7 +176,8 @@
       <workItem from="1686214525397" duration="6226000" />
       <workItem from="1686393650070" duration="7330000" />
       <workItem from="1686404758123" duration="1987000" />
-      <workItem from="1686407504116" duration="16668000" />
+      <workItem from="1686407504116" duration="19974000" />
+      <workItem from="1686437014588" duration="4595000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
       <created>1685023932871</created>
@@ -227,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686417082771</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added more functionality for google map, circle with area is drawn on the map, also the circle is made somewhat scalable">
+      <created>1686433515144</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686433515144</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +279,7 @@
     <MESSAGE value="separated page into appropriate components" />
     <MESSAGE value="tried to add responsiveness to the page but no success. Added dependency for the slider &quot;react-responsive-carousel&quot;. Added test component &quot;TestSlider&quot; to test the newly added dependency." />
     <MESSAGE value="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component" />
+    <MESSAGE value="added more functionality for google map, circle with area is drawn on the map, also the circle is made somewhat scalable" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more functionality for google map, circle with area is drawn on the map, also the circle is made somewhat scalable" />
   </component>
 </project>
