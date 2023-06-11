@@ -184,8 +184,7 @@ function WeatherMain(props) {
 
     return (
         <div className="weather-site1">
-            <NavbarComponent {...weatherMainData}/>
-            <img className="line" src="/img/line.svg" alt="Line"/>
+
             <div className="flex-row-1">
                 <CurrentConditionsComponent {...weatherMainData}/>
                 <DetailsComponent {...weatherMainData}/>

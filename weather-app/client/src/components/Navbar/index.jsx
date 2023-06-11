@@ -4,6 +4,7 @@ import {GiHamburgerMenu} from "react-icons/gi";
 import {ReactDimmer} from "react-dimmer";
 import UnitMenu from "../UnitMenu";
 import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 function NavbarComponent(props) {
     const [isUserMenuVisible, setUserMenuVisibility] = useState(false);
@@ -13,6 +14,12 @@ function NavbarComponent(props) {
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
     const formattedDate = `${year}-${month}-${day}`;
+
+    const [activePage, setActivePage] = useState("today");
+
+    const handlePageChange = (page) => {
+        setActivePage(page);
+    };
 
     const {
         profileCircle
@@ -29,16 +36,20 @@ function NavbarComponent(props) {
     return (
         <div className="flex-row">
             <div className="today-date">{formattedDate}</div>
+            <Link to="/" className={`nav-btn ${activePage === "today" ? "active" : ""}`} onClick={() => handlePageChange("today")}>
             <div className="today">
                 <div className="overlap-group14">
                     <div className="today-1">TODAY</div>
                 </div>
             </div>
+            </Link>
+            <Link to="/weekmonth" className={`nav-btn ${activePage === "weekmonth" ? "active" : ""}`} onClick={() => handlePageChange("weekmonth")}>
             <div className="week-month">
                 <div className="overlap-group13">
                     <div className="week-mo">WEEK/MONTH</div>
                 </div>
             </div>
+            </Link>
             <img className="profile-circle menu-btn" src={profileCircle} alt="profile-circle" onClick={handleProfileClick}/>
             <img className="settings menu-btn" src="/img/settings.svg" alt="settings" onClick={handleSettingsClick}/>
 

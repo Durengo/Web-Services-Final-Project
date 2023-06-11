@@ -621,14 +621,14 @@
 
 
 .text-label-map {
-    align-self: flex-start;
+    align-self: center;
     color: #808080f0;
     font-family: var(--font-family-inter);
     font-size: var(--font-size-xxxxl);
     font-weight: 600;
     letter-spacing: 0;
     line-height: normal;
-    margin-left: 10%; /* Adjust this value according to your layout */
+    margin-left: 0%; /* Adjust this value according to your layout */
     margin-top: 26px;
     min-height: 22px;
     white-space: nowrap;

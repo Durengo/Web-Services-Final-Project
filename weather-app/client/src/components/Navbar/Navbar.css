@@ -2,3 +2,12 @@
     font-size: 1.75rem;
     cursor: pointer;
 }
+
+.navbar-main {
+    align-items: center;
+    background-color: #dadde9;
+    display: flex;
+    flex-direction: column;
+    height: 1rem;
+    width: 100%;
+}

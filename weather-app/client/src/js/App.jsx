@@ -1,23 +1,33 @@
 import "../css/App.css";
+import "../components/Navbar/Navbar.css";
 
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import WeatherMain from "../components/WeatherMain";
-import {Circle, GoogleMap, LoadScript } from "@react-google-maps/api";
+import {Circle, GoogleMap, LoadScript} from "@react-google-maps/api";
+import NavbarComponent from "../components/Navbar";
+import MapContainer from "../components/MapContainer";
+
 function App() {
     return (
-        <Router>
-            <Switch>
-                <Route path="/:path(|1_160)">
-                    <LoadScript googleMapsApiKey="AIzaSyDK7JtguLvN8BXLvIVX3tb1fwoAjenC9Nc" language="lt">
-                    <WeatherMain {...weatherMainData} />
-                    </LoadScript>
-                </Route>
-            </Switch>
-        </Router>
+        <LoadScript googleMapsApiKey="AIzaSyDK7JtguLvN8BXLvIVX3tb1fwoAjenC9Nc" language="lt">
+            <Router>
+                <div className="navbar-main">
+                    <NavbarComponent {...weatherMainData}/>
+                    <img className="line" src="/img/line.svg" alt="Line"/>
+                </div>
+                <Switch>
+                    <Route exact path="/" component={WeatherMain}/>
+                    <Route path="/weekmonth" component={MapContainer}/>
+                </Switch>
+            </Router>
+        </LoadScript>
+
     );
 }
 
+// <Route path="/:path(|1_160)">
+// <WeatherMain {...weatherMainData} />
 export default App;
 
 export const weatherMainData = {
