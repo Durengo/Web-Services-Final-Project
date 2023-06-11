@@ -243,7 +243,8 @@
     letter-spacing: 3px;
     line-height: normal;
     text-align: center;
-    width: 103px;
+    width: 110px;
+    left: 10px;
 }
 
 .span1 {
@@ -352,6 +353,7 @@
     line-height: normal;
     position: absolute;
     top: 19px;
+    white-space: nowrap;
 }
 
 .wind-label-today {
@@ -516,7 +518,8 @@
     line-height: normal;
     position: absolute;
     top: 17px;
-    width: 124px;
+    width: 134px;
+    white-space: nowrap;
 }
 
 .pressure-label-today {
