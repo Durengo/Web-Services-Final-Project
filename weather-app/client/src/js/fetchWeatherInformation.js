@@ -1,7 +1,5 @@
-import axios, {get} from "axios";
+import axios from "axios";
 import {LOCAL_API_URL} from "../env/env";
-import {getClientIP} from "./getClientIP";
-import {setCurrentLocation, setIsFetchingCurrentLocation} from "../redux/actions/currentLocationActions";
 import {setIsFetchingWeatherInformation, setWeatherInformation} from "../redux/actions/weatherInformationActions";
 import {fetchCurrentLocationByIp} from "./fetchCurrentLocation";
 import store from "../redux/store";
@@ -9,8 +7,7 @@ import store from "../redux/store";
 export const fetchWeatherInformationByCityName = (cityName) => {
     return async (dispatch) => {
         dispatch(setIsFetchingWeatherInformation(true)); // Set the fetching flag to true to indicate the state is being fetched
-        if(!cityName)
-        {
+        if (!cityName) {
             dispatch(setIsFetchingWeatherInformation(false));
             console.log("Canceling dispatch city name is null.");
             return;

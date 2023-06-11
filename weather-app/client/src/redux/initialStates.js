@@ -262,8 +262,8 @@ export const initialState = {
         },
     isFetchingForecastHistory: false,
     mapCoordinates: {
-      latitude: null,
-      longitude: null,
+        latitude: null,
+        longitude: null,
     },
     previousMapCoordinates: {
         latitude: null,

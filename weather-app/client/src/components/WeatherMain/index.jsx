@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 // Styles
 import "./WeatherMain.css";
 // Components
@@ -6,27 +7,18 @@ import MapContainer from "../MapContainer";
 import DetailsComponent from "../Details";
 import CurrentConditionsComponent from "../CurrentConditions";
 import SliderComponent from "../Slider";
-import NavbarComponent from "../Navbar";
-
-
 // Scripts
-// import { getClientIP } from "../../js/getClientIP.js";
-
+import {setSessionUsingIp} from "../../redux/actions/session";
+import {setDateToday} from "../../js/setDateToday";
+import {fetchWeatherInformationByCoordinates, fetchWeatherInformationByIP} from "../../js/fetchWeatherInformation";
+import {fetchForecastHistoryByCoordinates, fetchForecastHistoryByIp} from "../../js/fetchForecastHistory";
 // Data
 import {weatherMainData} from "../../js/App";
-import {fetchCurrentLocationByIp} from "../../js/fetchCurrentLocation";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchWeatherInformationByCoordinates, fetchWeatherInformationByIP} from "../../js/fetchWeatherInformation";
-import {getSunriseAndSunset} from "../../js/conversion";
-import {fetchForecastHistoryByCoordinates, fetchForecastHistoryByIp} from "../../js/fetchForecastHistory";
 import {
     setMapCoordinates,
     setMapCoordinatesFirstTime,
     setPreviousMapCoordinates
 } from "../../redux/actions/mapCoordinatesActions";
-import {setSessionDateToday, setSessionUsingIp} from "../../redux/actions/session";
-import {setDateToday} from "../../js/setDateToday";
-
 
 function WeatherMain(props) {
     const {} = props;
@@ -39,7 +31,6 @@ function WeatherMain(props) {
     const month = String(today.getMonth() + 1).padStart(2, "0");
     const day = String(today.getDate()).padStart(2, "0");
     const formattedDate = `${year}-${month}-${day}`;
-    //let formattedDate;
 
     const currentLocation = useSelector((state) => state.currentLocation);
     const weatherInformation = useSelector((state) => state.weatherInformation);
@@ -64,21 +55,13 @@ function WeatherMain(props) {
         if (!isMountedRef.current) {
             dispatch(setDateToday());
             dispatch(setSessionUsingIp(true));
-            // dispatch(fetchCurrentLocationByIp());
-
-            // dispatch(setMapCoordinates(currentLocation.location.latitude, currentLocation.location.longitude));
-            // console.log("ONE CALL ONLY");
             isMountedRef.current = true;
         }
     }, []);
 
     useEffect(() => {
         if (sessionUsingIp) {
-            // dispatch(fetchCurrentLocationByIp());
             dispatch(fetchWeatherInformationByIP());
-
-            // dispatch(setMapCoordinates(currentLocation.location.latitude, currentLocation.location.longitude));
-            // console.log("USING IP CALL ONLY");
             dispatch(setSessionUsingIp(false));
         }
     }, [sessionUsingIp]);
@@ -92,19 +75,12 @@ function WeatherMain(props) {
                 && (previousMapCoordinates.longitude !== mapCoordinates.longitude)) {
                 dispatch(setPreviousMapCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
                 dispatch(setMapCoordinates(weatherInformation.location.lat, weatherInformation.location.lon));
-                // console.log("Dispatch called!");
-                //
-                // const timeout = setTimeout(() => {
-                //     dispatch(fetchWeatherInformationByCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
-                //     console.log("Dispatch called!");
-                // }, 1000);
             }
         }
     }, [weatherInformation, isFetchingCurrentLocation, isFetchingWeatherInformation]);
 
     useEffect(() => {
-        if(mapCoordinatesFirstTime)
-        {
+        if (mapCoordinatesFirstTime) {
             dispatch(fetchWeatherInformationByCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
             dispatch(setMapCoordinatesFirstTime(false));
         }
@@ -114,8 +90,7 @@ function WeatherMain(props) {
         if (mapCoordinates && !isFetchingMapCoordinates) {
             console.log(`New Map Coordinates: ${mapCoordinates.latitude}:${mapCoordinates.longitude}`);
             console.log(`Previous Map Coordinates: ${previousMapCoordinates.latitude}:${previousMapCoordinates.longitude}`);
-            if(mapCoordinatesFirstTime)
-            {
+            if (mapCoordinatesFirstTime) {
                 dispatch(fetchWeatherInformationByCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
                 dispatch(setMapCoordinatesFirstTime(false));
             }
@@ -123,64 +98,20 @@ function WeatherMain(props) {
     }, [mapCoordinates, isFetchingMapCoordinates]);
 
     useEffect(() => {
-        if (mapCoordinates && !isFetchingWeatherInformation) {
-            //dispatch(fetchWeatherInformationByCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
-        }
-    }, [mapCoordinates, isFetchingWeatherInformation]);
-
-    useEffect(() => {
         if (sessionDateToday && !isUpdatingSessionDateToday) {
             console.log(`Today day set to: ${sessionDateToday.year}-${sessionDateToday.month}-${sessionDateToday.day}`);
-            // formattedDate = `${sessionDateToday.year}-${sessionDateToday.month}-${sessionDateToday.day}`;
-            // console.log("da date: " + formattedDate);
         }
     }, [sessionDateToday, isUpdatingSessionDateToday]);
 
-    // useEffect(() => {
-    //     if (!fetchingCurrentLocation && currentLocation) {
-    //         dispatch(fetchWeatherInformation(currentLocation.city.name));
-    //     }
-    // }, [dispatch, currentLocation, fetchingCurrentLocation]);
-
     useEffect(() => {
         if (weatherInformation && sessionDateToday && !isFetchingWeatherInformation && !isUpdatingSessionDateToday) {
-            if(sessionUsingIp)
-            {
+            if (sessionUsingIp) {
                 dispatch(fetchForecastHistoryByIp(`${formattedDate}`, `${formattedDate}`));
-            }
-            else
-            {
+            } else {
                 dispatch(fetchForecastHistoryByCoordinates(mapCoordinates.latitude, mapCoordinates.longitude, `${formattedDate}`, `${formattedDate}`));
             }
         }
     }, [dispatch, weatherInformation, isFetchingWeatherInformation, sessionDateToday, isUpdatingSessionDateToday]);
-
-    // useEffect(() => {
-    //     if (!fetchingCurrentLocation && currentLocation) {
-    //         dispatch(setMapCoordinates(currentLocation.location.latitude, currentLocation.location.longitude));
-    //         // dispatch(setSessionUsingIp(false));
-    //     }
-    // }, [dispatch, currentLocation, fetchingCurrentLocation]);
-    //
-    // useEffect(() => {
-    //     if(currentLocation && mapCoordinates && mapCoordinatesFirstTime)
-    //     {
-    //         console.log("map cooooooord");
-    //         dispatch(changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
-    //     }
-    // }, [dispatch, currentLocation, mapCoordinates, mapCoordinatesFirstTime]);
-
-    // useEffect(() => {
-    //     if (mapCoordinates.latitude && mapCoordinates.longitude && !isFetchingCurrentLocation) {
-    //         const timeout = setTimeout(() => {
-    //             dispatch(changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
-    //         }, 1000);
-    //     }
-    // }, [dispatch, mapCoordinates.latitude, mapCoordinates.longitude, isFetchingCurrentLocation]);
-
-    // if (!fetchingCurrentLocation)
-
-    // console.log(getSunriseAndSunset(54.6872, 25.2797));
 
     return (
         <div className="weather-site1">

@@ -19,65 +19,13 @@ const MapContainer = () => {
 
     const firstTime = false;
 
-    // useEffect(() => {
-    //     if(currentLocation && !isFetchingCurrentLocation)
-    //     {
-    //         if(!currentLocation.location.latitude || !currentLocation.location.longitude)
-    //         {
-    //             // break;
-    //         }
-    //         else
-    //         {
-    //             console.log(`Current location: ${currentLocation.location.latitude}:${currentLocation.location.longitude}`)
-    //             // dispatch(setMapCoordinates(currentLocation.location.latitude, currentLocation.location.longitude));
-    //             setCircleCenter({
-    //                 lat: currentLocation.location.latitude,
-    //                 lng: currentLocation.location.longitude,
-    //             });
-    //             setIsCircleVisible(true);
-    //             // changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude);
-    //             // setCircleCenter({lat: mapCoordinates.latitude, lng: mapCoordinates.longitude});
-    //         }
-    //
-    //     }
-    // }, [dispatch, currentLocation, isFetchingCurrentLocation]);
-
-    // useEffect(() => {
-    //    if(circleCenter)
-    //    {
-    //        setCircleCenter(clickedCoordinates);
-    //        setIsCircleVisible(true);
-    //
-    //    }
-    // }, [circleCenter, currentLocation, clickedCoordinates]);
-    //
-
-
-
     useEffect(() => {
-        if(mapCoordinates && !isFetchingMapCoordinates)
-        {
+        if (mapCoordinates && !isFetchingMapCoordinates) {
             console.log(`Map Coordinates: ${mapCoordinates.latitude}:${mapCoordinates.longitude}`);
             setCircleCenter({lat: mapCoordinates.latitude, lng: mapCoordinates.longitude});
             setIsCircleVisible(true);
-            // const timeout = setTimeout(() => {
-            //     dispatch(changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
-            // }, 1000);
-            // dispatch(changeCoordinates(mapCoordinates.latitude, mapCoordinates.longitude));
         }
     }, [dispatch, mapCoordinates, isFetchingMapCoordinates]);
-
-
-
-
-    // const [circleCenter, setCircleCenter] = useState({
-    //     // lat: 55.1735998,
-    //     // lng: 23.8948016,
-    //     lat: currentLocation.location.latitude,
-    //     lng: currentLocation.location.longitude,
-    // });
-    // const [isCircleVisible, setIsCircleVisible] = useState(true);
-    // const mapRef = useRef(null);
 
     const mapStyles = {
         height: "400px",
@@ -126,52 +74,13 @@ const MapContainer = () => {
     };
 
     const handleMapClick = (e) => {
-        // dispatch(setMapCoordinatesFirstTime(false));
         const latitude = e.latLng.lat();
         const longitude = e.latLng.lng();
-
-
-
-        console.log(`OnClick coordinates: ${latitude}:${longitude}`);
-        // setClickedCoordinates({
-        //     latitude: e.latLng.lat(),
-        //     longitude: e.latLng.lng(),
-        // });
-        // dispatch(setMapCoordinates(e.latLng.lat(), e.latLng.lng()));
+        // console.log(`OnClick coordinates: ${latitude}:${longitude}`);
         dispatch(setMapCoordinates(latitude, longitude));
         dispatch(setMapCoordinatesFirstTime(true));
-        // dispatch(setMapCoordinatesFirstTime(false));
 
-        // dispatch(changeCoordinates(latitude, longitude));
-        // mapCoordinates.latitude = e.latLng.lat();
-        // mapCoordinates.longitude = e.latLng.lng();
-
-        // setClickedCoordinatesLatitude(e.latLng.lat());
-        // setClickedCoordinatesLongitude(e.latLng.lng());
-
-
-        // setCircleCenter({lat: clickedCoordinates.latitude, lng: clickedCoordinates.longitude});
-        // setIsCircleVisible(true);
-
-
-        // const clickedLatLng = {
-        //     lat: e.latLng.lat(),
-        //     lng: e.latLng.lng(),
-        // };
-        // console.log(`${clickedLatLng.lat}:${clickedLatLng.lng}`);
-
-        // console.log(`${clickedCoordinates.latitude}:${clickedCoordinates.longitude}`);
-
-
-        // dispatch(setMapCoordinates({latitude: clickedLatLng.lat, longitude: clickedLatLng.lng}));
     };
-
-    // useEffect(() => {
-    //    if(circleCenter)
-    //    {
-    //
-    //    }
-    // });
 
     const handleMapLoad = (map) => {
         mapRef.current = map; // Store the map reference in the ref
@@ -180,7 +89,7 @@ const MapContainer = () => {
     const handleMapZoomChanged = () => {
         const zoomLevel = mapRef.current?.getZoom(); // Get the zoom level from the map reference
         circleOptions.radius = calculateCircleRadius(zoomLevel);
-        setCircleCenter({ ...circleCenter }); // Trigger re-render
+        setCircleCenter({...circleCenter}); // Trigger re-render
     };
 
     if (isFetchingCurrentLocation || isFetchingWeatherInformation) {
@@ -188,16 +97,16 @@ const MapContainer = () => {
     }
 
     return (
-            <GoogleMap
-                mapContainerStyle={mapStyles}
-                zoom={13}
-                center={circleCenter}
-                onClick={handleMapClick}
-                onLoad={handleMapLoad}
-                onZoomChanged={handleMapZoomChanged}
-            >
-                {isCircleVisible && <Circle options={circleOptions} />}
-            </GoogleMap>
+        <GoogleMap
+            mapContainerStyle={mapStyles}
+            zoom={13}
+            center={circleCenter}
+            onClick={handleMapClick}
+            onLoad={handleMapLoad}
+            onZoomChanged={handleMapZoomChanged}
+        >
+            {isCircleVisible && <Circle options={circleOptions}/>}
+        </GoogleMap>
     );
 };
 
