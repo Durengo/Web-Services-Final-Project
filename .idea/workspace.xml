@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="fixed carousel, fixed intersection of current location with other elements">
+    <list default="true" id="6b7a4218-0386-4cca-9d38-285819ea34f6" name="Changes" comment="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app/client/src/components/WeatherMain/WeatherMain.css" afterDir="false" />
     </list>
@@ -170,7 +170,7 @@
       <workItem from="1686393650070" duration="7330000" />
       <workItem from="1686404758123" duration="1987000" />
       <workItem from="1686407504116" duration="19974000" />
-      <workItem from="1686437014588" duration="6328000" />
+      <workItem from="1686437014588" duration="7782000" />
     </task>
     <task id="LOCAL-00001" summary="ADDED IDK MIGHT DELETE LATER REALLY NOT IMPORTANT">
       <created>1685023932871</created>
@@ -242,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686441946928</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component">
+      <created>1686443634451</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686443634451</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +288,7 @@
     <MESSAGE value="removed react-responsive-carousel dependency. Added react-multi-carousel dependency. Remade slider in TestSlider component" />
     <MESSAGE value="added more functionality for google map, circle with area is drawn on the map, also the circle is made somewhat scalable" />
     <MESSAGE value="fixed carousel, fixed intersection of current location with other elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed carousel, fixed intersection of current location with other elements" />
+    <MESSAGE value="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed position of current degrees after changing value to fahrenheit, fixed position of pressure value in details component" />
   </component>
 </project>

@@ -185,7 +185,7 @@
 
 .condition-container {
     height: 305px;
-    left: 120px;
+    left: 180px;
     position: absolute;
     top: 0;
     width: 507px;
@@ -193,7 +193,7 @@
 
 .condition-icon-today {
     height: 305px;
-    left: 194px;
+    left: 140px;
     position: absolute;
     top: 0;
     width: 313px;
@@ -218,7 +218,7 @@
     font-family: var(--font-family-inter);
     font-size: var(--font-size-l);
     font-weight: 300;
-    left: 120px;
+    left: 180px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -258,7 +258,7 @@
 .line-1 {
     height: 53px;
     margin-top: 9px;
-    width: 2px;
+    width: 110px;
 }
 
 .details {
