@@ -1,5 +1,4 @@
 export const initialState = {
-    data: null,
     currentLocation: {
         ip: null,
         type: null,
@@ -158,6 +157,14 @@ export const initialState = {
         },
     isFetchingCurrentUser: false,
     session: false,
+    sessionUsingIp: true,
+    sessionDateToday: {
+        year: null,
+        month: null,
+        day: null,
+    },
+    isUpdatingSessionDateToday: false,
+    sessionIp: null,
     forecastHistory:
         {
             forecast:
@@ -254,4 +261,13 @@ export const initialState = {
                 },
         },
     isFetchingForecastHistory: false,
+    mapCoordinates: {
+      latitude: null,
+      longitude: null,
+    },
+    previousMapCoordinates: {
+        latitude: null,
+        longitude: null,
+    },
+    mapCoordinatesFirstTime: false,
 };
