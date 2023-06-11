@@ -1,50 +1,12 @@
 import React from "react";
 import "./X2.css";
+import DetailsComponent from "../Details";
+import {weatherMainData} from "../../js/App";
+import CurrentConditionsComponent from "../CurrentConditions";
 
 function X2(props) {
     const {
-        spanText1,
-        spanText2,
-        spanText3,
-        profileCircle,
-        settings,
         line,
-        spanText4,
-        spanText5,
-        conditionicontoday,
-        spanText6,
-        spanText7,
-        spanText8,
-        spanText9,
-        line1,
-        spanText10,
-        spanText11,
-        realfeelicontoday,
-        spanText12,
-        windicontoday,
-        spanText13,
-        spanText14,
-        spanText15,
-        spanText16,
-        iconBrightness,
-        spanText17,
-        humidityicontoday,
-        spanText18,
-        visibilityicontoday,
-        spanText19,
-        precipitationicontoday,
-        spanText20,
-        spanText21,
-        spanText22,
-        pressureicontoday,
-        spanText23,
-        spanText24,
-        spanText25,
-        sunriseicontoday,
-        spanText26,
-        spanText27,
-        sunseticontoday,
-        spanText28,
         spanText29,
         spanText30,
         line6,
@@ -259,164 +221,16 @@ function X2(props) {
     return (
         <div className="container-center-horizontal">
             <div className="x2 screen">
-                <div className="flex-row">
-                    <div className="today-date inter-medium-black-20px">
-                        <span className="inter-medium-black-20px">{spanText1}</span>
-                    </div>
-                    <div className="today-button">
-                        <div className="overlap-group12">
-                            <div className="today inter-semi-bold-storm-dust-14px">
-                                <span className="inter-semi-bold-storm-dust-14px">{spanText2}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="weekmo-button">
-                        <div className="overlap-group13">
-                            <div className="today-1 inter-semi-bold-storm-dust-14px">
-                                <span className="inter-semi-bold-storm-dust-14px">{spanText3}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <img className="profile-circle" src={profileCircle} alt="profile-circle" />
-                    <img className="settings" src={settings} alt="settings" />
+
+                <img className="line-23" src={line} alt="Line" />
+                <div className="flex-row-13">
+                    <CurrentConditionsComponent {...weatherMainData}/>
+                    <DetailsComponent />
                 </div>
-                <img className="line-2" src={line} alt="Line" />
-                <div className="flex-row-1">
-                    <div className="current-conditions">
-                        <div className="overlap-group11">
-                            <div className="overlap-group10">
-                                <div className="today-container">
-                                    <h1 className="city-today inter-semi-bold-midnight-blue-71px">
-                                        <span className="inter-semi-bold-midnight-blue-71px">{spanText4}</span>
-                                    </h1>
-                                    <div className="current-region-today inter-normal-black-20px">
-                                        <span className="inter-normal-black-20px">{spanText5}</span>
-                                    </div>
-                                </div>
-                                <div className="condition-container">
-                                    <img className="condition-icon-today" src={conditionicontoday} alt="ConditionIconToday" />
-                                    <div className="feels-like-condition-today inter-semi-bold-midnight-blue-30px">
-                                        <span className="inter-semi-bold-midnight-blue-30px">{spanText6}</span>
-                                    </div>
-                                </div>
-                                <div className="text-condition-today inter-light-midnight-blue-20px">
-                                    <span className="inter-light-midnight-blue-20px">{spanText7}</span>
-                                </div>
-                            </div>
-                            <div className="flex-row-2">
-                                <div className="temperature-today valign-text-bottom inter-normal-midnight-blue-60px">
-                    <span>
-                      <span className="inter-normal-midnight-blue-60px">{spanText8}</span>
-                      <span className="labelleaurore-normal-midnight-blue-55px">{spanText9}</span>
-                    </span>
-                                </div>
-                                <img className="line-1-1" src={line1} alt="Line 1" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="details">
-                        <div className="flex-row-3">
-                            <div className="flex-col">
-                                <div className="details-label bakbakone-normal-black-20px">
-                                    <span className="bakbakone-normal-black-20px">{spanText10}</span>
-                                </div>
-                                <div className="realfeel-container">
-                                    <div className="real-feel-label-today inter-normal-black-14px">
-                                        <span className="inter-normal-black-14px">{spanText11}</span>
-                                    </div>
-                                    <img className="real-feel-icon-today" src={realfeelicontoday} alt="RealFeelIconToday" />
-                                </div>
-                                <div className="real-feel-condition-today inter-extra-bold-black-24px">
-                                    <span className="inter-extra-bold-black-24px">{spanText12}</span>
-                                </div>
-                            </div>
-                            <div className="overlap-group4">
-                                <div className="ontoday-container-1">
-                                    <img className="wind-icon-today" src={windicontoday} alt="WindIconToday" />
-                                    <div className="wind-condition-today inter-extra-bold-black-24px">
-                                        <span className="inter-extra-bold-black-24px">{spanText13}</span>
-                                    </div>
-                                </div>
-                                <div className="wind-label-today inter-normal-black-14px">
-                                    <span className="inter-normal-black-14px">{spanText14}</span>
-                                </div>
-                            </div>
-                            <div className="uvindex-container">
-                                <div className="uv-index-label-today inter-normal-black-14px">
-                                    <span className="inter-normal-black-14px">{spanText15}</span>
-                                </div>
-                                <div className="uv-index-condition-today inter-extra-bold-black-24px">
-                                    <span className="inter-extra-bold-black-24px">{spanText16}</span>
-                                </div>
-                            </div>
-                            <img className="icon-brightness" src={iconBrightness} alt="icon-brightness" />
-                        </div>
-                        <div className="flex-row-4 inter-normal-black-14px">
-                            <div className="humidity-label-today">
-                                <span className="inter-normal-black-14px">{spanText17}</span>
-                            </div>
-                            <img className="humidity-icon-today" src={humidityicontoday} alt="HumidityIconToday" />
-                            <div className="visibility-label-today">
-                                <span className="inter-normal-black-14px">{spanText18}</span>
-                            </div>
-                            <img className="visibility-icon-today" src={visibilityicontoday} alt="VisibilityIconToday" />
-                            <div className="precipitation-label-today">
-                                <span className="inter-normal-black-14px">{spanText19}</span>
-                            </div>
-                            <img className="precipitation-icon-today" src={precipitationicontoday} alt="PrecipitationIconToday" />
-                        </div>
-                        <div className="conditiontoday-container inter-extra-bold-black-24px">
-                            <div className="humidity-condition-today">
-                                <span className="inter-extra-bold-black-24px">{spanText20}</span>
-                            </div>
-                            <div className="visibility-condition-today">
-                                <span className="inter-extra-bold-black-24px">{spanText21}</span>
-                            </div>
-                            <div className="precipitation-condition-today">
-                                <span className="inter-extra-bold-black-24px">{spanText22}</span>
-                            </div>
-                        </div>
-                        <div className="overlap-group-container">
-                            <div className="overlap-group7">
-                                <div className="pressure-container">
-                                    <img className="pressure-icon-today" src={pressureicontoday} alt="PressureIconToday" />
-                                    <div className="pressure-condition-today inter-extra-bold-black-24px">
-                                        <span className="inter-extra-bold-black-24px">{spanText23}</span>
-                                    </div>
-                                </div>
-                                <div className="pressure-label-today inter-normal-black-14px">
-                                    <span className="inter-normal-black-14px">{spanText24}</span>
-                                </div>
-                            </div>
-                            <div className="overlap-group6">
-                                <div className="ontoday-container">
-                                    <div className="x-condition-today inter-extra-bold-black-24px">
-                                        <span className="inter-extra-bold-black-24px">{spanText25}</span>
-                                    </div>
-                                    <img className="x-icon-today" src={sunriseicontoday} alt="SunriseIconToday" />
-                                </div>
-                                <div className="place inter-normal-black-14px">
-                                    <span className="inter-normal-black-14px">{spanText26}</span>
-                                </div>
-                            </div>
-                            <div className="overlap-group5">
-                                <div className="ontoday-container">
-                                    <div className="x-condition-today inter-extra-bold-black-24px">
-                                        <span className="inter-extra-bold-black-24px">{spanText27}</span>
-                                    </div>
-                                    <img className="x-icon-today" src={sunseticontoday} alt="SunsetIconToday" />
-                                </div>
-                                <div className="place-1 inter-normal-black-14px">
-                                    <span className="inter-normal-black-14px">{spanText28}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="frame-container">
-                    <div className="frame-1">
-                        <div className="overlap-group14 inter-extra-bold-black-14px">
-                            <div className="overlap-group">
+                <div className="frame-container50">
+                    <div className="frame-50">
+                        <div className="overlap-group50 inter-extra-bold-black-14px">
+                            <div className="overlap-group51">
                                 <div className="title-7-day-forecast inter-bold-black-20px">
                                     <span className="inter-bold-black-20px">{spanText29}</span>
                                 </div>
@@ -427,19 +241,19 @@ function X2(props) {
                                 <div className="tue inter-normal-black-14px">
                                     <span className="inter-normal-black-14px">{spanText31}</span>
                                 </div>
-                                <img className="line" src={line7} alt="Line 7" />
+                                <img className="line50" src={line7} alt="Line 7" />
                                 <div className="wed inter-normal-black-14px">
                                     <span className="inter-normal-black-14px">{spanText32}</span>
                                 </div>
-                                <img className="line" src={line8} alt="Line 8" />
+                                <img className="line50" src={line8} alt="Line 8" />
                                 <div className="thu inter-normal-black-14px">
                                     <span className="inter-normal-black-14px">{spanText33}</span>
                                 </div>
-                                <img className="line-1" src={line9} alt="Line 9" />
+                                <img className="line-51" src={line9} alt="Line 9" />
                                 <div className="fri inter-normal-black-14px">
                                     <span className="inter-normal-black-14px">{spanText34}</span>
                                 </div>
-                                <img className="line-1" src={line10} alt="Line 10" />
+                                <img className="line-51" src={line10} alt="Line 10" />
                                 <div className="sat inter-normal-black-14px">
                                     <span className="inter-normal-black-14px">{spanText35}</span>
                                 </div>
@@ -507,9 +321,9 @@ function X2(props) {
                             <img className="week-icons" src={weekIcons} alt="week icons" />
                         </div>
                     </div>
-                    <div className="frame-2">
-                        <div className="overlap-group15">
-                            <div className="overlap-group-1">
+                    <div className="frame-51">
+                        <div className="overlap-group51">
+                            <div className="overlap-group-52">
                                 <div className="month-container">
                                     <div className="title-month-forecast inter-bold-storm-dust-20px">
                                         <span className="inter-bold-storm-dust-20px">{spanText65}</span>
