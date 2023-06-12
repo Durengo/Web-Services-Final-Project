@@ -134,7 +134,7 @@ function X2(props) {
                 <img className="line-23" alt="Line" />
                 <div className="flex-row-13">
                     <CurrentConditionsComponent/>
-                    <DetailsComponent />
+                    <DetailsComponent {...weatherMainData}/>
                 </div>
                 <div className="frame-container50">
                     <DayForecast />
