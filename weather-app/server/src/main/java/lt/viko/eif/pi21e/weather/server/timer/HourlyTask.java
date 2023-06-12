@@ -1,10 +1,8 @@
 package lt.viko.eif.pi21e.weather.server.timer;
 
-import jakarta.annotation.PostConstruct;
 import lt.viko.eif.pi21e.weather.server.checker.CheckerClass;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
