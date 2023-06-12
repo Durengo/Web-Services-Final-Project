@@ -47,12 +47,12 @@ function SliderComponent() {
         // Define the responsive configurations for different screen sizes
         desktop: {
             breakpoint: {max: 3000, min: 1024},
-            items: 12, // Number of items to show on desktop
+            items: 11, // Number of items to show on desktop
             slidesToSlide: 3, // Number of slides to scroll per action
         },
         tablet: {
             breakpoint: {max: 1024, min: 464},
-            items: 2, // Number of items to show on tablet
+            items: 5, // Number of items to show on tablet
             slidesToSlide: 2, // Number of slides to scroll per action
         },
         mobile: {
