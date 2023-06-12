@@ -126,9 +126,9 @@ const WeatherGrid = () => {
             {hourlyData.map((data) => (
                 <Grid item key={data.date} xs={12} sm={6} md={4} lg={3}>
                     <Paper className="weather-card"> {/* Apply the CSS class */}
-                        <h3>{data.dayName}</h3>
+                        <h3 className="dayName">{data.dayName}</h3>
                         <img src={data.weatherIcon}/>
-                        <p>{data.degreesMax}°</p>
+                        <p className="degreesMax">{data.degreesMax}°</p>
                     </Paper>
                 </Grid>
             ))}

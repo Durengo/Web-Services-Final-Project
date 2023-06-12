@@ -1258,14 +1258,9 @@
 .degrees-max {
   margin-left: 3px;
 }
-.title-7-day-forecast{
-  font-family: "inter", sans-serif;
-  font-weight: 800;
-  font-size: 16px;
-  color: black;
-  display: inline-block;
-}
-.title-month-forecast{
+.title-7-day-forecast,
+.title-month-forecast,
+.title-month{
   font-family: "inter", sans-serif;
   font-weight: 800;
   font-size: 16px;
@@ -1277,6 +1272,10 @@
   font-weight: normal;
   font-size: 14px;
   color: black;
+}
+.degreesMax{
+  font-family: "inter", sans-serif;
+  font-weight: 700;
 }
 
 
