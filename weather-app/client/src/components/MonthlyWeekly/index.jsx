@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "./X2.css";
 import DetailsComponent from "../Details";
 import {weatherMainData} from "../../js/App";
@@ -52,6 +52,8 @@ function X2(props) {
     const isFetchingForecastHistory = useSelector((state) => state.isFetchingForecastHistory);
     const temperatureUnit = useSelector((state) => state.temperatureUnit);
     const sessionTodayDate = useSelector((state) => state.sessionDateToday);
+
+    const [todayMonth, setTodayMonth] = useState(null);
 
     useEffect(() => {
         if (!isMountedRef.current) {
@@ -118,6 +120,18 @@ function X2(props) {
         }
     }, [dispatch, weatherInformation, isFetchingWeatherInformation, sessionDateToday, isUpdatingSessionDateToday]);
 
+    useEffect(() => {
+       if(forecastHistory)
+       {
+           let dateParts = String(forecastHistory.forecast.forecastday[0].date).split("-");
+           let monthPart = parseInt(dateParts[1]);
+           let currentDate = new Date(0, monthPart - 1);
+           let monthName = currentDate.toLocaleString('en-US', { month: 'long' });
+           console.log(`MONTH SET TO: ${monthName}`);
+           setTodayMonth(monthName);
+       }
+    }, [forecastHistory]);
+
     if (isFetchingCurrentLocation || isFetchingWeatherInformation || isFetchingForecastHistory) {
         return <div>LOADING...</div>;
     }
@@ -146,7 +160,7 @@ function X2(props) {
                                         <span className="inter-bold-storm-dust-20px">{spanText65}</span>
                                     </div>
                                     <div className="title-month inter-normal-black-18-2px">
-                                        <span className="inter-normal-black-18-2px">{spanText66}</span>
+                                        <span className="inter-normal-black-18-2px">{todayMonth}</span>
                                     </div>
                                 </div>
                                 <WeatherGrid />
