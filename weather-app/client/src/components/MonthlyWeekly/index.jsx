@@ -144,8 +144,6 @@ function X2(props) {
     return (
         <div className="container-center-horizontal">
             <div className="x2 screen">
-
-                <img className="line-23" alt="Line" />
                 <div className="flex-row-13">
                     <CurrentConditionsComponent/>
                     <DetailsComponent {...weatherMainData}/>
