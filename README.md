@@ -12,7 +12,7 @@ Vilniaus Kolegija / University of Applied Sciences at the Faculty of Electronics
     * [Requirements](#requirements)
   * [Scope](#scope)
   * [Students and Roles](#students-and-roles)
-  * [Trello Board](#trello-board)
+  * [Weather App Trello Board](#weather-app-trello-board)
   * [Project Setup](#project-setup)
     * [Prerequisites:](#prerequisites)
     * [Building The Project](#building-the-project)
@@ -20,7 +20,16 @@ Vilniaus Kolegija / University of Applied Sciences at the Faculty of Electronics
       * [Client:](#client)
     * [Additional Information:](#additional-information)
   * [Design and Mockups](#design-and-mockups)
+    * [Front Page](#front-page)
+    * [X-Day/X-Month View](#x-dayx-month-view)
+    * [User Login/Registration](#user-loginregistration)
+    * [Units Customization](#units-customization)
+    * [Notification Set-Up](#notification-set-up)
   * [Final Result](#final-result)
+    * [Snippet of the Main Page](#snippet-of-the-main-page)
+    * [Snippet of X-Day/X-Month View](#snippet-of-x-dayx-month-view)
+    * [Using the Map](#using-the-map)
+    * [Switching the Units](#switching-the-units)
   * [Completion Matrix](#completion-matrix)
   * [Weather Application API Features](#weather-application-api-features)
     * [Core API](#core-api)
@@ -100,7 +109,7 @@ etc. Other types of API’s (like Websocket or GraphQL) are also considerable.
 |  Nazar Lavkart   |                   Back-end Developer / Database Developer                    |
 |  Vitold Skuder   |                   Back-end Developer / Database Developer                    |
 
-## [Trello Board](no link until archived)
+## [Weather App Trello Board](https://trello.com/b/mIbXPsM4)
 
 ## Project Setup
 
@@ -135,37 +144,75 @@ etc. Other types of API’s (like Websocket or GraphQL) are also considerable.
 4. Client has been tested on Firefox and Chrome browsers, other browsers might be supported
 ## Design and Mockups
 
+### Front Page
+
+![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-01.png)
+
+### X-Day/X-Month View
+
+![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-02.png)
+
+### User Login/Registration
+
+![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-03.png)
+
+### Units Customization
+
+![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-04.png)
+
+### Notification Set-Up
+
+![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-05.png)
+
+![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-06.png)
+
 ## Final Result
+
+### Snippet of the Main Page
+
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/demo/weather_app_main.png)
+
+### Snippet of X-Day/X-Month View
+
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/demo/weather_app_second_page.png)
+
+### Using the Map
+
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/demo/map_usage.gif)
+
+### Switching the Units
+
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/demo/details_units.gif)
 
 ## Completion Matrix
 
-| Requirement                                                | Implemented | Additional Note                                                                                                                                                                                 |
-|------------------------------------------------------------|:-----------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Location and Map Integration**                           | **✓ ~90%**  | Overall very high satisfaction rate for requirement completion.                                                                                                                                 |
-| 1. Utilize the Google Maps API                             |      ✓      |                                                                                                                                                                                                 |
-| 2. Implement IP Geo Location API                           |      ✓      |                                                                                                                                                                                                 |
-| 3. Provide interactive maps                                |      ✓      |                                                                                                                                                                                                 |
-| 4. Integrate Google Maps API                               |      ✓      |                                                                                                                                                                                                 |
-| 5. Obtain weather data from WeatherAPI.com API             |      ✓      |                                                                                                                                                                                                 |
-| 6. View weather patterns, forecasts, and satellite imagery |   ✗ ~75%    | Weather patterns are not displayed, but the general vicinity of the area where the information is gathered from is shown. There was not enough time to implement this.                          |
-| 7. Make maps zoomable and pan-able                         |      ✓      |                                                                                                                                                                                                 |
-| 8. Switch between map types                                |      ✓      |                                                                                                                                                                                                 |
-| 9. View real-time weather conditions                       |      ✓      |                                                                                                                                                                                                 |
-| 10. Display weather conditions with colors                 |      x      | Since weather patterns are not displayed it's not feasible to implement this.                                                                                                                   |
-| 11. Toggle between forecast timeframes                     |   ✗ ~50%    |                                                                                                                                                                                                 |
-| **Weather Data**                                           | **✓ 100%**  | The core functionalities are implemented in the back-end as well as the front-end. Excellent satisfaction rate for requirement completion.                                                      |
-| 1. Integrate with WeatherAPI.com API                       |      ✓      |                                                                                                                                                                                                 |
-| 2. Display current weather conditions                      |      ✓      |                                                                                                                                                                                                 |
-| 3. Provide detailed forecasts                              |      ✓      |                                                                                                                                                                                                 |
-| **Favorite List**                                          | **✗ ~30%**  | Overall, not great and not terrible satisfaction rate for requirement. Although regarding the fact this feature is completely absent from the front-end more % are deduced.                     |
-| 1. Enable users to create a personalized list              |   ✗ ~50%    | Implemented in the back-end. Not enough time to implement for front-end.                                                                                                                        |
-| 2. Allow users to save frequently visited places           |   ✗ ~50%    | Implemented in the back-end. Not enough time to implement for front-end.                                                                                                                        |
-| **Subscription List**                                      | **✗ ~25%**  | Overall, not great and not terrible satisfaction rate for requirement. Although regarding the fact this feature is completely absent from the front-end more % are deduced.                     |
-| 1. Implement a subscription feature                        |   ✗ ~50%    | Database and back-end fully implemented. Not enough time to implement for front-end.                                                                                                            |
-| 2. Set criteria for notifications                          |   ✗ ~50%    | Database and back-end fully implemented. Not enough time to implement for front-end.                                                                                                            |
-| 3. Implement real-time updates and push notifications      |   ✗ ~35%    | Implemented in the back-end. Not enough time to implement for front-end. These features wasted quite a bit of time - first Firebase was used, but that did not work so we switched to ActiveMQ. |
-| **User Preferences and Customization**                     | **✓ 100%**  | An excellent satisfaction rate for requirements completion. Overall, quite an easy feature to implement, especially when converted values are provided by the used APIs.                        |
-| 1. Provide options for customization                       |      ✓      |                                                                                                                                                                                                 |
+| Requirement                                                | Implemented | Additional Note                                                                                                                                                                                                                          |
+|------------------------------------------------------------|:-----------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Location and Map Integration**                           | **✓ ~90%**  | Overall very high satisfaction rate for requirement completion.                                                                                                                                                                          |
+| 1. Utilize the Google Maps API                             |      ✓      |                                                                                                                                                                                                                                          |
+| 2. Implement IP Geo Location API                           |      ✓      |                                                                                                                                                                                                                                          |
+| 3. Provide interactive maps                                |      ✓      |                                                                                                                                                                                                                                          |
+| 4. Integrate Google Maps API                               |      ✓      |                                                                                                                                                                                                                                          |
+| 5. Obtain weather data from WeatherAPI.com API             |      ✓      |                                                                                                                                                                                                                                          |
+| 6. View weather patterns, forecasts, and satellite imagery |   ✗ ~75%    | Weather patterns are not displayed, but the general vicinity of the area where the information is gathered from is shown. There was not enough time to implement this.                                                                   |
+| 7. Make maps zoomable and pan-able                         |      ✓      |                                                                                                                                                                                                                                          |
+| 8. Switch between map types                                |      ✓      |                                                                                                                                                                                                                                          |
+| 9. View real-time weather conditions                       |      ✓      |                                                                                                                                                                                                                                          |
+| 10. Display weather conditions with colors                 |      x      | Since weather patterns are not displayed it's not feasible to implement this.                                                                                                                                                            |
+| 11. Toggle between forecast timeframes                     |   ✗ ~80%    | The logic is within the front-end, but there was not enough time to implement this feature. Also, the WeatherAPI basic subscription only offers a maximum amount of 3 days to be viewed, so there's not much point in implementing this. |
+| **Weather Data**                                           | **✓ 100%**  | The core functionalities are implemented in the back-end as well as the front-end. Excellent satisfaction rate for requirement completion.                                                                                               |
+| 1. Integrate with WeatherAPI.com API                       |      ✓      |                                                                                                                                                                                                                                          |
+| 2. Display current weather conditions                      |      ✓      |                                                                                                                                                                                                                                          |
+| 3. Provide detailed forecasts                              |      ✓      |                                                                                                                                                                                                                                          |
+| **Favorite List**                                          | **✗ ~30%**  | Overall, not great and not terrible satisfaction rate for requirement. Although regarding the fact this feature is completely absent from the front-end more % are deduced.                                                              |
+| 1. Enable users to create a personalized list              |   ✗ ~50%    | Implemented in the back-end. Not enough time to implement for front-end.                                                                                                                                                                 |
+| 2. Allow users to save frequently visited places           |   ✗ ~50%    | Implemented in the back-end. Not enough time to implement for front-end.                                                                                                                                                                 |
+| **Subscription List**                                      | **✗ ~25%**  | Overall, not great and not terrible satisfaction rate for requirement. Although regarding the fact this feature is completely absent from the front-end more % are deduced.                                                              |
+| 1. Implement a subscription feature                        |   ✗ ~50%    | Database and back-end fully implemented. Not enough time to implement for front-end.                                                                                                                                                     |
+| 2. Set criteria for notifications                          |   ✗ ~50%    | Database and back-end fully implemented. Not enough time to implement for front-end.                                                                                                                                                     |
+| 3. Implement real-time updates and push notifications      |   ✗ ~35%    | Implemented in the back-end. Not enough time to implement for front-end. These features wasted quite a bit of time - first Firebase was used, but that did not work so we switched to ActiveMQ.                                          |
+| **User Preferences and Customization**                     | **✓ 100%**  | An excellent satisfaction rate for requirements completion. Overall, quite an easy feature to implement, especially when converted values are provided by the used APIs.                                                                 |
+| 1. Provide options for customization                       |      ✓      |                                                                                                                                                                                                                                          |
 
 ## Weather Application API Features
 ### Core API
