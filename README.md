@@ -146,25 +146,25 @@ etc. Other types of API’s (like Websocket or GraphQL) are also considerable.
 
 ### Front Page
 
-![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-01.png)
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/design/Weather-01.png)
 
 ### X-Day/X-Month View
 
-![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-02.png)
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/design/Weather-02.png)
 
 ### User Login/Registration
 
-![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-03.png)
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/design/Weather-03.png)
 
 ### Units Customization
 
-![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-04.png)
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/design/Weather-04.png)
 
 ### Notification Set-Up
 
-![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-05.png)
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/design/Weather-05.png)
 
-![](https://github.com/Durengo/Web-Services-Final-Project/tree/main/docs/design/Weather-06.png)
+![](https://github.com/Durengo/Web-Services-Final-Project/blob/main/docs/design/Weather-06.png)
 
 ## Final Result
 
