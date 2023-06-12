@@ -1,0 +1,40 @@
+/*.line {*/
+/*    align-self: center;*/
+/*    height: 1px;*/
+/*    margin-left: 1.0px;*/
+/*    margin-top: 36px;*/
+/*    width: 310px;*/
+/*}*/
+/*.frame-50 {*/
+/*    align-items: flex-start;*/
+/*    display: flex;*/
+/*    margin-top: 5px;*/
+/*    width: 50px;*/
+/*}*/
+/*.overlap-group50 {*/
+/*    border-radius: 30px;*/
+/*    height: 730px;*/
+/*    margin-left: 2px;*/
+/*    position: relative;*/
+/*    width: 600px;*/
+/*}*/
+/*.overlap-group51 {*/
+/*    align-items: flex-start;*/
+/*    background-color: var(--cultured-pearl);*/
+/*    border-radius: 30px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    left: 0;*/
+/*    min-height: 730px;*/
+/*    padding: 19px 0;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    width: 381px;*/
+/*}*/
+/*.title-7-day-forecast {*/
+/*    letter-spacing: 0;*/
+/*    line-height: normal;*/
+/*    margin-left: 35px;*/
+/*    min-height: 24px;*/
+/*    white-space: nowrap;*/
+/*}*/
