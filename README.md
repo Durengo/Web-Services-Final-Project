@@ -100,14 +100,14 @@ etc. Other types of API’s (like Websocket or GraphQL) are also considerable.
 
 ## Students and Roles
 
-|     Student      |                                     Role                                     |
-|:----------------:|:----------------------------------------------------------------------------:|
-| Sebastian Termen | Project Lead / Manager / Scrum Master / Product Owner / Full-stack Developer |
-|  Olha Sharapova  |              User Experience / User Interface Designer (UX/UI)               |
-| Daria Svyrydenko |                            Quality Assurance (QA)                            |
-|  Ihor Halytskyi  |                             Front-end Developer                              |
-|  Nazar Lavkart   |                   Back-end Developer / Database Developer                    |
-|  Vitold Skuder   |                   Back-end Developer / Database Developer                    |
+|     Student      |                                     Role                                                                       |
+|:----------------:|:--------------------------------------------------------------------------------------------------------------:|
+| Sebastian Termen | Project Lead / Manager / Scrum Master / Product Owner / Full-stack Developer / GOD / Git Workflow Grand Master |
+|  Olha Sharapova  |              User Experience / User Interface Designer (UX/UI)                                                 |
+| Daria Svyrydenko |                            Quality Assurance (QA)                                                              |
+|  Ihor Halytskyi  |                             Front-end Developer                                                                |
+|  Nazar Lavkart   |                   Back-end Developer / Database Developer                                                      |
+|  Vitold Skuder   |                   Back-end Developer / Database Developer                                                      |
 
 ## [Weather App Trello Board](https://trello.com/b/mIbXPsM4)
 
